@@ -1,0 +1,21 @@
+output DP-1 resolution 1920x1200 position 0,0
+output DVI-D-1 resolution 1920x1200 position 1920,0
+output DVI-D-2 resolution 1920x1200 position 3840,0
+
+workspace 1 output DP-1
+workspace 2 output DVI-D-1
+workspace 3 output DVI-D-2
+
+ bar {
+     position top
+ 
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+     status_command while ~/.config/swaybar/swaybar_marty.sh; do sleep 1; done
+     colors {
+         statusline #ffffff
+         background #32323299
+         inactive_workspace #32323200 #32323200 #5c5c5c
+     }
+}
