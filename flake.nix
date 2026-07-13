@@ -33,6 +33,7 @@ outputs = { self, nixpkgs, home-manager, ... }: {
         ./modules/services/docker.nix
         ./modules/services/hypervisor.nix
         ./modules/services/pipewire.nix
+        ./modules/services/samba.nix
         ./modules/services/zsh.nix
         ./hosts/marty/configuration.nix
         ./hosts/marty/hardware-configuration.nix
@@ -61,6 +62,7 @@ outputs = { self, nixpkgs, home-manager, ... }: {
         ./modules/services/docker.nix
         ./modules/services/hypervisor.nix
         ./modules/services/pipewire.nix
+        ./modules/services/samba.nix
         ./modules/services/zsh.nix
         ./hosts/biff/configuration.nix
         ./hosts/biff/hardware-configuration.nix

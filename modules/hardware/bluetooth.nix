@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
-  hardware.bluetooth.enable = false;
-  hardware.bluetooth.powerOnBoot = false;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
+  environment.systemPackages = with pkgs; [
+    bluez
+  ];
 }
