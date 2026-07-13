@@ -39,9 +39,15 @@ outputs = { self, nixpkgs, home-manager, ... }: {
       system = "x86_64-linux";
 
       modules = [
-        ./modules/common.nix
+        ./modules/1password.nix
+        ./modules/common.nix        
+        ./modules/docker.nix
+        ./modules/fonts.nix
         ./modules/hypervisor.nix
+        ./modules/sway.nix
+        ./modules/zsh.nix
         ./hosts/werkplaats/configuration.nix
+        ./hosts/werkplaats/hardware-configuration.nix
         home-manager.nixosModules.home-manager
       ];
     };
