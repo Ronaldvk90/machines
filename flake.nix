@@ -40,6 +40,7 @@ outputs = { self, nixpkgs, home-manager, ... }: {
 
       modules = [
         ./modules/common.nix
+        ./modules/hypervisor.nix
         ./hosts/werkplaats/configuration.nix
         home-manager.nixosModules.home-manager
       ];

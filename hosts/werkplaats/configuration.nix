@@ -5,44 +5,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  services.resolved = {
-  enable = true;
-
-  settings = {
-    Resolve = {
-      DNS = [ "10.10.10.1" "1.1.1.1" ];
-      Domains = [ "bttf.lan" ];
-#      DNSSEC = "allow-downgrade";
-      DNSSEC = "no";
-#      DNSOverTLS = "opportunistic";
-      DNSOverTLS = "no";
-      };
-    };
-  };
-  networking.wg-quick.interfaces = {
-    wg0 = {
-      address = [ "10.10.20.5/32" ];
-      dns = [ "10.10.10.1" ];
-      privateKey = "yET0kyiVT/OmkqQIW+lyiYUeyq2/q9rYnlwtwdAFo20=";
-
-      peers = [
-        {
-          publicKey = "c8Z3EZKROzUWEwFm7W+hr2Sor+GzBGJbxAfCpa3Mn2U=";
-          endpoint = "178.224.211.198:51820";
-
-          allowedIPs = [
-            "0.0.0.0/0"
-            "::/0"
-          ];
-
-          persistentKeepalive = 25;
-        }
-      ];
-    };
-  };
-
-  systemd.services."wg-quick-wg0".wantedBy = lib.mkForce [ ];
-
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
@@ -94,10 +56,8 @@
     daemon.settings.features.containerd-snapshotter = true;
     logDriver = "json-file";
   };
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
+  
   security.sudo.wheelNeedsPassword = false;
-  services.flatpak.enable = true;
   
   xdg.portal = {
     enable = true;
