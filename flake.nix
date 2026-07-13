@@ -34,6 +34,17 @@ outputs = { self, nixpkgs, home-manager, ... }: {
       ];
     };
 
+  nixosConfigurations.werkplaats =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./modules/common.nix
+        ./hosts/werkplaats/configuration.nix
+        home-manager.nixosModules.home-manager
+      ];
+    };
+
   nixosConfigurations.debbie =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
