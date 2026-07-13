@@ -10,10 +10,9 @@
     enable32Bit = true;
   };
 
-  # boot.plymouth.enable = true; 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  networking.hostName = "werkplaats"; # Define your hostname.
+  networking.hostName = "werkplaats";
   networking.domain = "2switch";
 
   # Enable networking
@@ -49,5 +48,4 @@
   networking.firewall.enable = false;
 
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

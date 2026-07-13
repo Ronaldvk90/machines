@@ -40,11 +40,17 @@ outputs = { self, nixpkgs, home-manager, ... }: {
 
       modules = [
         ./modules/1password.nix
+        ./modules/binfmt.nix
         ./modules/common.nix        
         ./modules/docker.nix
+        ./modules/enable-flakes.nix
         ./modules/fonts.nix
+        ./modules/gnome-keyring.nix
         ./modules/hypervisor.nix
+        ./modules/pipewire.nix
         ./modules/sway.nix
+        ./modules/timezone.nix
+        ./modules/unfree.nix
         ./modules/zsh.nix
         ./hosts/werkplaats/configuration.nix
         ./hosts/werkplaats/hardware-configuration.nix
