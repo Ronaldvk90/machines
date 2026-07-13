@@ -44,5 +44,6 @@
     gparted
     gsmartcontrol
     xsane
+    nemo
   ];
 }
