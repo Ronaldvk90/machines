@@ -29,6 +29,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/zsh.nix
         ./modules/storage/vda.nix
         ./hosts/virtual/configuration.nix
+        disko.nixosModules.disko
       ];
     };
 
