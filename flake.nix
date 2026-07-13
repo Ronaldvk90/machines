@@ -17,9 +17,26 @@ outputs = { self, nixpkgs, home-manager, ... }: {
       system = "x86_64-linux";
 
       modules = [
+        ./modules/core/binfmt.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/desktop/fonts.nix
+        ./modules/desktop/gnome-keyring.nix
+        ./modules/desktop/sway.nix
+        ./modules/hardware/bluetooth.nix
+        ./modules/hardware/printing.nix
+        ./modules/services/1password.nix
+        ./modules/services/avahi.nix
+        ./modules/services/docker.nix
+        ./modules/services/hypervisor.nix
+        ./modules/services/pipewire.nix
+        ./modules/services/zsh.nix
         ./hosts/marty/configuration.nix
-	./modules/common.nix
-	home-manager.nixosModules.home-manager
+        ./hosts/marty/hardware-configuration.nix
+        home-manager.nixosModules.home-manager
       ];
     };
 
@@ -28,8 +45,25 @@ outputs = { self, nixpkgs, home-manager, ... }: {
       system = "x86_64-linux";
 
       modules = [
-	./modules/common.nix
-	./hosts/biff/configuration.nix
+        ./modules/core/binfmt.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/desktop/fonts.nix
+        ./modules/desktop/gnome-keyring.nix
+        ./modules/desktop/sway.nix
+        ./modules/hardware/bluetooth.nix
+        ./modules/hardware/printing.nix
+        ./modules/services/1password.nix
+        ./modules/services/avahi.nix
+        ./modules/services/docker.nix
+        ./modules/services/hypervisor.nix
+        ./modules/services/pipewire.nix
+        ./modules/services/zsh.nix
+        ./hosts/biff/configuration.nix
+        ./hosts/biff/hardware-configuration.nix
         home-manager.nixosModules.home-manager
       ];
     };
@@ -39,19 +73,20 @@ outputs = { self, nixpkgs, home-manager, ... }: {
       system = "x86_64-linux";
 
       modules = [
-        ./modules/1password.nix
-        ./modules/binfmt.nix
-        ./modules/common.nix        
-        ./modules/docker.nix
-        ./modules/enable-flakes.nix
-        ./modules/fonts.nix
-        ./modules/gnome-keyring.nix
-        ./modules/hypervisor.nix
-        ./modules/pipewire.nix
-        ./modules/sway.nix
-        ./modules/timezone.nix
-        ./modules/unfree.nix
-        ./modules/zsh.nix
+        ./modules/core/binfmt.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/desktop/fonts.nix
+        ./modules/desktop/gnome-keyring.nix
+        ./modules/desktop/sway.nix
+        ./modules/services/1password.nix 
+        ./modules/services/docker.nix
+        ./modules/services/hypervisor.nix
+        ./modules/services/pipewire.nix
+        ./modules/services/zsh.nix
         ./hosts/werkplaats/configuration.nix
         ./hosts/werkplaats/hardware-configuration.nix
         home-manager.nixosModules.home-manager
@@ -63,8 +98,19 @@ outputs = { self, nixpkgs, home-manager, ... }: {
       system = "x86_64-linux";
 
       modules = [
-        ./modules/common.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/desktop/plasma.nix
+        ./modules/hardware/bluetooth.nix
+        ./modules/hardware/printing.nix
+        ./modules/services/1password.nix
+        ./modules/services/avahi.nix
+        ./modules/services/onedrive.nix
+        ./modules/services/pipewire.nix
         ./hosts/debbie/configuration.nix
+        ./hosts/debbie/hardware-configuration.nix
         home-manager.nixosModules.home-manager
       ];
     };

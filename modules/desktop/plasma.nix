@@ -31,4 +31,8 @@
 
   # Configure console keymap
   console.keyMap = "us";
+
+  environment.systemPackages = with pkgs; [
+    kdePackages.kate
+  ];
 }
