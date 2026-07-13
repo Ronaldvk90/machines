@@ -30,6 +30,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/storage/vda.nix
         ./hosts/virtual/configuration.nix
         disko.nixosModules.disko
+        home-manager.nixosModules.home-manager
       ];
     };
 
