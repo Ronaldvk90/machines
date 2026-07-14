@@ -58,6 +58,7 @@
     handbrake
     dmg2img
     nerd-fonts.hack
+    cider-2
   ];
 
   home.file = {
