@@ -8,32 +8,9 @@
     url = "github:nix-community/home-manager/release-26.05";
     inputs.nixpkgs.follows = "nixpkgs";
   };
-
-  disko = {
-    url = "github:nix-community/disko";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
 };
 
-outputs = { self, nixpkgs, home-manager, disko, ... }: {
-  nixosConfigurations.virtual =
-    nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-
-      modules = [
-        ./modules/core/common.nix
-        ./modules/core/enable-flakes.nix
-        ./modules/core/sudo.nix
-        ./modules/core/timezone.nix
-        ./modules/core/unfree.nix
-        ./modules/services/zsh.nix
-        ./modules/storage/vda.nix
-        ./hosts/virtual/configuration.nix
-        disko.nixosModules.disko
-        home-manager.nixosModules.home-manager
-      ];
-    };
-
+outputs = { self, nixpkgs, home-manager, ... }: {
   nixosConfigurations.marty =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
