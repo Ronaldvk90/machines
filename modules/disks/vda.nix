@@ -15,6 +15,7 @@
                 format = "vfat";
                 mountpoint = "/boot";
                 mountOptions = [ "umask=0077" ];
+                mountBy = "uuid";
               };
             };
             NIXROOT = {
@@ -23,6 +24,7 @@
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/";
+                mountBy = "uuid";
               };
             };
           };
