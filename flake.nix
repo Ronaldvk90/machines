@@ -129,6 +129,7 @@ outputs = { self, nixpkgs, home-manager, ... }: {
         ./modules/core/unfree.nix
         ./modules/desktop/fonts.nix
         ./modules/server/incus.nix
+        ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./hosts/strickland/configuration.nix
         ./hosts/strickland/hardware-configuration.nix
