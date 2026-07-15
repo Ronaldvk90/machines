@@ -139,6 +139,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./hosts/strickland/configuration.nix
         ./hosts/strickland/hardware-configuration.nix
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
       ];
     };
   };
