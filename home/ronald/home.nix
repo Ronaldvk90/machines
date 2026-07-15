@@ -135,10 +135,12 @@
   programs.git = {
     package = pkgs.git;
     enable = true;
-    settings.user.name = "Ronald van Kouwen";
-    settings.user.email = "ronaldvk90@outlook.com";
-      extraConfig = {
-        url."git@github.com:".insteadOf = "https://github.com/";
+    #settings.user.name = "Ronald van Kouwen";
+    #settings.user.email = "ronaldvk90@outlook.com";
+      settings = {
+        user.name = "Ronald van Kouwen";
+	user.email = "Ronaldvk90@outlook.com";
+	url."git@github.com:".insteadOf = "https://github.com/";
       };
   };
 
