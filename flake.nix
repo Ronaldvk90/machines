@@ -115,5 +115,25 @@ outputs = { self, nixpkgs, home-manager, ... }: {
         home-manager.nixosModules.home-manager
       ];
     };
+  
+    nixosConfigurations.strickland =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./modules/core/binfmt.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/desktop/fonts.nix
+        ./modules/server/incus.nix
+        ./modules/services/zsh.nix
+        ./hosts/strickland/configuration.nix
+        ./hosts/strickland/hardware-configuration.nix
+        home-manager.nixosModules.home-manager
+      ];
+    };
   };
 }
