@@ -3,13 +3,13 @@
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  networking.hostName = "strickland"; # Define your hostname.
+  networking.hostName = "strickland2"; # Define your hostname.
   networking.domain = "bttf.lan";
   networking.networkmanager.enable = false;
   networking.useDHCP = false;
   networking.bridges = {
     "br0" = {
-      interfaces = [ "enp3s0" ];
+      interfaces = [ "ens18" ];
     };
   };
   networking.interfaces.br0.ipv4.addresses = [ {
