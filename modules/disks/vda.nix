@@ -1,3 +1,5 @@
+{ config, disko, ... }
+
 {
   disko.devices = {
     disk = {
