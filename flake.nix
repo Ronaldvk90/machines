@@ -137,7 +137,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./hosts/strickland/configuration.nix
-        ./hosts/strickland/hardware-configuration.nix
+        #./hosts/strickland/hardware-configuration.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
       ];
