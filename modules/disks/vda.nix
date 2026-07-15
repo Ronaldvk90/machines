@@ -1,13 +1,13 @@
 {
   disko.devices = {
     disk = {
-      vda = {
+      disk = {
         device = "/dev/vda";
         type = "disk";
         content = {
           type = "gpt";
           partitions = {
-            ESP = {
+            NIXBOOT = {
               type = "EF00";
               size = "500M";
               content = {
@@ -17,7 +17,7 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            root = {
+            NIXROOT = {
               size = "100%";
               content = {
                 type = "filesystem";
