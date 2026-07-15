@@ -1,21 +1,6 @@
 { config, pkgs, lib, ... }:
 
-{
-#  let
-#    flathubApps = [
-#     "com.vscodium.codium"
-#     "org.gnome.Podcasts"
-#    ];
-#
-#in {
-#home.activation.flatpak = lib.hm.dag.entryAfter ["writeBoundary"] ''
-#  ${pkgs.flatpak}/bin/flatpak remote-add --user --if-not-exists flathub \
-#    https://flathub.org/repo/flathub.flatpakrepo
-#
-#  ${pkgs.flatpak}/bin/flatpak install --user -y flathub \
-#    ${lib.concatStringsSep " " flathubApps}
-#'';
-  
+{ 
   home.username = "ronald";
   home.homeDirectory = "/home/ronald";
   home.stateVersion = "26.05";
@@ -77,12 +62,6 @@
 
   xdg.configFile."oh-my-posh/easy-term.omp.json".source = ./configs/zsh/easy-term.omp.json;
 
-
-#  home.activation.InstallHackFonts =
-#    lib.hm.dag.entryAfter [ "installPackages" ] ''
-#      ${pkgs.oh-my-posh}/bin/oh-my-posh font install Hack
-#    '';
-
   home.sessionPath = [
     "$HOME/.local/bin"
   ];
@@ -91,7 +70,6 @@
     PODMAN_COMPOSE_WARNING_LOGS = "false";
   };
 
-###########################################
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
@@ -135,12 +113,10 @@
   programs.git = {
     package = pkgs.git;
     enable = true;
-    #settings.user.name = "Ronald van Kouwen";
-    #settings.user.email = "ronaldvk90@outlook.com";
       settings = {
         user.name = "Ronald van Kouwen";
-	user.email = "Ronaldvk90@outlook.com";
-	url."git@github.com:".insteadOf = "https://github.com/";
+	      user.email = "Ronaldvk90@outlook.com";
+	      url."git@github.com:".insteadOf = "https://github.com/";
       };
   };
 
@@ -164,7 +140,5 @@
     enable = true;
   };
 
-###############################################
-  #nixpkgs.config.allowUnfree = true;
   programs.home-manager.enable = true;
 }
