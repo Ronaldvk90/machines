@@ -126,14 +126,14 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
 
       modules = [
         ./modules/disks/vda.nix
-        ./modules/core/binfmt.nix
+#        ./modules/core/binfmt.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/desktop/fonts.nix
-        ./modules/server/incus.nix
+#        ./modules/desktop/fonts.nix
+#        ./modules/server/incus.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./hosts/strickland/configuration.nix
