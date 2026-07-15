@@ -7,7 +7,7 @@
         content = {
           type = "gpt";
           partitions = {
-            NIXBOOT = {
+            ESP = {
               type = "EF00";
               size = "500M";
               content = {
@@ -17,12 +17,13 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            NIXROOT = {
+            root = {
               size = "100%";
               content = {
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/";
+                neededForBoot = true;
               };
             };
           };
