@@ -22,10 +22,10 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
 
       modules = [
         ./modules/core/binfmt.nix
-        ./modules/core/bootloader.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
+        ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/desktop/fonts.nix
@@ -42,8 +42,9 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/marty/configuration.nix
-        ./hosts/marty/hardware-configuration.nix
+        ./hosts/marty/disk.nix
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
       ];
     };
 
@@ -53,10 +54,10 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
 
       modules = [
         ./modules/core/binfmt.nix
-        ./modules/core/bootloader.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
+        ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/desktop/fonts.nix
@@ -73,8 +74,9 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/biff/configuration.nix
-        ./hosts/biff/hardware-configuration.nix
+        ./hosts/biff/disk.nix
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
       ];
     };
 
@@ -84,10 +86,10 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
 
       modules = [
         ./modules/core/binfmt.nix
-        ./modules/core/bootloader.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
+        ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/desktop/fonts.nix
@@ -100,8 +102,9 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/werkplaats/configuration.nix
-        ./hosts/werkplaats/hardware-configuration.nix
+        ./hosts/werkplaats/disk.nix
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
       ];
     };
 
@@ -112,6 +115,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
       modules = [
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
+        ./modules/core/grub2boot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/desktop/plasma.nix
@@ -123,8 +127,9 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/pipewire.nix
         ./modules/users/debbie.nix
         ./hosts/debbie/configuration.nix
-        ./hosts/debbie/hardware-configuration.nix
+        ./hosts/debbie/disk.nix
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko      
       ];
     };
   

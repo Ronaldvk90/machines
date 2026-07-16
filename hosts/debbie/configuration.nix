@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 
-{
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
-  
+{ 
   # Ensure base graphics are enabled
   hardware.graphics.enable = true;
 
