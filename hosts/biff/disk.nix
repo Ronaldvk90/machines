@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/sda";
+        device = "/dev/disk/by-id/ata-Crucial_CT525MX300SSD1_164714C0C627";
         type = "disk";
         content = {
           type = "gpt";
