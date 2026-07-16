@@ -22,6 +22,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
 
       modules = [
         ./modules/core/binfmt.nix
+        ./modules/core/bootloader.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
@@ -39,6 +40,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/pipewire.nix
         ./modules/services/samba.nix
         ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
         ./hosts/marty/configuration.nix
         ./hosts/marty/hardware-configuration.nix
         home-manager.nixosModules.home-manager
@@ -51,6 +53,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
 
       modules = [
         ./modules/core/binfmt.nix
+        ./modules/core/bootloader.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
@@ -68,6 +71,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/pipewire.nix
         ./modules/services/samba.nix
         ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
         ./hosts/biff/configuration.nix
         ./hosts/biff/hardware-configuration.nix
         home-manager.nixosModules.home-manager
@@ -80,6 +84,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
 
       modules = [
         ./modules/core/binfmt.nix
+        ./modules/core/bootloader.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
@@ -93,6 +98,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/hypervisor.nix
         ./modules/services/pipewire.nix
         ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
         ./hosts/werkplaats/configuration.nix
         ./hosts/werkplaats/hardware-configuration.nix
         home-manager.nixosModules.home-manager
@@ -115,6 +121,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/avahi.nix
         ./modules/services/onedrive.nix
         ./modules/services/pipewire.nix
+        ./modules/users/debbie.nix
         ./hosts/debbie/configuration.nix
         ./hosts/debbie/hardware-configuration.nix
         home-manager.nixosModules.home-manager
@@ -126,16 +133,17 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
       system = "x86_64-linux";
 
       modules = [
-#        ./modules/core/binfmt.nix
+        ./modules/core/binfmt.nix
+        ./modules/core/bootloader.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-#        ./modules/desktop/fonts.nix
-#        ./modules/services/incus.nix
+        ./modules/services/incus.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
         ./hosts/strickland/configuration.nix
         ./hosts/strickland/disk.nix
         home-manager.nixosModules.home-manager

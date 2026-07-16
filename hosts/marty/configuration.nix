@@ -7,8 +7,6 @@
   };
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "marty"; # Define your hostname.
   networking.domain = "bttf.lan";
   networking.networkmanager.enable = false;
@@ -24,14 +22,6 @@
   } ];
   networking.defaultGateway = "10.10.10.1";
   networking.nameservers = ["10.10.10.1"];
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ronald = {
-    shell = pkgs.zsh;
-    isNormalUser = true;
-    description = "Ronald van Kouwen";
-    extraGroups = [ "wheel" "docker" "libvirtd" "dialout" "scanner" "lp" "networkmanager" "video" ];
-  };
 
   home-manager.users.ronald = import ../../home/ronald/home.nix;
 

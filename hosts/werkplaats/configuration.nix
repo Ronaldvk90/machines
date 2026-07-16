@@ -8,22 +8,11 @@
     enable32Bit = true;
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "werkplaats";
   networking.domain = "2switch";
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ronald = {
-    shell = pkgs.zsh;
-    isNormalUser = true;
-    description = "Ronald van Kouwen";
-    extraGroups = [ "wheel" "docker" "libvirtd" "dialout" "scanner" "lp" "networkmanager" "video" ];
-    packages = with pkgs; [];
-  };
 
   home-manager.users.ronald = import ../../home/ronald/home.nix;
 

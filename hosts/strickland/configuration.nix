@@ -1,16 +1,6 @@
 { config, pkgs, ... }:
 
-{
-  boot.initrd.availableKernelModules = [
-    "virtio_pci"
-    "virtio_blk"
-    "ahci"
-    "sd_mod"
-  ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  
+{  
   networking.hostName = "strickland2"; # Define your hostname.
   networking.domain = "bttf.lan";
   networking.networkmanager.enable = false;
@@ -26,19 +16,6 @@
   } ];
   networking.defaultGateway = "10.10.10.1";
   networking.nameservers = ["10.10.10.1"];
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ronald = {
-    shell = pkgs.zsh;
-    isNormalUser = true;
-    description = "Ronald van Kouwen";
-    extraGroups = [ "wheel" "incus-admin" ];
-  };
-  
-  users.users.ronald.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFydz8KQpnXaXFtUijJdQtub7XyUB0rQSZEA2eAuXqsP"
-  ];
-
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 

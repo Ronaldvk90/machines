@@ -17,13 +17,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users."debbie" = {
-    isNormalUser = true;
-    description = "Debbie Berendsen";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-  
   home-manager.users.debbie = import ../../home/debbie/home.nix;
 
   environment.systemPackages = with pkgs; [
