@@ -34,6 +34,11 @@
     description = "Ronald van Kouwen";
     extraGroups = [ "wheel" "incus-admin" ];
   };
+  
+  users.users.ronald.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFydz8KQpnXaXFtUijJdQtub7XyUB0rQSZEA2eAuXqsP"
+  ];
+
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
