@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  
   networking.hostName = "strickland2"; # Define your hostname.
   networking.domain = "bttf.lan";
   networking.networkmanager.enable = false;
