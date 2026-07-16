@@ -34,7 +34,7 @@
         content = {
           type = "gpt";
           partitions = {
-            home = {
+            DATA = {
               size = "100%";
               content = {
                 type = "filesystem";
@@ -46,5 +46,5 @@
         };
       };
     };
-  }:
+  };
 }
