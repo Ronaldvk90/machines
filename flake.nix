@@ -126,7 +126,6 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
       system = "x86_64-linux";
 
       modules = [
-        ./modules/disks/vda.nix
 #        ./modules/core/binfmt.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
@@ -134,11 +133,11 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
 #        ./modules/desktop/fonts.nix
-#        ./modules/server/incus.nix
+#        ./modules/services/incus.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./hosts/strickland/configuration.nix
-        #./hosts/strickland/hardware-configuration.nix
+        ./modules/strickland/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
       ];
