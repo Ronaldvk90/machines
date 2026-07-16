@@ -9,6 +9,10 @@
     enable = true;
     ui.enable = true;
   };
+  
+  virtualisation.incus.settings = {
+    "core.https_address" = "0.0.0.0:8443";
+  };
 
   # Incus Preseed
   virtualisation.incus.preseed = {
