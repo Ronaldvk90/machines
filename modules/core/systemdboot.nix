@@ -7,6 +7,11 @@
     "ahci"
     "sd_mod"
     "nvme"
+    "xhci_pci"
+    "ehci_pci"
+    "usbhid"
+    "usb_storage"
+    "sr_mod"
   ];
   boot.kernelModules = [ "kvm-intel" ];
 
