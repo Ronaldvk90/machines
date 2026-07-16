@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
 {
+  boot.initrd.availableKernelModules = [
+    "virtio_pci"
+    "virtio_blk"
+    "ahci"
+    "sd_mod"
+  ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   

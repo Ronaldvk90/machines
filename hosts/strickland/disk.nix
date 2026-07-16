@@ -13,7 +13,6 @@
               content = {
                 type = "filesystem";
                 format = "vfat";
-                extraArgs = [ "-n" "NIXBOOT" ];
                 mountpoint = "/boot";
                 mountOptions = [ "umask=0077" ];
               };
@@ -23,7 +22,6 @@
               content = {
                 type = "filesystem";
                 format = "ext4";
-                extraArgs = [ "-L" "NIXROOT" ];
                 mountpoint = "/";
               };
             };
