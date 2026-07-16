@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/disk/by-path/virtio-pci-0000\:00\:0a.0";
+        device = "/dev/vda";
         type = "disk";
         content = {
           type = "gpt";
@@ -13,6 +13,7 @@
               content = {
                 type = "filesystem";
                 format = "vfat";
+                label = "NIXBOOT";
                 mountpoint = "/boot";
                 mountOptions = [ "umask=0077" ];
               };
@@ -22,6 +23,7 @@
               content = {
                 type = "filesystem";
                 format = "ext4";
+                label = "NIXROOT";
                 mountpoint = "/";
               };
             };
