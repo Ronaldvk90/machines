@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/vda";
+        device = "/dev/disk/by-path/virtio-pci-0000\:00\:0a.0";
         type = "disk";
         content = {
           type = "gpt";
