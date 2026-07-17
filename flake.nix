@@ -16,6 +16,15 @@
 };
 
 outputs = { self, nixpkgs, home-manager, disko, ... }: {
+  nixosConfigurations.installer =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./hosts/installer/configuration.nix
+      ];
+    };
+
   nixosConfigurations.marty =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
