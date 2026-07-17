@@ -1,18 +1,23 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-    disko
-    nfs-utils
-    cifs-utils
-  ];
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-label/NIXSTORE";
+    fsType = "ext4";
+    neededForBoot = true;
+  };
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  networking.networkmanager.enable = true;
+  environment.systemPackages = with pkgs; [
+    git
+    vim
+    tmux
+    disko
+    cifs-utils
+    nfs-utils
+  ];
 }
