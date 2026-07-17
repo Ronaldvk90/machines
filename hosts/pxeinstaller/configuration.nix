@@ -20,4 +20,6 @@
     cifs-utils
     nfs-utils
   ];
+
+  system.stateVersion = "26.05";
 }
