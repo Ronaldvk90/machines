@@ -21,6 +21,7 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
       system = "x86_64-linux";
 
       modules = [
+        "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
         ./hosts/installer/configuration.nix
       ];
     };
