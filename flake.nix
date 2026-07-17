@@ -161,7 +161,7 @@ nixosConfigurations.pxeinstaller =
 
       modules = [
         ./modules/core/binfmt.nix
-        ./modules/core/bootloader.nix
+        ./modules/core/systemdboot.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
