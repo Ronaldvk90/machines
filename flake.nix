@@ -16,13 +16,23 @@
 };
 
 outputs = { self, nixpkgs, home-manager, disko, ... }: {
-  nixosConfigurations.installer =
+nixosConfigurations.pxeinstaller =
+  nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
+
+    modules = [
+      "${nixpkgs}/nixos/modules/installer/netboot/netboot-minimal.nix"
+      ./hosts/pxeinstaller/configuration.nix
+    ];
+  };
+
+  nixosConfigurations.isoinstaller =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
       modules = [
         "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-        ./hosts/installer/configuration.nix
+        ./hosts/isoinstaller/configuration.nix
       ];
     };
 
