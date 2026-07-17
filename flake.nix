@@ -52,7 +52,8 @@ outputs = { self, nixpkgs, home-manager, disko, ... }: {
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/marty/configuration.nix
-        ./hosts/marty/disk.nix
+        ./hosts/marty/hardware-configuration.nix
+        #./hosts/marty/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
       ];
