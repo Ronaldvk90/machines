@@ -1,6 +1,9 @@
 { config, pkgs, lib, ... }:
 
 {
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
   boot.initrd.availableKernelModules = [
     "virtio_pci"
     "virtio_blk"
