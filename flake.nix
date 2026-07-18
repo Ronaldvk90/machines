@@ -22,7 +22,7 @@ nixosConfigurations.pxeinstaller =
 
     modules = [
       "${nixpkgs}/nixos/modules/installer/netboot/netboot-minimal.nix"
-      ./hosts/pxeinstaller/configuration.nix
+      ./installers/pxeinstaller/configuration.nix
     ];
   };
 
@@ -32,7 +32,7 @@ nixosConfigurations.pxeinstaller =
 
       modules = [
         "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-        ./hosts/isoinstaller/configuration.nix
+        ./installers/isoinstaller/configuration.nix
       ];
     };
 
@@ -173,6 +173,77 @@ nixosConfigurations.pxeinstaller =
         ./modules/users/ronald.nix
         ./hosts/strickland/configuration.nix
         ./hosts/strickland/disk.nix
+        home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+      ];
+    };
+
+    nixosConfigurations.jellyfin =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/services/jellyfin.nix
+        ./modules/services/samba.nix
+        ./modules/services/ssh.nix
+        ./modules/services/zsh.nix
+        ./modules/services/qemu-guest-agent.nix
+        ./modules/users/ronald.nix
+        ./incusvms/jellyfin/configuration.nix
+        ./incusvms/jellyfin/disk.nix
+        home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+      ];
+    };
+
+    nixosConfigurations.outatime =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nixos
+        ./modules/services/podman.nix
+        ./modules/services/ssh.nix
+        ./modules/services/zsh.nix
+        ./modules/services/qemu-guest-agent.nix
+        ./modules/users/ronald.nix
+        ./incusvms/outatime/configuration.nix
+        ./incusvms/outatime/disk.nix
+        home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+      ];
+    };
+
+    nixosConfigurations.transmission =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nixos
+        ./modules/services/ssh.nix
+        ./modules/services/transmission.nix
+        ./modules/services/zsh.nix
+        ./modules/services/qemu-guest-agent.nix
+        ./modules/services/samba.nix
+        ./modules/users/ronald.nix
+        ./incusvms/transmission/configuration.nix
+        ./incusvms/transmission/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
       ];
