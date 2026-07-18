@@ -3,6 +3,7 @@
 {
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
 
   networking.hostName = "biff"; # Define your hostname.
