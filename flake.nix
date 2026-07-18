@@ -95,7 +95,6 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/biff/configuration.nix
-        #./hosts/biff/hardware-configuration.nix
         ./hosts/biff/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
