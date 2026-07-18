@@ -2,3 +2,5 @@
 /result/*
 /pxe-output
 /pxe-output/*
+/iso-output
+/iso-output/*
