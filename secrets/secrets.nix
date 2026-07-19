@@ -3,6 +3,14 @@ let
 
 in
 {
+  "ronald.password.age".publicKeys = [
+    admin
+  ];
+
+  "debbie.password.age".publicKeys = [
+    admin
+  ];
+
   "ronald.nas.credentials.age".publicKeys = [
     admin
   ];
