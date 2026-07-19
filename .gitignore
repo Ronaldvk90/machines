@@ -4,3 +4,7 @@
 /pxe-output/*
 /iso-output
 /iso-output/*
+
+/secrets/*.txt
+/secrets/*.cred
+/secrets/*.key
