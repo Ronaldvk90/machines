@@ -171,12 +171,12 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
+        ./modules/crypto/secrets.nix
         ./modules/services/incus.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./secrets/recipients.nix
-        ./crypto/secrets.nix
         ./hosts/strickland/configuration.nix
         ./hosts/strickland/disk.nix
         home-manager.nixosModules.home-manager
