@@ -9,3 +9,4 @@ nix shell nixpkgs#nixos-anywhere -c nixos-anywhere --phases kexec,disko,install 
 echo "Paste your age key, finish with CTRL-D:"
 ssh root@"$HOST" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -q 'mkdir -p /mnt/var/lib/agenix && install -m 600 /dev/stdin /mnt/var/lib/agenix/agenix.key'
 ssh root@"$HOST" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -q "cd /mnt && nixos-enter --command \"nixos-rebuild boot --flake github:ronaldvk90/machines#$MACHINE\""
+ssh root@"$HOST" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -q "reboot"
