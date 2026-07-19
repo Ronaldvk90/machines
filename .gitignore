@@ -5,6 +5,6 @@
 /iso-output
 /iso-output/*
 
-/secrets/*.txt
-/secrets/*.cred
-/secrets/*.key
+secrets/*.txt
+secrets/*.cred
+secrets/*.key
