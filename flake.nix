@@ -176,7 +176,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./secrets/recipients.nix
+        #./secrets/recipients.nix
         ./hosts/strickland/configuration.nix
         ./hosts/strickland/disk.nix
         home-manager.nixosModules.home-manager
