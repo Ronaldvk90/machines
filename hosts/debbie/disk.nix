@@ -2,15 +2,20 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/sda";
+        device = "/dev/disk/by-id/ata-Crucial_CT525MX300SSD1_164714C0C627";
         type = "disk";
         content = {
           type = "gpt";
           partitions = {
-            boot = {
-              size = "1M";
-              type = "EF02"; # for grub MBR
-              attributes = [ 0 ]; # partition attribute
+            ESP = {
+              type = "EF00";
+              size = "500M";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
+              };
             };
             root = {
               size = "100%";

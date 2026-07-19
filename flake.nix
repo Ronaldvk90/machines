@@ -53,6 +53,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
+        ./modules/crypto/secrets.nix
         ./modules/desktop/fonts.nix
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
@@ -67,10 +68,10 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/marty/configuration.nix
-        ./hosts/marty/hardware-configuration.nix
-        #./hosts/marty/disk.nix
+        ./hosts/marty/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
+        agenix.nixosModules.default        
       ];
     };
 
@@ -86,6 +87,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
+        ./modules/crypto/secrets.nix
         ./modules/desktop/fonts.nix
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
@@ -103,6 +105,7 @@ nixosConfigurations.pxeinstaller =
         ./hosts/biff/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
+        agenix.nixosModules.default
       ];
     };
 
@@ -118,6 +121,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
+        ./modules/crypto/secrets.nix
         ./modules/desktop/fonts.nix
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
@@ -131,6 +135,7 @@ nixosConfigurations.pxeinstaller =
         ./hosts/werkplaats/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
+        agenix.nixosModules.default
       ];
     };
 
@@ -139,11 +144,12 @@ nixosConfigurations.pxeinstaller =
       system = "x86_64-linux";
 
       modules = [
+        ./modules/core/systemdboot.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
-        ./modules/core/grub2boot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
+        ./modules/crypto/secrets.nix
         ./modules/desktop/plasma.nix
         ./modules/hardware/bluetooth.nix
         ./modules/hardware/printing.nix
@@ -155,7 +161,8 @@ nixosConfigurations.pxeinstaller =
         ./hosts/debbie/configuration.nix
         ./hosts/debbie/disk.nix
         home-manager.nixosModules.home-manager
-        disko.nixosModules.disko      
+        disko.nixosModules.disko
+        agenix.nixosModules.default
       ];
     };
   
@@ -196,6 +203,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
+        ./modules/crypto/secrets.nix        
         ./modules/services/jellyfin.nix
         ./modules/services/samba.nix
         ./modules/services/ssh.nix
@@ -206,6 +214,7 @@ nixosConfigurations.pxeinstaller =
         ./incusvms/jellyfin/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
+        agenix.nixosModules.default
       ];
     };
 
@@ -220,6 +229,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nixos
+        ./modules/crypto/secrets.nix        
         ./modules/services/podman.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
@@ -229,6 +239,7 @@ nixosConfigurations.pxeinstaller =
         ./incusvms/outatime/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
+        agenix.nixosModules.default        
       ];
     };
 
@@ -243,6 +254,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nixos
+        ./modules/crypto/secrets.nix        
         ./modules/services/ssh.nix
         ./modules/services/transmission.nix
         ./modules/services/zsh.nix
@@ -253,6 +265,7 @@ nixosConfigurations.pxeinstaller =
         ./incusvms/transmission/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
+        agenix.nixosModules.default        
       ];
     };
   };
