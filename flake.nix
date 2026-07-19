@@ -13,9 +13,14 @@
     url = "github:nix-community/disko";
     inputs.nixpkgs.follows = "nixpkgs";
   };
+
+  agenix = {
+    url = "github:ryantm/agenix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 };
 
-outputs = { self, nixpkgs, home-manager, disko, ... }: {
+outputs = { self, nixpkgs, home-manager, disko, agenix, ... }: {
 nixosConfigurations.pxeinstaller =
   nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
@@ -170,10 +175,13 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
+        ./secrets/recipients.nix
+        ./crypto/secrets.nix
         ./hosts/strickland/configuration.nix
         ./hosts/strickland/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
+        agenix.nixosModules.default
       ];
     };
 
