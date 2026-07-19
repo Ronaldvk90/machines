@@ -7,7 +7,7 @@
     file = ../../secrets/ronald.password.age;
   };
 
-    age.secrets.debbiePassword = {
+  age.secrets.debbiePassword = {
     file = ../../secrets/debbie.password.age;
   };
 
