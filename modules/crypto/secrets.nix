@@ -1,9 +1,9 @@
 {
-  age.secrets.ronald.nasCredentials = {
+  age.secrets.ronaldNasCredentials = {
     file = ../secrets/ronald.nas.credentials.age;
   };
 
-  age.secrets.debbie.nasCredentials = {
+  age.secrets.debbieNasCredentials = {
     file = ../secrets/debbie.nas.credentials.age;
   };
 }
