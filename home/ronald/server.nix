@@ -64,7 +64,6 @@
       settings = {
         user.name = "Ronald van Kouwen";
 	      user.email = "Ronaldvk90@outlook.com";
-	      url."git@github.com:".insteadOf = "https://github.com/";
       };
   };
 
