@@ -223,22 +223,18 @@ nixosConfigurations.pxeinstaller =
       system = "x86_64-linux";
 
       modules = [
-        ./modules/core/systemdboot.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nixos
-        ./modules/crypto/secrets.nix        
+        ./modules/crypto/secrets.nix
         ./modules/services/podman.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
-        ./modules/services/qemu-guest-agent.nix
         ./modules/users/ronald.nix
         ./incusvms/outatime/configuration.nix
-        ./incusvms/outatime/disk.nix
         home-manager.nixosModules.home-manager
-        disko.nixosModules.disko
         agenix.nixosModules.default        
       ];
     };
