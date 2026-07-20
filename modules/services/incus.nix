@@ -32,7 +32,7 @@
         };
         root = {
           path = "/";
-          pool = "default";
+          pool = "storage";
           size = "35GiB";
           type = "disk";
         };
@@ -40,14 +40,22 @@
       name = "default";
     }
   ];
-  storage_pools = [
-      {
-      config = {
-        source = "/var/lib/incus/storage-pools/default";
-        };
-        driver = "dir";
-        name = "default";
-      }
-    ];
+storage_pools = [
+  {
+    config = {
+      source = "/var/lib/incus/storage-pools/default";
+    };
+    driver = "dir";
+    name = "default";
+  }
+
+  {
+    config = {
+      source = "storage";
+    };
+    driver = "zfs";
+    name = "storage";
+  }
+];
   };
 }
