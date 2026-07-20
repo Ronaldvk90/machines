@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/sda";
+        device = "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S3Z2NB1KA59367P";
         type = "disk";
         content = {
           type = "gpt";
