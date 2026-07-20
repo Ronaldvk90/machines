@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 
 {  
-  networking.hostName = "strickland"; # Define your hostname.
+  networking.hostName = "strickland";
+  networking.hostId = "e46ea564";
   networking.domain = "bttf.lan";
   networking.networkmanager.enable = false;
   networking.useDHCP = false;
