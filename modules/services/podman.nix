@@ -11,4 +11,6 @@
   environment.systemPackages = with pkgs; [
     podman-compose
   ];
+
+  users.users.ronald.linger = true;
 }
