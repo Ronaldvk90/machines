@@ -179,6 +179,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/crypto/secrets.nix
+        ./modules/hardware/zfs.nix
         ./modules/services/incus.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
