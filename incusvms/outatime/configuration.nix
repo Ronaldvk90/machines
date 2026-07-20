@@ -18,9 +18,10 @@
     enable = true;
     networks."50-enp5s0" = {
       matchConfig.Name = "enp5s0";
+      address = [ "10.10.10.11/24" ];
       networkConfig = {
-        DHCP = "ipv4";
-        IPv6AcceptRA = true;
+        Gateway = "10.10.10.1";
+        DNS = [ "10.10.10.1" ];
       };
       linkConfig.RequiredForOnline = "routable";
     };
