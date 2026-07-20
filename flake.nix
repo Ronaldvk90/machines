@@ -197,7 +197,6 @@ nixosConfigurations.pxeinstaller =
       system = "x86_64-linux";
 
       modules = [
-        ./modules/core/systemdboot.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
@@ -208,12 +207,10 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/samba.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
-        ./modules/services/qemu-guest-agent.nix
         ./modules/users/ronald.nix
         ./incusvms/jellyfin/configuration.nix
-        ./incusvms/jellyfin/disk.nix
+        ./incusvms/jellyfin/incus.nix
         home-manager.nixosModules.home-manager
-        disko.nixosModules.disko
         agenix.nixosModules.default
       ];
     };
@@ -245,7 +242,6 @@ nixosConfigurations.pxeinstaller =
       system = "x86_64-linux";
 
       modules = [
-        ./modules/core/systemdboot.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
@@ -255,13 +251,11 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/ssh.nix
         ./modules/services/transmission.nix
         ./modules/services/zsh.nix
-        ./modules/services/qemu-guest-agent.nix
         ./modules/services/samba.nix
         ./modules/users/ronald.nix
         ./incusvms/transmission/configuration.nix
-        ./incusvms/transmission/disk.nix
+        ./incusvms/transmission/incus.nix
         home-manager.nixosModules.home-manager
-        disko.nixosModules.disko
         agenix.nixosModules.default        
       ];
     };
