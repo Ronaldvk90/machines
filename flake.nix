@@ -234,6 +234,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./incusvms/outatime/configuration.nix
+        ./incusvms/outatime/incus.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default        
       ];
