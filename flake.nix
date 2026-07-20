@@ -227,7 +227,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
-        ./modules/core/unfree.nixos
+        ./modules/core/unfree.nix
         ./modules/crypto/secrets.nix
         ./modules/services/podman.nix
         ./modules/services/ssh.nix
