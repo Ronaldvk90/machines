@@ -15,4 +15,16 @@
     rpc-whitelist = "127.0.0.1,10.10.10.*,10.10.20.*";
     };
   };
+
+  users.groups.downloads = {
+    gid = 2000;
+  };
+  
+  users.users.ronald.extraGroups = [
+    "downloads"
+  ];
+
+  users.users.transmission.extraGroups = [
+    "downloads"
+  ];
 }
