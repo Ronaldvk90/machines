@@ -180,7 +180,6 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/unfree.nix
         ./modules/crypto/secrets.nix
         ./modules/services/incus.nix
-        ./modules/services/samba.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
