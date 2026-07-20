@@ -6,6 +6,8 @@
     "${modulesPath}/virtualisation/incus-virtual-machine.nix"
   ];
 
+  home-manager.users.ronald = import ../../home/ronald/server.nix;
+
   networking = {
     dhcpcd.enable = false;
     useDHCP = false;
