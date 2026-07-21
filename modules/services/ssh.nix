@@ -13,7 +13,7 @@
 
       AllowUsers = [ "ronald" ];
 
-      X11Forwarding = false;
+      X11Forwarding = true;
       AllowTcpForwarding = false;
       AllowAgentForwarding = false;
 
