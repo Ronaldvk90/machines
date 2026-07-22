@@ -6,6 +6,8 @@ workspace 1 output DP-1
 workspace 2 output DVI-D-1
 workspace 3 output DVI-D-2
 
+exec swaymsg workspace number 1
+
  bar {
      position top
  
