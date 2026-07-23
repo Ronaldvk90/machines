@@ -18,9 +18,14 @@
     url = "github:ryantm/agenix";
     inputs.nixpkgs.follows = "nixpkgs";
   };
+
+  lanzaboote = {
+    url = "github:nix-community/lanzaboote/v1.1.0";
+    inputs.nixpkgs.follows = "nixpkgs";
+    };
 };
 
-outputs = { self, nixpkgs, home-manager, disko, agenix, ... }: {
+outputs = { self, nixpkgs, home-manager, disko, agenix, lanzaboote, ... }: {
 nixosConfigurations.pxeinstaller =
   nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
@@ -106,6 +111,7 @@ nixosConfigurations.pxeinstaller =
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         agenix.nixosModules.default
+        lanzaboote.nixosModules.lanzaboote
       ];
     };
 
