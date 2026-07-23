@@ -1,11 +1,17 @@
 { config, pkgs, lib, ... }:
 
 {
-  security.pam.services.sshd = {
-    googleAuthenticator = {
-      enable = true;
+security.pam.services.sshd = {
+  googleAuthenticator.enable = true;
+
+  rules.auth = {
+    google_authenticator = {
+      order = 11000;
+      control = "required";
+      modulePath = "${pkgs.google-authenticator}/lib/security/pam_google_authenticator.so";
     };
   };
+};
 
   services.openssh = {
     enable = true;
@@ -37,5 +43,4 @@
   environment.systemPackages = with pkgs; [
     google-authenticator
   ];
-
 }
