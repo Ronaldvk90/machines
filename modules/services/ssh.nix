@@ -1,17 +1,18 @@
 { config, pkgs, lib, ... }:
 
 {
-security.pam.services.sshd = {
-  googleAuthenticator.enable = true;
+  security.pam.services.sshd = {
+    googleAuthenticator.enable = true;
 
-  rules.auth = {
-    google_authenticator = {
-      order = 11000;
-      control = "required";
-      modulePath = "${pkgs.google-authenticator}/lib/security/pam_google_authenticator.so";
+    rules.auth = {
+      google_authenticator = {
+        order = 11000;
+        control = "required";
+        modulePath =
+          "${pkgs.google-authenticator}/lib/security/pam_google_authenticator.so";
+      };
     };
   };
-};
 
   services.openssh = {
     enable = true;
@@ -36,7 +37,7 @@ security.pam.services.sshd = {
       MaxAuthTries = 3;
 
       PerSourcePenalties =
-      "crash:3600s authfail:3600s max:86400s";
+        "crash:3600s authfail:3600s max:86400s";
     };
   };
 
