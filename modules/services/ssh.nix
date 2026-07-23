@@ -13,18 +13,13 @@
 
     settings = {
       PasswordAuthentication = false;
-
-      # Nodig voor de TOTP challenge
       KbdInteractiveAuthentication = true;
-
       PubkeyAuthentication = true;
-
-      # Zorgt ervoor dat PAM daadwerkelijk onderdeel
-      # is van de SSH authentication flow.
       UsePAM = true;
 
-      PermitRootLogin = "no";
+      AuthenticationMethods = "publickey,keyboard-interactive";
 
+      PermitRootLogin = "no";
       AllowUsers = [ "ronald" ];
 
       X11Forwarding = false;
@@ -35,7 +30,7 @@
       MaxAuthTries = 3;
 
       PerSourcePenalties =
-        "crash:3600s authfail:3600s max:86400s";
+      "crash:3600s authfail:3600s max:86400s";
     };
   };
 }
