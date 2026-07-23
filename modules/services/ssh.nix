@@ -33,4 +33,9 @@
       "crash:3600s authfail:3600s max:86400s";
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    google-authenticator
+  ];
+
 }
