@@ -1,8 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
-  security.pam.services.sshd.googleAuthenticator = {
-    enable = true;
+  security.pam.services.sshd = {
+    googleAuthenticator = {
+      enable = true;
+    };
   };
 
   services.openssh = {
@@ -11,8 +13,15 @@
 
     settings = {
       PasswordAuthentication = false;
+
+      # Nodig voor de TOTP challenge
       KbdInteractiveAuthentication = true;
+
       PubkeyAuthentication = true;
+
+      # Zorgt ervoor dat PAM daadwerkelijk onderdeel
+      # is van de SSH authentication flow.
+      UsePAM = true;
 
       PermitRootLogin = "no";
 
