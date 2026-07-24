@@ -12,9 +12,15 @@
         PasswordAuthentication = true;
         PermitRootLogin = "no";
         KbdInteractiveAuthentication = true;
-        ChallengeResponseAuthentication = true;
         };
       };
+  };
+
+  programs.ssh = {
+  extraConfig = ''
+    ChallengeResponseAuthentication yes
+    UsePAM yes
+    '';
   };
   
   security.pam = {
