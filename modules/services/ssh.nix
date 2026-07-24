@@ -12,6 +12,7 @@
           PasswordAuthentication = false;
           KbdInteractiveAuthentication = true;
           #PubkeyAuthentication = true;
+          PubkeyAuthentication = false;
           UsePAM = true;
           #AuthenticationMethods = "publickey,keyboard-interactive";
           PermitRootLogin = "no";
