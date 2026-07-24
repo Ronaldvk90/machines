@@ -15,7 +15,7 @@
           UsePAM = true;
           AuthenticationMethods = "publickey,keyboard-interactive";
           PermitRootLogin = "no";
-          #AllowUsers = [ "ronald" ];
+          AllowUsers = [ "ronald" ];
           X11Forwarding = false;
           AllowTcpForwarding = false;
           AllowAgentForwarding = false;
@@ -27,7 +27,16 @@
     };
   };
   
-  security.pam.services = {
-    sshd.googleAuthenticator.enable = true;
+  security.pam.services.sshd = {
+    googleAuthenticator.enable = true;
+
+    rules.auth = {
+      google_authenticator = {
+        order = 11000;
+        control = "required";
+        modulePath =
+          "${pkgs.google-authenticator}/lib/security/pam_google_authenticator.so";
+      };
+    };
   };
 }
