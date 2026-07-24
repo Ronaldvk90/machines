@@ -28,7 +28,7 @@
   };
 
   security.pam.services.sshd = {
-   googleAuthenticator.enable = true;
+    googleAuthenticator.enable = true;
 
     rules.auth = {
      google_authenticator = {
