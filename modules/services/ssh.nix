@@ -12,8 +12,8 @@
           PasswordAuthentication = false;
           KbdInteractiveAuthentication = true;
           PubkeyAuthentication = true;
-          #UsePAM = true;
-          #AuthenticationMethods = "publickey,keyboard-interactive";
+          UsePAM = true;
+          AuthenticationMethods = "publickey,keyboard-interactive";
           PermitRootLogin = "no";
           AllowUsers = [ "ronald" ];
           X11Forwarding = false;
@@ -27,9 +27,7 @@
     };
   };
   
-#  security.pam.services = {
-#    login.googleAuthenticator.enable = true;
-#    sshd.googleAuthenticator.enable = true;
-#    sudo.googleAuthenticator.enable = true;
-#  };
+  security.pam.services = {
+    sshd.googleAuthenticator.enable = true;
+  };
 }
