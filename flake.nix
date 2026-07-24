@@ -198,6 +198,29 @@ nixosConfigurations.pxeinstaller =
       ];
     };
 
+   nixosConfigurations.test =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/crypto/secrets.nix
+        ./modules/services/ssh.nix
+        ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
+        ./hosts/test/configuration.nix
+        ./hosts/test/disk.nix
+        home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+        agenix.nixosModules.default
+      ];
+    };
+
     nixosConfigurations.jellyfin =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
