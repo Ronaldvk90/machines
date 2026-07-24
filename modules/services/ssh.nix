@@ -32,10 +32,13 @@
 
     rules.auth = {
      google_authenticator = {
-       order = 11000;
-       control = "sufficient";
-       modulePath =
-         "${pkgs.google-authenticator}/lib/security/pam_google_authenticator.so";
+      order = 11000;
+      control = "sufficient";
+      modulePath =
+        "${pkgs.google-authenticator}/lib/security/pam_google_authenticator.so";
+            settings = {
+        echo_verification_code = true;
+      };
      };
     };
   };
