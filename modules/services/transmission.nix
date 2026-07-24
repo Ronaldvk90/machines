@@ -7,19 +7,20 @@
     credentialsFile = "/var/lib/secrets/transmission/settings.json";
     openRPCPort = true;
 
-  settings = {
-    rpc-host-whitelist-enable = "true";
-    rpc-host-whitelist = "localhost,transmission";
-    rpc-bind-address = "0.0.0.0";
-    rpc-whitelost-enable = "true";
-    rpc-whitelist = "127.0.0.1,10.10.10.*,10.10.20.*";
+    settings = {
+      rpc-host-whitelist-enable = true;
+      rpc-host-whitelist = "localhost,transmission";
+      rpc-bind-address = "0.0.0.0";
+
+      rpc-whitelist-enable = true;
+      rpc-whitelist = "127.0.0.1,10.10.10.*,10.10.20.*";
     };
   };
 
   users.groups.downloads = {
     gid = 2000;
   };
-  
+
   users.users.ronald.extraGroups = [
     "downloads"
   ];
@@ -27,4 +28,10 @@
   users.users.transmission.extraGroups = [
     "downloads"
   ];
+
+  systemd.services.transmission.serviceConfig = {
+    SupplementaryGroups = [
+      "downloads"
+    ];
+  };
 }
