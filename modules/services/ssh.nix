@@ -26,12 +26,6 @@
         };
     };
   };
-
-  programs.ssh = {
-  extraConfig = ''
-    ChallengeResponseAuthentication yes
-    '';
-  };
   
   security.pam = {
     services.sshd.googleAuthenticator.enable = true;
