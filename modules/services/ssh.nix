@@ -13,7 +13,7 @@
           KbdInteractiveAuthentication = true;
           PubkeyAuthentication = true;
           #UsePAM = true;
-          #AuthenticationMethods = "publickey,keyboard-interactive";
+          AuthenticationMethods = "publickey,keyboard-interactive";
           PermitRootLogin = "no";
           AllowUsers = [ "ronald" ];
           X11Forwarding = false;
