@@ -12,7 +12,7 @@
         PasswordAuthentication = true;
         PermitRootLogin = "no";
         KbdInteractiveAuthentication = true;
-        ChallengeResponseAuthentication = yes;
+        ChallengeResponseAuthentication = true;
         };
       };
   };
