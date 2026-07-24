@@ -15,7 +15,7 @@
           UsePAM = true;
           AuthenticationMethods = "publickey,keyboard-interactive";
           PermitRootLogin = "no";
-          AllowUsers = [ "ronald" ];
+          #AllowUsers = [ "ronald" ];
           X11Forwarding = false;
           AllowTcpForwarding = false;
           AllowAgentForwarding = false;
