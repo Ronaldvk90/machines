@@ -4,7 +4,7 @@
     services.openvpn.servers = {
         thuis = {
             autoStart = false;
-            config = builtins.readFile /run/agenix/thuis.ovpn;
+            config = config.age.secrets.ronaldOpenvpn.path;
         };
     };
 

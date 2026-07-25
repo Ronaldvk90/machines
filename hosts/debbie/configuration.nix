@@ -21,12 +21,6 @@
     file = ../../secrets/bttf.lan.nmconnection.age;
     path = "/etc/NetworkManager/system-connections/bttf.lan.nmconnection";
   };
-  
-  ##### OpenVPN #####
-  age.secrets.debbieOpenvpn = {
-    file = ../../secrets/debbie.openvpn.credentials.age;
-    path = "/run/agenix/thuis.ovpn";
-  };
 
   home-manager.users.debbie = import ../../home/debbie/home.nix;
 
