@@ -22,6 +22,7 @@
   ##### OpenVPN #####
   age.secrets.ronaldOpenvpn = {
     file = ../../secrets/ronald.openvpn.credentials.age;
+    path = "/run/agenix/thuis.ovpn";
   };
 
   home-manager.users.ronald = import ../../home/ronald/home.nix;
