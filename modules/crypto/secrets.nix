@@ -18,4 +18,8 @@
   age.secrets.debbieNasCredentials = {
     file = ../../secrets/debbie.nas.credentials.age;
   };
+
+  age.secrets.ronaldOpenvpn = {
+    file = ../../secrets/ronald.openvpn.age;
+  };
 }

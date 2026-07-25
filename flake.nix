@@ -102,6 +102,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/avahi.nix
         ./modules/services/docker.nix
         ./modules/services/hypervisor.nix
+        ./modules/services/openvpn.nix
         ./modules/services/pipewire.nix
         ./modules/services/samba.nix
         ./modules/services/zsh.nix

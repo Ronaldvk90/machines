@@ -18,4 +18,8 @@ in
   "debbie.nas.credentials.age".publicKeys = [
     admin
   ];
+
+    "ronald.openvpn.credentials.age".publicKeys = [
+    admin
+  ];
 }

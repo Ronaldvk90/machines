@@ -17,8 +17,8 @@
   environment.systemPackages = with pkgs; [
     vim
     git
-    avahi
     ntfs3g
+    openvpn
   ];
 
   system.stateVersion = "26.05"; # Did you read the comment?
