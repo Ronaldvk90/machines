@@ -20,6 +20,6 @@
   };
 
   age.secrets.ronaldOpenvpn = {
-    file = ../../secrets/ronald.openvpn.age;
+    file = ../../secrets/ronald.openvpn.credentials.age;
   };
 }
