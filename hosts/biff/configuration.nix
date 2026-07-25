@@ -8,9 +8,20 @@
 
   networking.hostName = "biff"; # Define your hostname.
   networking.networkmanager.enable = true;
+
+  ##### Wifi Networks #####
   age.secrets.Ziggo-ap-4d4efe6 = {
-   file = ../../secrets/Ziggo-ap-4d4efe6.nmconnection.age;
-   path = "/etc/NetworkManager/system-connections/Ziggo-ap-4d4efe6.nmconnection";
+    file = ../../secrets/Ziggo-ap-4d4efe6.nmconnection.age;
+    path = "/etc/NetworkManager/system-connections/Ziggo-ap-4d4efe6.nmconnection";
+  };
+  age.secrets.bttf-lan = {
+    file = ../../secrets/bttf.lan.nmconnection.age;
+    path = "/etc/NetworkManager/system-connections/bttf.lan.nmconnection";
+  };
+  
+  ##### OpenVPN #####
+  age.secrets.ronaldOpenvpn = {
+    file = ../../secrets/ronald.openvpn.credentials.age;
   };
 
   home-manager.users.ronald = import ../../home/ronald/home.nix;
