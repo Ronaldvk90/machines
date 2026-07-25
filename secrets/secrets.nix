@@ -22,4 +22,12 @@ in
     "ronald.openvpn.credentials.age".publicKeys = [
     admin
   ];
+
+    "bttf.lan.nmconnection.age".publicKeys = [
+    admin
+  ];
+
+    "Ziggo-ap-4d4efe6.nmconnection.age".publicKeys = [           
+    admin
+  ];
 }
