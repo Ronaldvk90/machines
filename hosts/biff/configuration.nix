@@ -8,6 +8,10 @@
 
   networking.hostName = "biff"; # Define your hostname.
   networking.networkmanager.enable = true;
+  age.secrets.Ziggo-ap-4d4efe6 = {
+   file = ../../secrets/Ziggo-ap-4d4efe6.nmconnection.age;
+   path = "/etc/NetworkManager/system-connections/Ziggo-ap-4d4efe6.nmconnection";
+  };
 
   home-manager.users.ronald = import ../../home/ronald/home.nix;
   
