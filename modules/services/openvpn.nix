@@ -5,7 +5,7 @@
         thuis = {
             autoStart = false;
             config = config.age.secrets.ronalOpenvpn.path;
-        updateResolvConf = true;
+            #updateResolvConf = true;
         };
     };
 
