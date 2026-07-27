@@ -4,7 +4,7 @@
     services.openvpn.servers = {
         thuis = {
             autoStart = false;
-            config = /run/agenix/ronaldOpenvpn;
+            config = "/run/agenix/ronaldOpenvpn";
             updateResolvConf = true;
         };
     };
