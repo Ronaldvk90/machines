@@ -6,8 +6,13 @@
     enable32Bit = true;
   };
 
-  networking.hostName = "biff"; # Define your hostname.
+  networking.hostName = "biff";
   networking.networkmanager.enable = true;
+  networking.dhcpcd.enable = false;
+
+  services.resolved = {
+    enable = true;
+  };
 
   ##### Wifi Networks #####
   age.secrets.Ziggo-ap-4d4efe6 = {
