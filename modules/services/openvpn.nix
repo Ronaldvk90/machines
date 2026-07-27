@@ -1,24 +1,16 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  systemd.services.openvpn-thuis = {
-    description = "OpenVPN thuis";
-
-    after = [
-      "network-online.target"
-    ];
-
-    wants = [
-      "network-online.target"
-    ];
-
-    serviceConfig = {
-      ExecStart = "${pkgs.openvpn}/bin/openvpn --config ${config.age.secrets.ronaldOpenvpn.path}";
-      Restart = "on-failure";
+    services.openvpn.servers = {
+        thuis = {
+            autoStart = false;
+            config = '' config config.age.secrets.ronaldOpenvpn.path '';
+            #config = config.age.secrets.ronaldOpenvpn.path;
+            updateResolvConf = true;
+        };
     };
-  };
 
-  environment.systemPackages = with pkgs; [
-    openvpn
-  ];
+    environment.systemPackages = with pkgs; [
+        openvpn
+    ];
 }
