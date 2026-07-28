@@ -26,6 +26,7 @@
       linkConfig.RequiredForOnline = "routable";
     };
   };
-
+  
+  networking.firewall.enable = false;
   system.stateVersion = "26.05";
 }
