@@ -13,9 +13,11 @@
   networking.networkmanager.enable = true;
   networking.dhcpcd.enable = false;
 
-  services.resolved = {
-    enable = true;
-  };
+  services.resolvconf.enable = true;
+  
+  #services.resolved = {
+  #  enable = true;
+  #};
 
   home-manager.users.ronald = import ../../home/ronald/home.nix;
 
