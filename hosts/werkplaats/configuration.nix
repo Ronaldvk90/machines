@@ -14,10 +14,6 @@
   networking.dhcpcd.enable = false;
   networking.resolvconf.package = pkgs.openresolv;
   
-  #services.resolved = {
-  #  enable = true;
-  #};
-
   home-manager.users.ronald = import ../../home/ronald/home.nix;
 
   environment.systemPackages = with pkgs; [

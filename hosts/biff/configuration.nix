@@ -10,10 +10,7 @@
   networking.domain = "bttf.lan";
   networking.networkmanager.enable = true;
   networking.dhcpcd.enable = false;
-
-  services.resolved = {
-    enable = true;
-  };
+  networking.resolvconf.package = pkgs.openresolv;
 
   ##### Wifi Networks #####
   age.secrets.Ziggo-ap-4d4efe6 = {
