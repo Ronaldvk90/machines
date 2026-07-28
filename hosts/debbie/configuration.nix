@@ -7,10 +7,10 @@
   # Enable 32-bit drivers for your system (e.g. for Wine/Steam)
   hardware.graphics.enable32Bit = true;
 
-  networking.hostName = "debbie"; # Define your hostname.
-
-  # Enable networking
+  networking.hostName = "debbie";
+  networking.domain = "bttf.lan";
   networking.networkmanager.enable = true;
+  networking.resolvconf.package = pkgs.openresolv;
 
   ##### Wifi Networks #####
   age.secrets.Ziggo-ap-4d4efe6 = {
@@ -22,6 +22,12 @@
     path = "/etc/NetworkManager/system-connections/bttf.lan.nmconnection";
   };
 
+  ##### VPN connection #####
+  age.secrets.thuis-vpn = {
+    file = ../../secrets/debbie.openvpn.credentials.age;
+    path = "/etc/NetworkManager/system-connections/thuis.nmconnection";
+  };
+
   home-manager.users.debbie = import ../../home/debbie/home.nix;
 
   environment.systemPackages = with pkgs; [
@@ -29,7 +35,8 @@
     git
     ntfs3g
     openvpn
+    networkmanager-openvpn
   ];
 
-  system.stateVersion = "26.05"; # Did you read the comment?
+  system.stateVersion = "26.05";
 }
