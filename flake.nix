@@ -135,6 +135,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/1password.nix 
         ./modules/services/docker.nix
         ./modules/services/hypervisor.nix
+        ./modules/services/openvpn.nix
         ./modules/services/pipewire.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix

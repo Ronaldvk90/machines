@@ -10,9 +10,12 @@
 
   networking.hostName = "werkplaats";
   networking.domain = "2switch";
-
-  # Enable networking
   networking.networkmanager.enable = true;
+  networking.dhcpcd.enable = false;
+
+  services.resolved = {
+    enable = true;
+  };
 
   home-manager.users.ronald = import ../../home/ronald/home.nix;
 

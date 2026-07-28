@@ -5,7 +5,6 @@
         thuis = {
             autoStart = false;
             config = '' config /run/agenix/ronaldOpenvpn '';
-            #config = config.age.secrets.ronaldOpenvpn.path;
             updateResolvConf = true;
         };
     };

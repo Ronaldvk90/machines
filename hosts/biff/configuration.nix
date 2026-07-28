@@ -7,6 +7,7 @@
   };
 
   networking.hostName = "biff";
+  networking.domain = "bttf.lan";
   networking.networkmanager.enable = true;
   networking.dhcpcd.enable = false;
 
