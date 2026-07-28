@@ -12,8 +12,7 @@
   networking.domain = "2switch";
   networking.networkmanager.enable = true;
   networking.dhcpcd.enable = false;
-
-  services.resolvconf.enable = true;
+  networking.resolvconf.package = pkgs.openresolv;
   
   #services.resolved = {
   #  enable = true;
