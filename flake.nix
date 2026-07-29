@@ -67,7 +67,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
         ./modules/services/docker.nix
-        ./modules/services/hypervisor.nix
+        ./modules/services/libvirt.nix
         ./modules/services/pipewire.nix
         ./modules/services/samba.nix
         ./modules/services/zsh.nix
@@ -101,7 +101,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
         ./modules/services/docker.nix
-        ./modules/services/hypervisor.nix
+        ./modules/services/libvirt.nix
         ./modules/services/openvpn.nix
         ./modules/services/pipewire.nix
         ./modules/services/samba.nix
@@ -134,7 +134,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/desktop/sway.nix
         ./modules/services/1password.nix 
         ./modules/services/docker.nix
-        ./modules/services/hypervisor.nix
+        ./modules/services/libvirt.nix
         ./modules/services/openvpn.nix
         ./modules/services/pipewire.nix
         ./modules/services/zsh.nix
