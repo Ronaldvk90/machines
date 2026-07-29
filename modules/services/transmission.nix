@@ -8,6 +8,8 @@
     openRPCPort = true;
 
     settings = {
+      download-dir = "/mnt/ronald/Downloads";
+      incomplete-dir = "/mnt/ronald/Incomplete";
       rpc-host-whitelist-enable = true;
       rpc-host-whitelist = "localhost,transmission";
       rpc-bind-address = "0.0.0.0";
