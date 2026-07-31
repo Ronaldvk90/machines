@@ -74,6 +74,8 @@
     profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
       ms-azuretools.vscode-docker
+      redhat.vscode-yaml
+      elcamilet.ssh-connect
     ];
 
     profiles.default.userSettings = {
