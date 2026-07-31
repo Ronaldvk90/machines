@@ -69,9 +69,9 @@
     PODMAN_COMPOSE_WARNING_LOGS = "false";
   };
 
-  programs.vscode = {
+  programs.vscodium = {
     enable = true;
-    package = pkgs.vscodium;
+    #package = pkgs.vscodium;
 
     profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
