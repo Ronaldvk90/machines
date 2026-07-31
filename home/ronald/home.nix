@@ -75,7 +75,6 @@
       jnoortheen.nix-ide
       ms-azuretools.vscode-docker
       redhat.vscode-yaml
-      elcamilet.ssh-connect
     ];
 
     profiles.default.userSettings = {
