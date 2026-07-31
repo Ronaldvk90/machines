@@ -256,6 +256,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/crypto/secrets.nix
+        ./modules/services/docker.nix
         ./modules/services/podman.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
