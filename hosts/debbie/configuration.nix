@@ -9,7 +9,12 @@
 
   networking.hostName = "debbie";
   networking.domain = "bttf.lan";
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
+  };
   networking.resolvconf.package = pkgs.openresolv;
 
   ##### Wifi Networks #####
@@ -34,8 +39,6 @@
     vim
     git
     ntfs3g
-    openvpn
-    networkmanager-openvpn
   ];
 
   system.stateVersion = "26.05";
