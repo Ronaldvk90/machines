@@ -63,12 +63,15 @@ output * bg ~/Pictures/wallpaper.jpg  fill
 # Basics:
 #
 
-# File manager
+    # File manager
     bindsym $mod+n exec nemo
 
-# Wollah internet
+    # Wollah internet
     bindsym $mod+i exec firefox
     bindsym $mod+y exec firefox youtube.com
+
+    # start vscodium
+    bindsym $mod+c exec codium
 
     # Start a terminal
     bindsym $mod+Return exec $term
