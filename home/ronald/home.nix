@@ -51,6 +51,7 @@
     ".config/sway/config.d/biff".source = ./configs/sway/config.d/biff;
     ".config/sway/config.d/werkplaats".source = ./configs/sway/config.d/werkplaats;
     ".config/foot/foot.ini".source = ./configs/foot/foot.ini;
+    ".config/VSCodium/User/keybindings.json".source = ./configs/vscodium/keybindings.json;
     ".config/swaybar/swaybar_marty.sh".source = ./configs/swaybar/swaybar_marty.sh;
     ".config/swaybar/swaybar_biff.sh".source = ./configs/swaybar/swaybar_biff.sh;
     ".config/swaybar/swaybar_werkplaats.sh".source = ./configs/swaybar/swaybar_werkplaats.sh;
@@ -78,13 +79,6 @@
     profiles.default.userSettings = {
       "workbench.colorTheme" = "Light 2026";
     };
-
-    programs.vscode.profiles.default.keybindings = [
-      {
-        key = "ctrl+/";
-        command = "editor.action.commentLine";
-      }
-    ];
   };
 
   programs.oh-my-posh = {
