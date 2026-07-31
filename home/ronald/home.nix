@@ -37,7 +37,6 @@
     audacity
     c64-debugger
     gnome-podcasts
-    vscodium
     whatsapp-electron
     rbdoom-3-bfg
     handbrake
@@ -68,6 +67,15 @@
 
   home.sessionVariables = {
     PODMAN_COMPOSE_WARNING_LOGS = "false";
+  };
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide
+    ];
   };
 
   programs.oh-my-posh = {
