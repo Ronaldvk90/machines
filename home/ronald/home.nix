@@ -30,7 +30,6 @@
     libdvdcss
     filezilla
     file
-    remmina
     pavucontrol
     wimlib
     alsa-utils
