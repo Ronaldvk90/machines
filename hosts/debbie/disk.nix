@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/disk/by-id/ata-Crucial_CT525MX300SSD1_164714C0C627";
+        device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_250GB_S21PNXAG450836K";
         type = "disk";
         content = {
           type = "gpt";
