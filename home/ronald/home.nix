@@ -77,7 +77,7 @@
     ];
 
     profiles.default.userSettings = {
-      "workbench.colorTheme" = "Dark Modern";
+      "workbench.colorTheme" = "Light 2026";
     };
   };
 
