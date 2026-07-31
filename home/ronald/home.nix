@@ -78,6 +78,13 @@
     profiles.default.userSettings = {
       "workbench.colorTheme" = "Light 2026";
     };
+
+    programs.vscode.profiles.default.keybindings = [
+      {
+        key = "ctrl+/";
+        command = "editor.action.commentLine";
+      }
+    ];
   };
 
   programs.oh-my-posh = {
