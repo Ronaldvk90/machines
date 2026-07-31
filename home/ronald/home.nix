@@ -79,7 +79,6 @@
     profiles.default.userSettings = {
       "workbench.colorTheme" = "Dark Modern";
     };
-};
   };
 
   programs.oh-my-posh = {
