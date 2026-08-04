@@ -6,6 +6,9 @@
     drivers = with pkgs; [
       cups-filters
       cups-browsed
+      gutenprint
+      hplip
+      cnijfilter2
     ];
   };
 
