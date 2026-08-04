@@ -137,6 +137,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/libvirt.nix
         ./modules/services/openvpn.nix
         ./modules/services/pipewire.nix
+        ./modules/services/printing.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/werkplaats/configuration.nix
