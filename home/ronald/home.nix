@@ -42,9 +42,9 @@
     dmg2img
     nerd-fonts.hack
     cider-2
-
     platformio
     avrdude
+    python3
   ];
 
   home.file = {
