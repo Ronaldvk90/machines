@@ -69,6 +69,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/docker.nix
         ./modules/services/libvirt.nix
         ./modules/services/pipewire.nix
+        ./modules/services/printing.nix
         ./modules/services/samba.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -104,6 +105,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/libvirt.nix
         ./modules/services/openvpn.nix
         ./modules/services/pipewire.nix
+        ./modules/services/printing.nix
         ./modules/services/samba.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -166,6 +168,7 @@ nixosConfigurations.pxeinstaller =
         ./modules/services/avahi.nix
         ./modules/services/onedrive.nix
         ./modules/services/pipewire.nix
+        ./modules/services/printing.nix
         ./modules/users/debbie.nix
         ./hosts/debbie/configuration.nix
         ./hosts/debbie/disk.nix
