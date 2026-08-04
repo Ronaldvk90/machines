@@ -83,15 +83,15 @@
           name = "platformio-ide";
           publisher = "LordImmaculate";
           version = "3.3.4-codium";
-          sha256 = "VUL_HIER_DE_HASH_IN";
+          sha256 = "";
         })
       ];
-  };
 
-  profiles.default.userSettings = {
-    "workbench.colorTheme" = "Light 2026";
+    profiles.default.userSettings = {
+      "workbench.colorTheme" = "Light 2026";
+    };
   };
-
+  
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
