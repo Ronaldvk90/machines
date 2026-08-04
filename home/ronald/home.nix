@@ -79,19 +79,19 @@
         ms-azuretools.vscode-docker
         redhat.vscode-yaml
 
-        (pkgs.vscode-utils.extensionFromVscodeMarketplace {
-          name = "platformio-ide";
-          publisher = "LordImmaculate";
-          version = "3.3.4-codium";
-          sha256 = "";
-        })
+      pkgs.vscode-utils.extensionFromOpenVSX {
+        publisher = "LordImmaculate";
+        name = "platformio-ide";
+        version = "3.3.4-codium";
+        sha256 = "...";
+        }
       ];
 
     profiles.default.userSettings = {
       "workbench.colorTheme" = "Light 2026";
     };
   };
-  
+
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
