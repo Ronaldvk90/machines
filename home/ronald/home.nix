@@ -75,6 +75,7 @@
       jnoortheen.nix-ide
       ms-azuretools.vscode-docker
       redhat.vscode-yaml
+      platformio.platformio-ide
     ];
 
     profiles.default.userSettings = {
