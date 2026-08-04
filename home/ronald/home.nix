@@ -42,6 +42,9 @@
     dmg2img
     nerd-fonts.hack
     cider-2
+
+    platformio
+    avrdude
   ];
 
   home.file = {
@@ -75,7 +78,6 @@
       jnoortheen.nix-ide
       ms-azuretools.vscode-docker
       redhat.vscode-yaml
-      platformio.platformio-ide
     ];
 
     profiles.default.userSettings = {
