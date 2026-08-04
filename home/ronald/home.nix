@@ -78,13 +78,6 @@
         jnoortheen.nix-ide
         ms-azuretools.vscode-docker
         redhat.vscode-yaml
-
-      pkgs.vscode-utils.extensionFromOpenVSX {
-        publisher = "LordImmaculate";
-        name = "platformio-ide";
-        version = "3.3.4-codium";
-        sha256 = "...";
-        }
       ];
 
     profiles.default.userSettings = {
