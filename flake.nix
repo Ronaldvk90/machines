@@ -63,7 +63,6 @@ nixosConfigurations.pxeinstaller =
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
         ./modules/hardware/bluetooth.nix
-        ./modules/hardware/printing.nix
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
         ./modules/services/docker.nix
@@ -98,7 +97,6 @@ nixosConfigurations.pxeinstaller =
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
         ./modules/hardware/bluetooth.nix
-        ./modules/hardware/printing.nix
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
         ./modules/services/docker.nix
@@ -163,7 +161,6 @@ nixosConfigurations.pxeinstaller =
         ./modules/crypto/secrets.nix
         ./modules/desktop/plasma.nix
         ./modules/hardware/bluetooth.nix
-        ./modules/hardware/printing.nix
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
         ./modules/services/onedrive.nix
