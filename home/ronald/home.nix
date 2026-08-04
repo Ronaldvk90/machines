@@ -74,16 +74,22 @@
 
   programs.vscodium = {
     enable = true;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
-      ms-azuretools.vscode-docker
-      redhat.vscode-yaml
-      lordimmaculate.platformio-ide
-    ];
+      profiles.default.extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+        ms-azuretools.vscode-docker
+        redhat.vscode-yaml
 
-    profiles.default.userSettings = {
-      "workbench.colorTheme" = "Light 2026";
-    };
+        (pkgs.vscode-utils.extensionFromVscodeMarketplace {
+          name = "platformio-ide";
+          publisher = "LordImmaculate";
+          version = "3.3.4-codium";
+          sha256 = "VUL_HIER_DE_HASH_IN";
+        })
+      ];
+  };
+
+  profiles.default.userSettings = {
+    "workbench.colorTheme" = "Light 2026";
   };
 
   programs.oh-my-posh = {
