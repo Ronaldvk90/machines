@@ -34,10 +34,6 @@
 
   environment.systemPackages = with pkgs; [
     kdePackages.kate
-    konqueror
-    ffmpegthumbnailer
-    kdegraphics-thumbnailers
-    ffmpegthumbs
-    kio-extra
+    kdePackages.konqueror
   ];
 }
