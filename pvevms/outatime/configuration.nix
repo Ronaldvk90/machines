@@ -3,6 +3,7 @@
 {
   boot.loader.systemd-boot.enable = false;
   boot.loader.grub.enable = false;
+  boot.isContainer = true;
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
