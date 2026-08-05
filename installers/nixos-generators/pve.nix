@@ -1,10 +1,6 @@
 { pkgs, ... }:
 
 {
-  {
-  system.build.proxmoxLxc = pkgs.callPackage "${pkgs.path}/nixos/lib/make-system-tarball.nix" {};
-  }
-  
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"

@@ -41,19 +41,10 @@ nixosConfigurations.pxeinstaller =
     ];
   };
 
-# packages.x86_64-linux.nixos-pve-lxc =
-#   nixos-generators.nixosGenerate {
-#     system = "x86_64-linux";
-#     format = "proxmox-lxc";
-
-#     modules = [
-#       ./installers/nixos-generators/pve.nix
-#     ];
-#   };
-
-nixosConfigurations.nixos-pve-lxc =
-  nixpkgs.lib.nixosSystem {
+packages.x86_64-linux.nixos-pve-lxc =
+  nixos-generators.nixosGenerate {
     system = "x86_64-linux";
+    format = "proxmox-lxc";
 
     modules = [
       ./installers/nixos-generators/pve.nix
