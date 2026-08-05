@@ -254,8 +254,8 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./incusvms/jellyfin/configuration.nix
-        ./incusvms/jellyfin/incus.nix
+        ./pvevms/jellyfin/configuration.nix
+        #./incusvms/jellyfin/incus.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default
       ];
@@ -277,8 +277,8 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./incusvms/outatime/configuration.nix
-        ./incusvms/outatime/incus.nix
+        ./pvevms/outatime/configuration.nix
+        #./incusvms/outatime/incus.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default        
       ];
@@ -300,8 +300,8 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/zsh.nix
         ./modules/services/samba.nix
         ./modules/users/ronald.nix
-        ./incusvms/transmission/configuration.nix
-        ./incusvms/transmission/incus.nix
+        ./pvevms/transmission/configuration.nix
+        #./incusvms/transmission/incus.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default        
       ];

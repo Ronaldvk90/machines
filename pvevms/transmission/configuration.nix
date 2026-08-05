@@ -1,13 +1,12 @@
 { config, pkgs, lib, modulesPath, ... }:
 
 {
-  imports = [
-    # Include the default incus configuration.
-    "${modulesPath}/virtualisation/incus-virtual-machine.nix"
-  ];
-
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.grub.enable = false;
+  
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
+  networking.hostName = "transmission";
   networking = {
     dhcpcd.enable = false;
     useDHCP = false;
@@ -16,8 +15,8 @@
 
   systemd.network = {
     enable = true;
-    networks."50-enp5s0" = {
-      matchConfig.Name = "enp5s0";
+    networks."50-eth0" = {
+      matchConfig.Name = "eth0";
       address = [ "10.10.10.10/24" ];
       networkConfig = {
         Gateway = "10.10.10.1";
