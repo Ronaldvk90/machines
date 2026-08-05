@@ -4,3 +4,5 @@
 /pxe-output/*
 /iso-output
 /iso-output/*
+/pve-output/
+/pve-output/*

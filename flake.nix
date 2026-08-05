@@ -41,13 +41,26 @@ nixosConfigurations.pxeinstaller =
     ];
   };
 
-packages.x86_64-linux.nixos-pve-lxc =
-  nixos-generators.nixosGenerate {
+# packages.x86_64-linux.nixos-pve-lxc =
+#   nixos-generators.nixosGenerate {
+#     system = "x86_64-linux";
+#     format = "proxmox-lxc";
+
+#     modules = [
+#       ./installers/nixos-generators/pve.nix
+#     ];
+#   };
+
+nixosConfigurations.nixos-pve-lxc =
+  nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
-    format = "proxmox-lxc";
 
     modules = [
       ./installers/nixos-generators/pve.nix
+      {
+        system.build.proxmoxLxc = 
+          pkgs.callPackage "${nixpkgs}/nixos/lib/make-system-tarball.nix" {};
+      }
     ];
   };
 
