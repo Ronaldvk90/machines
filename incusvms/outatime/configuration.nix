@@ -31,6 +31,7 @@
     };
   };
   
+  networking.enableIPv6 = false;
   networking.firewall.enable = false;
   system.stateVersion = "26.05";
 }

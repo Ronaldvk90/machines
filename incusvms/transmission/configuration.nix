@@ -27,5 +27,6 @@
     };
   };
 
+  networking.enableIPv6 = false;
   system.stateVersion = "26.05";
 }
