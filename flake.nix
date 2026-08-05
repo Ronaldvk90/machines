@@ -57,10 +57,6 @@ nixosConfigurations.nixos-pve-lxc =
 
     modules = [
       ./installers/nixos-generators/pve.nix
-      {
-        system.build.proxmoxLxc = 
-          pkgs.callPackage "${nixpkgs}/nixos/lib/make-system-tarball.nix" {};
-      }
     ];
   };
 
