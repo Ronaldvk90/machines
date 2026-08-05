@@ -9,6 +9,11 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
+  nixos-generators = {
+    url = "github:nix-community/nixos-generators";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   disko = {
     url = "github:nix-community/disko";
     inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +30,7 @@
     };
 };
 
-outputs = { self, nixpkgs, home-manager, disko, agenix, lanzaboote, ... }: {
+outputs = { self, nixpkgs, home-manager, disko, agenix, lanzaboote, nixos-generators, ... }: {
 nixosConfigurations.pxeinstaller =
   nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
@@ -33,6 +38,16 @@ nixosConfigurations.pxeinstaller =
     modules = [
       "${nixpkgs}/nixos/modules/installer/netboot/netboot-minimal.nix"
       ./installers/pxeinstaller/configuration.nix
+    ];
+  };
+
+packages.x86_64-linux.nixos-pve-lxc =
+  nixos-generators.nixosGenerate {
+    system = "x86_64-linux";
+    format = "proxmox-lxc";
+
+    modules = [
+      ./installers/nixos-generators/pve.nix
     ];
   };
 
