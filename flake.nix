@@ -249,8 +249,9 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix        
+        ./modules/crypto/secrets.nix
         ./modules/services/jellyfin.nix
+        ./modules/services/qemu-guest-agent.nix
         ./modules/services/samba.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
@@ -299,7 +300,8 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix        
+        ./modules/crypto/secrets.nix
+        ./modules/services/qemu-guest-agent.nix
         ./modules/services/ssh.nix
         ./modules/services/transmission.nix
         ./modules/services/zsh.nix
