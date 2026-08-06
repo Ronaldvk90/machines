@@ -275,7 +275,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/crypto/secrets.nix
-        ./modules/services/docker.nix
         ./modules/services/podman.nix
         ./modules/services/qemu-guest-agent.nix
         ./modules/services/ssh.nix
