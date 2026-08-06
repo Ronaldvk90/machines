@@ -276,6 +276,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/unfree.nix
         ./modules/crypto/secrets.nix
         ./modules/services/podman.nix
+        ./modules/services/qemu-guest-agent.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
