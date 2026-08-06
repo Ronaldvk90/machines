@@ -1,11 +1,19 @@
 { config, pkgs, lib, modulesPath, ... }:
 
 {
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.grub.enable = false;
-  boot.isContainer = true;
-  systemd.services.systemd-modules-load.enable = false;
-  boot.kernelModules = [];
+  imports = [ (modulesPath + "/virtualisation/proxmox-lxc.nix") ];
+  nix.settings = { sandbox = false; };  
+  proxmoxLXC = {
+    manageNetwork = false;
+    privileged = true;
+  };
+  services.fstrim.enable = false; # Let Proxmox host handle fstrim
+  
+  # boot.loader.systemd-boot.enable = false;
+  # boot.loader.grub.enable = false;
+  # boot.isContainer = true;
+  # systemd.services.systemd-modules-load.enable = false;
+  # boot.kernelModules = [];
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
