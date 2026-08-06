@@ -1,12 +1,6 @@
 { config, pkgs, lib, modulesPath, ... }:
 
 {
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.grub.enable = false;
-  boot.isContainer = true;
-  systemd.services.systemd-modules-load.enable = false;
-  boot.kernelModules = [];
-
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   networking = {

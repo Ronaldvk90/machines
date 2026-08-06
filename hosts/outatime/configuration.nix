@@ -1,14 +1,6 @@
 { config, pkgs, lib, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/virtualisation/proxmox-lxc.nix") ];
-  nix.settings = { sandbox = false; };  
-  proxmoxLXC = {
-    manageNetwork = false;
-    privileged = false;
-  };
-  services.fstrim.enable = false;
-
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   networking.hostName = "outatime";

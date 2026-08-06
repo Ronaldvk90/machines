@@ -243,6 +243,7 @@ packages.x86_64-linux.nixos-pve-lxc =
       system = "x86_64-linux";
 
       modules = [
+        ./modules/core/systemdboot.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
@@ -254,9 +255,10 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./pvevms/jellyfin/configuration.nix
-        #./incusvms/jellyfin/incus.nix
+        ./hosts/jellyfin/configuration.nix
+        ./hosts/jellyfin/disk.nix
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
         agenix.nixosModules.default
       ];
     };
@@ -266,6 +268,7 @@ packages.x86_64-linux.nixos-pve-lxc =
       system = "x86_64-linux";
 
       modules = [
+        ./modules/core/systemdboot.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
@@ -277,9 +280,10 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./pvevms/outatime/configuration.nix
-        #./incusvms/outatime/incus.nix
+        ./hosts/outatime/configuration.nix
+        ./hosts/outatime/disk.nix
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
         agenix.nixosModules.default        
       ];
     };
@@ -289,6 +293,7 @@ packages.x86_64-linux.nixos-pve-lxc =
       system = "x86_64-linux";
 
       modules = [
+        ./modules/core/systemdboot.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
@@ -300,9 +305,10 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/zsh.nix
         ./modules/services/samba.nix
         ./modules/users/ronald.nix
-        ./pvevms/transmission/configuration.nix
-        #./incusvms/transmission/incus.nix
+        ./hosts/transmission/configuration.nix
+        ./hosts/transmission/disk.nix
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
         agenix.nixosModules.default        
       ];
     };
