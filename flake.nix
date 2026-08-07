@@ -41,6 +41,15 @@ nixosConfigurations.pxeinstaller =
     ];
   };
 
+packages.x86_64-linux.flserver =
+  (nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
+
+    modules = [
+      ./containers/flserver/configuration.nix
+    ];
+  }).config.system.build.ociImage;
+
 packages.x86_64-linux.nixos-pve-lxc =
   nixos-generators.nixosGenerate {
     system = "x86_64-linux";
