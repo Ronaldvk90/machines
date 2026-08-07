@@ -42,13 +42,14 @@ nixosConfigurations.pxeinstaller =
   };
 
 packages.x86_64-linux.flserver =
-  (nixpkgs.lib.nixosSystem {
+  nixos-generators.nixosGenerate {
     system = "x86_64-linux";
+    format = "docker";
 
     modules = [
       ./containers/flserver/configuration.nix
     ];
-  }).config.system.build.ociImage;
+  };
 
 packages.x86_64-linux.nixos-pve-lxc =
   nixos-generators.nixosGenerate {
