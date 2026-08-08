@@ -57,7 +57,7 @@ packages.x86_64-linux.nixos-pve-lxc =
     format = "proxmox-lxc";
 
     modules = [
-      ./installers/nixos-generators/pve.nix
+      ./containers/pvelxc/configuration.nix
     ];
   };
 
