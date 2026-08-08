@@ -41,26 +41,6 @@ nixosConfigurations.pxeinstaller =
     ];
   };
 
-# packages.x86_64-linux.flserver =
-#   nixos-generators.nixosGenerate {
-#     system = "x86_64-linux";
-#     format = "docker";
-
-#     modules = [
-#       ./containers/flserver/configuration.nix
-#     ];
-#   };
-
-packages.x86_64-linux.flserver-lxc =
-  nixos-generators.nixosGenerate {
-    system = "x86_64-linux";
-    format = "proxmox-lxc";
-
-    modules = [
-      ./containers/flserver/configuration.nix
-    ];
-  };
-
 packages.x86_64-linux.nixos-pve-lxc =
   nixos-generators.nixosGenerate {
     system = "x86_64-linux";
@@ -81,6 +61,30 @@ packages.x86_64-linux.nixos-pve-lxc =
       ];
     };
 
+  packages.x86_64-linux.flserver-lxc =
+    nixos-generators.nixosGenerate {
+      system = "x86_64-linux";
+      format = "proxmox-lxc";
+      modules = [
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/crypto/secrets.nix
+        ./modules/desktop/xfce4.nix
+        ./modules/desktop/fonts.nix
+        ./modules/services/avahi.nix
+        ./modules/services/pipewire.nix
+        ./modules/services/xrdp.nix
+        ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
+        ./containers/flserver/configuration.nix
+        home-manager.nixosModules.home-manager
+        agenix.nixosModules.default        
+      ];
+    };
+  
   nixosConfigurations.marty =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
