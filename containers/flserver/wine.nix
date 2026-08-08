@@ -8,12 +8,18 @@
     nerd-fonts.hack
     wine
     winetricks
+    bash
   ];
 
+  home.file = {
+    "/usr/share/applications/Firstrun.desktop".source = ./Firstrun.desktop;
+    "/home/ronald/firstrun.sh".source = ./firstrun.sh;
+  };
 
   home.activation.winetricks = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     export WINEPREFIX="$HOME/.wine"
 
+    ${pkgs.winetricks}/bin/winetricks -q winxp
     ${pkgs.winetricks}/bin/winetricks -q vb6run
     ${pkgs.winetricks}/bin/winetricks -q riched30
     ${pkgs.winetricks}/bin/winetricks -q directplay
