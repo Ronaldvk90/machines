@@ -6,7 +6,7 @@
   networking.dhcpcd.enable = false;
   networking.resolvconf.package = pkgs.openresolv;
 
-  home-manager.users.ronald = import ../../home/ronald/server.nix;
+  home-manager.users.ronald = import ./wine.nix;
   
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -14,8 +14,6 @@
     killall
     exfat
     htop
-    wine
-    winetricks
   ];
 
   networking.firewall.enable = false;
