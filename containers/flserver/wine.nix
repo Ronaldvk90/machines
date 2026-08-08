@@ -12,7 +12,6 @@
   ];
 
   home.file = {
-    "/usr/share/applications/Firstrun.desktop".source = ./Firstrun.desktop;
     "/home/ronald/firstrun.sh".source = ./firstrun.sh;
   };
 
@@ -26,6 +25,15 @@
   '';
 
   xdg.configFile."oh-my-posh/easy-term.omp.json".source = ./easy-term.omp.json;
+
+  xdg.desktopEntries.Firstrun = {
+    name = "Freelancer";
+    comment = "Install the Freelancer server";
+    exec = "/home/ronald/firstrun.sh";
+    icon = "applications-games";
+    terminal = true;
+    categories = [ "Game" ];
+  };
 
   home.sessionPath = [
     "$HOME/.local/bin"
