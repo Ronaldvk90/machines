@@ -25,6 +25,7 @@
   '';
   
   xdg.enable = true;
+  xdg.dataHome = "/home/ronald/.local/share";
   xdg.configFile."oh-my-posh/easy-term.omp.json".source = ./easy-term.omp.json;
 
   xdg.desktopEntries.Firstrun = {
