@@ -19,6 +19,5 @@
   networking.firewall.enable = false;
 
   system.stateVersion = "26.05"; # Did you read the comment?
-
 }
 
