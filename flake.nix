@@ -41,10 +41,20 @@ nixosConfigurations.pxeinstaller =
     ];
   };
 
-packages.x86_64-linux.flserver =
+# packages.x86_64-linux.flserver =
+#   nixos-generators.nixosGenerate {
+#     system = "x86_64-linux";
+#     format = "docker";
+
+#     modules = [
+#       ./containers/flserver/configuration.nix
+#     ];
+#   };
+
+packages.x86_64-linux.flserver-lxc =
   nixos-generators.nixosGenerate {
     system = "x86_64-linux";
-    format = "docker";
+    format = "proxmox-lxc";
 
     modules = [
       ./containers/flserver/configuration.nix
