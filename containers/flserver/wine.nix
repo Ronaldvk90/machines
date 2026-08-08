@@ -35,29 +35,10 @@
     categories = [ "Game" ];
   };
 
-  home.sessionPath = [
-    "$HOME/.local/bin"
-  ];
-
-  home.sessionVariables = {
-    PODMAN_COMPOSE_WARNING_LOGS = "false";
-  };
-
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
     configFile = "${config.xdg.configHome}/oh-my-posh/easy-term.omp.json";
-  };
-
-  programs.neovim = {
-    viAlias = true;
-    vimAlias = true;
-    enable = true;
-    defaultEditor = true;
-    extraConfig = ''
-      set number relativenumber
-      set mouse=a
-    '';
   };
 
   programs.zsh = {
@@ -88,25 +69,5 @@
       };
   };
 
-  programs.tmux = {
-    enable = true;
-    shortcut = "a";
-    baseIndex = 1;
-    newSession = true;
-    escapeTime = 0;
-    secureSocket = false;
-    mouse = true;
-    clock24 = true;
-    historyLimit = 50000;
-
-    plugins = with pkgs; [
-      tmuxPlugins.better-mouse-mode
-    ];
-  };
-
-  programs.tmate = {
-    enable = true;
-  };
-  
   programs.home-manager.enable = true;
 }
