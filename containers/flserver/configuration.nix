@@ -2,7 +2,7 @@
 
 {
   networking.hostName = "flserver";
-  networking.domain = "bttf.lan";
+  #networking.domain = "bttf.lan";
   networking.networkmanager.enable = true;
   networking.dhcpcd.enable = false;
   networking.resolvconf.package = pkgs.openresolv;
