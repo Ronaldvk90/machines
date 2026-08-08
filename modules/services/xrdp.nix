@@ -2,4 +2,5 @@
 
 {
   services.xrdp.enable = true;
+  services.xrdp.defaultWindowManager = "startxfce4";
 }
