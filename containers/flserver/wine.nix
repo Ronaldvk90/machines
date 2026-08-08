@@ -23,7 +23,8 @@
     ${pkgs.winetricks}/bin/winetricks -q riched30
     ${pkgs.winetricks}/bin/winetricks -q directplay
   '';
-
+  
+  xdg.enable = true;
   xdg.configFile."oh-my-posh/easy-term.omp.json".source = ./easy-term.omp.json;
 
   xdg.desktopEntries.Firstrun = {
