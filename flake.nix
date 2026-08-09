@@ -78,10 +78,8 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/pipewire.nix
         ./modules/services/xrdp.nix
         ./modules/services/zsh.nix
-        ./modules/users/ronald.nix
         ./containers/flserver/configuration.nix
         home-manager.nixosModules.home-manager
-        agenix.nixosModules.default        
       ];
     };
   

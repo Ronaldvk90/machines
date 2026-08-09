@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.username = "ronald";
-  home.homeDirectory = "/home/ronald";
+  home.username = "fluser";
+  home.homeDirectory = "/home/fluser";
   home.stateVersion = "26.05";
   home.packages = with pkgs; [
     nerd-fonts.hack
@@ -24,7 +24,7 @@
       Type=Application
       Name=Firstrun
       Comment=Install the Freelancer server
-      Exec=/home/ronald/firstrun.sh
+      Exec=/home/fluser/firstrun.sh
       Icon=applications-games
       Path=
       Terminal=true
@@ -43,12 +43,12 @@
       winetricks -q directplay
 
       # Freelancer itself.
-      wine /home/ronald/Desktop/freelancer/SETUP.EXE
+      wine /home/fluser/Desktop/freelancer/SETUP.EXE
 
       # Ioncross (if present)
-      if [ -f "/home/ronald/Desktop/freelancer/IFSO.exe" ]
+      if [ -f "/home/fluser/Desktop/freelancer/IFSO.exe" ]
       then
-      wine /home/ronald/Desktop/freelancer/IFSO.exe
+      wine /home/fluser/Desktop/freelancer/IFSO.exe
       else
       echo -e "\033[0;33mIoncross FLserver Operator not found. You can install it later if you want to. :)\033[0m"
     '';
@@ -79,15 +79,6 @@
     SAVEHIST=10000
     setopt appendhistory
   '';
-  };
- 
-  programs.git = {
-    package = pkgs.git;
-    enable = true;
-      settings = {
-        user.name = "Ronald van Kouwen";
-	      user.email = "Ronaldvk90@outlook.com";
-      };
   };
 
   programs.home-manager.enable = true;

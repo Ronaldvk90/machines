@@ -1,14 +1,28 @@
 { config, lib, pkgs, ... }:
 
 {
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.fluser = {
+    shell = pkgs.zsh;
+    isNormalUser = true;
+    initialPassword = "Welkom123!";
+    description = "fluser";
+    extraGroups = [];
+  };
+
+  system.activationScripts.fluserPasswordExpiry = ''
+    ${pkgs.shadow}/bin/chage -d 0 fluser
+  '';
+
   networking.hostName = "flserver";
   networking.networkmanager.enable = true;
   networking.dhcpcd.enable = false;
   networking.resolvconf.package = pkgs.openresolv;
 
-  home-manager.users.ronald = import ./wine.nix;
+  home-manager.users.fluser = import ./wine.nix;
   
   environment.systemPackages = with pkgs; [
+    shadow
     vim
     wget
     killall
@@ -17,7 +31,7 @@
   ];
 
   networking.firewall.enable = false;
-
+  services.openssh.enable = false;
   system.stateVersion = "26.05";
 }
 
