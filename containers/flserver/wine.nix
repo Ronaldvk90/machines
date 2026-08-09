@@ -18,27 +18,36 @@
     "/etc/profiles/per-user/ronald/share/applications/Firstrun.desktop".source = ./Firstrun.desktop;
   };
 
-  # home.activation.winetricks = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-  #   export WINEPREFIX="$HOME/.wine"
-
-  #   ${pkgs.winetricks}/bin/winetricks -q winxp
-  #   ${pkgs.winetricks}/bin/winetricks -q vb6run
-  #   ${pkgs.winetricks}/bin/winetricks -q riched30
-  #   ${pkgs.winetricks}/bin/winetricks -q directplay
-  # '';
+  home.file."Desktop/READMEFIRST!!!.TXT" = {
+    executable = true;
+    text = ''
+      Please place a folder named freelancer with the extracted freelancer iso in your Desktop folder with optional  IONCROSS FLserver operator named IFSO.exe in it 
+      '';
+  };
   
-  # xdg.enable = true;
-  # xdg.dataHome = "/home/ronald/.local/share";
-  xdg.configFile."oh-my-posh/easy-term.omp.json".source = ./easy-term.omp.json;
+  home.file."Desktop/FreelancerInstaller" = {
+    executable = true;
+    text = ''
+      #!/usr/bin/env bash
 
-  # xdg.desktopEntries.Firstrun = {
-  #   name = "Freelancer";
-  #   comment = "Install the Freelancer server";
-  #   exec = "/home/ronald/firstrun.sh";
-  #   icon = "applications-games";
-  #   terminal = true;
-  #   categories = [ "Game" ];
-  # };
+      winetricks -q winxp
+      winetricks -q vb6run
+      winetricks -q riched30
+      winetricks -q directplay
+
+      # Freelancer itself.
+      wine /home/ronald/Desktop/freelancer/SETUP.EXE
+
+      # Ioncross (if present)
+      if [ -f "/home/ronald/Desktop/freelancer/IFSO.exe" ]
+      then
+      wine /home/ronald/Desktop/freelancer/IFSO.exe
+      else
+      echo -e "\033[0;33mIoncross FLserver Operator not found. You can install it later if you want to. :)\033[0m"
+    '';
+  };
+
+  xdg.configFile."oh-my-posh/easy-term.omp.json".source = ./easy-term.omp.json;
 
   programs.oh-my-posh = {
     enable = true;
