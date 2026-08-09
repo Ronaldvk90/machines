@@ -14,7 +14,8 @@
   home.file = {
     "/home/ronald/firstrun.sh".source = ./firstrun.sh;
     # "/home/ronald/.local/share/applications/Firstrun.desktop".source = ./Firstrun.desktop;
-    "/home/ronald/.local/state/nix/profile/share/applications/Firstrun.desktop".source = ./Firstrun.desktop;
+    # "/home/ronald/.local/state/nix/profile/share/applications/Firstrun.desktop".source = ./Firstrun.desktop;
+    "/etc/profiles/per-user/ronald/share/applications/Firstrun.desktop".source = ./Firstrun.desktop;
   };
 
   # home.activation.winetricks = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
