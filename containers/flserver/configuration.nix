@@ -6,7 +6,7 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "fluser";
-    extraGroups = [];
+    extraGroups = [ "wheel" ];
   };
 
   users.users.fluser.openssh.authorizedKeys.keys = [
