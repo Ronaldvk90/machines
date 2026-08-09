@@ -29,6 +29,18 @@
     htop
   ];
 
+  services = {
+    openssh = {
+      enable = true;
+        settings = {
+          PasswordAuthentication = false;
+          KbdInteractiveAuthentication = true;
+          PubkeyAuthentication = true;
+        };
+    };
+  };
+
+
   networking.firewall.enable = false;
   system.stateVersion = "26.05";
 }
