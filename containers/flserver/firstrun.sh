@@ -6,7 +6,7 @@ winetricks -q riched30
 winetricks -q directplay
 
 # Freelancer itself.
-wine /freelancer/SETUP.EXE
+wine /home/ronald/freelancer/SETUP.EXE
 
 # Ioncross (if present)
 if [ -f "/home/ronald/freelancer/IFSO.exe" ]
