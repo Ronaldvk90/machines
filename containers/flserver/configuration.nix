@@ -10,6 +10,10 @@
     extraGroups = [];
   };
 
+  users.users.fluser.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFydz8KQpnXaXFtUijJdQtub7XyUB0rQSZEA2eAuXqsP"
+  ];
+
   system.activationScripts.fluserPasswordExpiry = ''
     ${pkgs.shadow}/bin/chage -d 0 fluser
   '';
