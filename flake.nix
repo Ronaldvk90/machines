@@ -71,7 +71,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/desktop/xfce4.nix
         ./modules/desktop/fonts.nix
         ./modules/services/avahi.nix
