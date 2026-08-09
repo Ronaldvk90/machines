@@ -17,8 +17,22 @@
       Please place a folder named freelancer with the extracted freelancer iso in your Desktop folder with optional  IONCROSS FLserver operator named IFSO.exe in it 
       '';
   };
-  
-  home.file."Desktop/FreelancerInstaller" = {
+  home.file."Desktop/FLInstaller.desktop" = {
+    text = ''
+      [Desktop Entry]
+      Version=1.0
+      Type=Application
+      Name=Firstrun
+      Comment=Install the Freelancer server
+      Exec=/home/ronald/firstrun.sh
+      Icon=applications-games
+      Path=
+      Terminal=true
+      StartupNotify=false
+    '';
+  };
+
+  home.file."firstrun.sh" = {
     executable = true;
     text = ''
       #!/usr/bin/env bash
