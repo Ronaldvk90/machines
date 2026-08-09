@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+winetricks -q winxp
+winetricks -q vb6run
+winetricks -q riched30
+winetricks -q directplay
+
 # Freelancer itself.
 wine /freelancer/SETUP.EXE
 

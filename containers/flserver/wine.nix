@@ -13,29 +13,30 @@
 
   home.file = {
     "/home/ronald/firstrun.sh".source = ./firstrun.sh;
+    "/home/ronald/.local/share/applications/Firstrun.desktop".source = ./Firstrun.desktop;
   };
 
-  home.activation.winetricks = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    export WINEPREFIX="$HOME/.wine"
+  # home.activation.winetricks = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  #   export WINEPREFIX="$HOME/.wine"
 
-    ${pkgs.winetricks}/bin/winetricks -q winxp
-    ${pkgs.winetricks}/bin/winetricks -q vb6run
-    ${pkgs.winetricks}/bin/winetricks -q riched30
-    ${pkgs.winetricks}/bin/winetricks -q directplay
-  '';
+  #   ${pkgs.winetricks}/bin/winetricks -q winxp
+  #   ${pkgs.winetricks}/bin/winetricks -q vb6run
+  #   ${pkgs.winetricks}/bin/winetricks -q riched30
+  #   ${pkgs.winetricks}/bin/winetricks -q directplay
+  # '';
   
-  xdg.enable = true;
-  xdg.dataHome = "/home/ronald/.local/share";
+  # xdg.enable = true;
+  # xdg.dataHome = "/home/ronald/.local/share";
   xdg.configFile."oh-my-posh/easy-term.omp.json".source = ./easy-term.omp.json;
 
-  xdg.desktopEntries.Firstrun = {
-    name = "Freelancer";
-    comment = "Install the Freelancer server";
-    exec = "/home/ronald/firstrun.sh";
-    icon = "applications-games";
-    terminal = true;
-    categories = [ "Game" ];
-  };
+  # xdg.desktopEntries.Firstrun = {
+  #   name = "Freelancer";
+  #   comment = "Install the Freelancer server";
+  #   exec = "/home/ronald/firstrun.sh";
+  #   icon = "applications-games";
+  #   terminal = true;
+  #   categories = [ "Game" ];
+  # };
 
   programs.oh-my-posh = {
     enable = true;
