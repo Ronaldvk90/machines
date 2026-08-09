@@ -60,6 +60,10 @@
     ".config/swaybar/swaybar_werkplaats.sh".source = ./configs/swaybar/swaybar_werkplaats.sh;
     ".tmux.conf".source = ./configs/tmux/tmux.conf;
     ".config/pipewire/pipewire.conf.d/zeroconf-discover.conf".source = ./configs/pipewire/zeroconf-discover.conf;
+    ".local/bin/freelancer" = {
+      source = ./configs/executables/freelancer;
+      executable = true;
+    };
   };
 
   xdg.configFile."oh-my-posh/easy-term.omp.json".source = ./configs/zsh/easy-term.omp.json;

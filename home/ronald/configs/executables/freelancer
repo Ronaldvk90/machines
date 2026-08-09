@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+wine "/home/ronald/.wine/drive_c/Games/Freelancer HD Edition/EXE/Freelancer.exe"
