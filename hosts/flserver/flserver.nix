@@ -1,8 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.username = "ronald";
-  home.stateVersion = "26.05";
   home.packages = with pkgs; [
     wine
     winetricks
