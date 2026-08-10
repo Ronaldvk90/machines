@@ -18,16 +18,15 @@
     };
   };
 
-  services.greetd = {                                                      
-  enable = true;                                                         
-  settings = {                                                           
-    default_session = {                                                  
+  services.greetd = {
+  enable = true;
+  settings = {
+    default_session = {
       command = "${pkgs.tuigreet}/bin/tuigreet --time --background doom --cmd sway";
-      user = "greeter";                                                  
-      };                                                                   
-    };                                                                     
+      user = "greeter";
+      };
+    };
   };
-
 
   security.pam.services.swaylock = {};
   security.pam.loginLimits = [
