@@ -62,7 +62,7 @@ packages.x86_64-linux.nixos-pve-lxc =
     };
 
   packages.x86_64-linux.flserver =
-    nixos-generators.nixosSystem {
+    nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
       modules = [
