@@ -2,7 +2,6 @@
 
 {
   home.username = "ronald";
-  home.homeDirectory = "/home/ronald";
   home.stateVersion = "26.05";
   home.packages = with pkgs; [
     wine
