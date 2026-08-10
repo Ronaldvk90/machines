@@ -61,10 +61,10 @@ packages.x86_64-linux.nixos-pve-lxc =
       ];
     };
 
-  packages.x86_64-linux.flserver-lxc =
-    nixos-generators.nixosGenerate {
+  packages.x86_64-linux.flserver =
+    nixos-generators.nixosSystem {
       system = "x86_64-linux";
-      format = "proxmox-lxc";
+
       modules = [
         ./modules/core/systemdboot.nix
         ./modules/core/common.nix
