@@ -81,6 +81,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/ssh.nix
         ./modules/services/xrdp.nix
         ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
         ./hosts/flserver/configuration.nix
         ./hosts/flserver/disk.nix
         home-manager.nixosModules.home-manager
