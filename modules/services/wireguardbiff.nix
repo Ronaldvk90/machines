@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  networking.wg-thuis.interfaces = {
+  networking.wg-quick.interfaces = {
     wg0 = {
       address = [
         "10.10.30.3/32"
