@@ -23,6 +23,10 @@
     file = ../../secrets/ronald.openvpn.credentials.age;
   };
 
+  age.secrets.biff-wireguard = {
+    file = ../../secrets/biff-wireguard.age;
+  };
+
   age.secrets.debbieOpenvpn = {
     file = ../../secrets/debbie.openvpn.credentials.age;
   };
