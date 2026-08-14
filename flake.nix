@@ -149,7 +149,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
         ./modules/services/samba.nix
-        ./modules/services/wireguardbiff.nix
+        ./modules/services/wireguard.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/biff/configuration.nix
@@ -183,6 +183,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/openvpn.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
+        ./modules/services/wireguard.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/werkplaats/configuration.nix
