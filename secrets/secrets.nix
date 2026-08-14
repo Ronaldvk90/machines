@@ -23,7 +23,11 @@ in
     admin
   ];
 
-  "wg0.age".publicKeys = [
+  "wg0.biff.age".publicKeys = [
+    admin
+  ];
+
+  "wg0.werkplaats.age".publicKeys = [
     admin
   ];
 

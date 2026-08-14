@@ -23,10 +23,6 @@
     file = ../../secrets/ronald.openvpn.credentials.age;
   };
 
-  age.secrets.wg0 = {
-    file = ../../secrets/wg0.age;
-  };
-
   age.secrets.debbieOpenvpn = {
     file = ../../secrets/debbie.openvpn.credentials.age;
   };

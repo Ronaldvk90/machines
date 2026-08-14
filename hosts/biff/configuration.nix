@@ -12,7 +12,11 @@
   networking.dhcpcd.enable = false;
   networking.resolvconf.package = pkgs.openresolv;
 
-  ##### Wifi Networks #####
+  # Per host Age encrypted files #
+  age.secrets.wg0 = {
+    file = ../../secrets/wg0.biff.age;
+  };
+
   age.secrets.Ziggo-ap-4d4efe6 = {
     file = ../../secrets/Ziggo-ap-4d4efe6.nmconnection.age;
     path = "/etc/NetworkManager/system-connections/Ziggo-ap-4d4efe6.nmconnection";
@@ -21,7 +25,8 @@
     file = ../../secrets/bttf.lan.nmconnection.age;
     path = "/etc/NetworkManager/system-connections/bttf.lan.nmconnection";
   };
-
+  ################################
+  
   home-manager.users.ronald = import ../../home/ronald/home.nix;
   
   environment.systemPackages = with pkgs; [

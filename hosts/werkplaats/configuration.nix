@@ -14,6 +14,12 @@
   networking.dhcpcd.enable = false;
   networking.resolvconf.package = pkgs.openresolv;
   
+  # Per host Age encrypted files #
+  age.secrets.wg0 = {
+    file = ../../secrets/wg0.werkplaats.age;
+  };
+  ################################
+
   home-manager.users.ronald = import ../../home/ronald/home.nix;
 
   environment.systemPackages = with pkgs; [
