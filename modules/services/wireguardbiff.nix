@@ -9,7 +9,7 @@
 
       # use dnscrypt, or proxy dns as described above
       dns = [ "10.10.10.1" ];
-      privateKeyFile = config.age.secrets.biff-wireguard.path;
+      privateKeyFile = config.age.secrets.biffwireguard.path;
       peers = [
         {
           # bt wg conf
