@@ -35,5 +35,6 @@
   environment.systemPackages = with pkgs; [
     kdePackages.kate
     kdePackages.konqueror
+    jellyfin-desktop
   ];
 }
