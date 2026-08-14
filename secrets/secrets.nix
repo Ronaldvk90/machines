@@ -23,7 +23,7 @@ in
     admin
   ];
 
-  "biff.wireguard.age".publicKeys = [
+  "wg0.age".publicKeys = [
     admin
   ];
 
