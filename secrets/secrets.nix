@@ -23,6 +23,10 @@ in
     admin
   ];
 
+  "biff.wireguard.age".publicKeys = [
+    admin
+  ];
+
   "debbie.openvpn.credentials.age".publicKeys = [
     admin
   ];
