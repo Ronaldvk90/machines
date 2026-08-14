@@ -31,6 +31,10 @@ in
     admin
   ];
 
+  "wg0.debbie-laptop.age".publicKeys = [
+    admin
+  ];
+
   "debbie.openvpn.credentials.age".publicKeys = [
     admin
   ];

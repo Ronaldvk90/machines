@@ -9,15 +9,14 @@
 
   networking.hostName = "debbie";
   networking.domain = "bttf.lan";
-  networking.networkmanager = {
-    enable = true;
-    plugins = with pkgs; [
-      networkmanager-openvpn
-    ];
-  };
+  networking.networkmanager.enable = true;
   networking.resolvconf.package = pkgs.openresolv;
 
-  ##### Wifi Networks #####
+  # Per host Age encrypted files #
+  age.secrets.wg0 = {
+    file = ../../secrets/wg0.debbie-laptop.age;
+  };
+
   age.secrets.Ziggo-ap-4d4efe6 = {
     file = ../../secrets/Ziggo-ap-4d4efe6.nmconnection.age;
     path = "/etc/NetworkManager/system-connections/Ziggo-ap-4d4efe6.nmconnection";
@@ -26,12 +25,7 @@
     file = ../../secrets/bttf.lan.nmconnection.age;
     path = "/etc/NetworkManager/system-connections/bttf.lan.nmconnection";
   };
-
-  ##### VPN connection #####
-  age.secrets.thuis-vpn = {
-    file = ../../secrets/debbie.openvpn.credentials.age;
-    path = "/etc/NetworkManager/system-connections/thuis.nmconnection";
-  };
+  ################################
 
   home-manager.users.debbie = import ../../home/debbie/home.nix;
 
