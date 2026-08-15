@@ -72,7 +72,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/desktop/xfce4.nix
         ./modules/desktop/fonts.nix
         ./modules/services/avahi.nix
@@ -102,7 +101,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/desktop/fonts.nix
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
@@ -136,7 +134,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/desktop/fonts.nix
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
@@ -145,7 +142,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/avahi.nix
         ./modules/services/docker.nix
         ./modules/services/libvirt.nix
-        ./modules/services/openvpn.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
         ./modules/services/samba.nix
@@ -173,7 +169,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/desktop/fonts.nix
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
@@ -204,7 +199,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/enable-flakes.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/desktop/plasma.nix
         ./modules/hardware/bluetooth.nix
         ./modules/services/1password.nix
@@ -233,7 +227,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/hardware/zfs.nix
         ./modules/services/incus.nix
         ./modules/services/ssh.nix
@@ -257,7 +250,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -280,7 +272,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/services/jellyfin.nix
         ./modules/services/qemu-guest-agent.nix
         ./modules/services/samba.nix
@@ -306,7 +297,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/services/podman.nix
         ./modules/services/qemu-guest-agent.nix
         ./modules/services/ssh.nix
@@ -331,7 +321,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/crypto/secrets.nix
         ./modules/services/qemu-guest-agent.nix
         ./modules/services/ssh.nix
         ./modules/services/transmission.nix

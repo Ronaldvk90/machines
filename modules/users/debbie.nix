@@ -8,4 +8,8 @@
     description = "Debbie Berendsen";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+
+  age.secrets.debbiePassword = {
+    file = ../../secrets/debbie.password.age;
+  };
 }
