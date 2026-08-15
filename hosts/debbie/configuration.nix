@@ -15,6 +15,7 @@
   # Per host Age encrypted files #
   age.secrets.wg0 = {
     file = ../../secrets/wg0.debbie-laptop.age;
+    path = "/etc/NetworkManager/system-connections/wg0.nmconnection";
   };
 
   age.secrets.Ziggo-ap-4d4efe6 = {
