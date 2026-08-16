@@ -12,50 +12,52 @@
   
   # Incus Preseed
   virtualisation.incus.preseed = {
-  networks = [
-    {
-      config = {
-        "ipv4.address" = "10.0.100.1/24";
-        "ipv4.nat" = "true";
-      };
-      name = "incusbr0";
-      type = "bridge";
-    }
-  ];
-  profiles = [
-    {
-      devices = {
-        eth0 = {
-          name = "eth0";
-          network = "incusbr0";
-          type = "nic";
+    networks = [
+      {
+        config = {
+          "ipv4.address" = "10.0.100.1/24";
+         "ipv4.nat" = "true";
         };
-        root = {
-          path = "/";
-          pool = "storage";
-          size = "35GiB";
-          type = "disk";
+        name = "incusbr0";
+        type = "bridge";
+      }
+    ];
+  
+    profiles = [
+      {
+        devices = {
+          eth0 = {
+            name = "eth0";
+            network = "incusbr0";
+            type = "nic";
+          };
+          root = {
+           path = "/";
+           pool = "storage";
+           size = "35GiB";
+           type = "disk";
+          };
         };
+        name = "default";
+      }
+    ];
+  
+    storage_pools = [
+      {
+        config = {
+        source = "/var/lib/incus/storage-pools/default";
       };
-      name = "default";
-    }
-  ];
-storage_pools = [
-  {
-    config = {
-      source = "/var/lib/incus/storage-pools/default";
-    };
-    driver = "dir";
-    name = "default";
-  }
+        driver = "dir";
+        name = "default";
+      }
 
-  {
-    config = {
-      source = "storage";
-    };
-    driver = "zfs";
-    name = "storage";
-  }
-];
+      {
+        config = {
+        source = "storage";
+      };
+        driver = "zfs";
+        name = "storage";
+      }
+    ];
   };
 }
