@@ -4,7 +4,6 @@
   services.transmission = {
     enable = true;
     openFirewall = true;
-    credentialsFile = "/var/lib/secrets/transmission/settings.json";
     openRPCPort = true;
 
     settings = {
