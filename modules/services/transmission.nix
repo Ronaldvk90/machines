@@ -15,7 +15,7 @@
       rpc-bind-address = "0.0.0.0";
 
       rpc-whitelist-enable = true;
-      rpc-whitelist = "127.0.0.1,10.10.10.*,10.10.20.*";
+      rpc-whitelist = "127.0.0.1,10.10.10.*,10.10.20.*,10.10.30.*";
     };
   };
 
