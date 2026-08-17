@@ -175,7 +175,6 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/1password.nix 
         ./modules/services/docker.nix
         ./modules/services/libvirt.nix
-        ./modules/services/openvpn.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
         ./modules/services/wireguard.nix
