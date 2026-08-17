@@ -138,6 +138,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/desktop/fonts.nix
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
+        ./modules/display-manager/lightdm.nix        
         ./modules/hardware/bluetooth.nix
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
@@ -173,6 +174,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/desktop/fonts.nix
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
+        ./modules/display-manager/lightdm.nix        
         ./modules/services/1password.nix 
         ./modules/services/docker.nix
         ./modules/services/libvirt.nix
@@ -200,6 +202,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/desktop/plasma.nix
+        ./modules/display-manager/sddm.nix
         ./modules/hardware/bluetooth.nix
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
