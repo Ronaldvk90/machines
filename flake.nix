@@ -104,6 +104,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/desktop/fonts.nix
         ./modules/desktop/gnome-keyring.nix
         ./modules/desktop/sway.nix
+        ./modules/display-manager/greetd.nix
         ./modules/hardware/bluetooth.nix
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
