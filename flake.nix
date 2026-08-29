@@ -97,6 +97,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/binfmt.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
+        ./modules/core/i2c.nix
         ./modules/core/sudo.nix
         ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix
@@ -131,6 +132,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/binfmt.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
+        ./modules/core/i2c.nix
         ./modules/core/sudo.nix
         ./modules/core/systemdboot.nix
         ./modules/core/timezone.nix

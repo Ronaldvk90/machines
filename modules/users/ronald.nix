@@ -7,7 +7,7 @@
     isNormalUser = true;
     hashedPasswordFile = config.age.secrets.ronaldPassword.path;
     description = "Ronald van Kouwen";
-    extraGroups = [ "wheel" "docker" "libvirtd" "dialout" "scanner" "lp" "networkmanager" "video" "incus-admin" ];
+    extraGroups = [ "wheel" "docker" "libvirtd" "dialout" "scanner" "lp" "networkmanager" "video" "incus-admin" "i2c" ];
   };
 
   users.users.ronald.openssh.authorizedKeys.keys = [
