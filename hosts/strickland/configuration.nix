@@ -28,7 +28,8 @@
   inetutils
   nmap
   ];
-
+  hardware.openrazer.enable = true;
+  
   networking.enableIPv6 = false;
   networking.firewall.enable = false;
 
