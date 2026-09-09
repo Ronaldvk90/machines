@@ -23,6 +23,8 @@
   home-manager.users.ronald = import ../../home/ronald/home.nix;
 
   environment.systemPackages = with pkgs; [
+  openrazer-daemon
+  polychromatic
   vim
   killall
   playerctl
