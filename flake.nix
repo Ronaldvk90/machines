@@ -145,6 +145,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
         ./modules/services/docker.nix
+        ./modules/services/ifuse.nix
         ./modules/services/libvirt.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
