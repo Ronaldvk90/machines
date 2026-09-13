@@ -6,7 +6,7 @@
    image = "owncloud/server:latest";
    ports = [ "8080:8080" ];
     environment = {
-      OWNCLOUD_TRUSTED_DOMAINS = "localhost 10.10.10.14 owncloud.bttf.lan";
+      OWNCLOUD_TRUSTED_DOMAINS = "localhost 10.10.10.14 10.10.10.4 owncloud.bttf.lan";
     };
   };
 }
