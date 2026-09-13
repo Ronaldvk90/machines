@@ -36,9 +36,9 @@
     "clouduser"
   ];
 
-  users.users.owncloud.extraGroups = [
-    "clouduser"
-  ];
+  # users.users.owncloud.extraGroups = [
+  #   "clouduser"
+  # ];
 
   networking.firewall.enable = false;
   system.stateVersion = "26.05";
