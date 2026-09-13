@@ -15,6 +15,29 @@
 
   environment.systemPackages = with pkgs; [
   vim
+  cifs-utils
+  ];
+
+  age.secrets.delenaNasCredentials = {
+    file = ../../secrets/delena.nas.credentials.age;
+  }; 
+
+  fileSystems."/mnt/delena" = {
+    device = "//10.10.10.3/delena";
+    fsType = "cifs";
+    options = [ "credentials=/run/agenix/delenaNasCredentials" "x-systemd.automount" "auto" "uid=1000" "gid=2000" "file_mode=0070" "dir_mode=0070" ];
+  };
+
+  users.groups.cloudper = {
+    gid = 2000;
+  };
+
+  users.users.ronald.extraGroups = [
+    "clouduser"
+  ];
+
+  users.users.owncloud.extraGroups = [
+    "clouduser"
   ];
 
   networking.firewall.enable = false;
