@@ -292,6 +292,31 @@ packages.x86_64-linux.nixos-pve-lxc =
       ];
     };
 
+    nixosConfigurations.owncloud =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/services/owncloud.nix
+        ./modules/services/qemu-guest-agent.nix
+        ./modules/services/samba.nix
+        ./modules/services/ssh.nix
+        ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
+        ./hosts/owncloud/configuration.nix
+        ./hosts/owncloud/disk.nix
+        home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+        agenix.nixosModules.default
+      ];
+    };
+
     nixosConfigurations.outatime =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";

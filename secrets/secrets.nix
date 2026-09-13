@@ -14,6 +14,10 @@ in
     admin
   ];
 
+  "delena.nas.credentials.age".publicKeys = [
+    admin
+  ];
+
   "debbie.nas.credentials.age".publicKeys = [
     admin
   ];
