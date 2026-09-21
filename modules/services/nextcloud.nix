@@ -8,7 +8,7 @@ services.nextcloud = {
   extraAppsEnable = true;
   hostName = "nextcloud";
   config.adminpassFile = config.age.secrets.nextcloudcredentials.path;
-  #datadir = "/mnt/nextcloud";
+  datadir = "/mnt/nextcloud";
   config.dbtype = "sqlite";
   settings = {
     # Some sane defaults required to satisfy Nextcloud configuration check
