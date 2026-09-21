@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }:
-
+{
 services.nextcloud = {
   enable = true;
   hostName = "nextcloud";
