@@ -14,7 +14,7 @@ services.nextcloud = {
     };
   };
 
-  age.secrets.NextcloudCredentials = {
+  age.secrets.nextcloud.credentials = {
     file = ../../secrets/nextcloud.credentials.age;
   };
 }
