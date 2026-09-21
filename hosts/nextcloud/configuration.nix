@@ -25,20 +25,20 @@
   fileSystems."/mnt/nextcloud" = {
     device = "//10.10.10.3/nextcloud";
     fsType = "cifs";
-    options = [ "credentials=/run/agenix/ronaldNasCredentials" "x-systemd.automount" "auto" "uid=1000" "gid=2000" "file_mode=0070" "dir_mode=0070" ];
+    options = [ "credentials=/run/agenix/ronaldNasCredentials" "x-systemd.automount" "auto" "uid=999" "gid=999" "file_mode=0070" "dir_mode=0070" ];
   };
 
-  users.groups.cloudper = {
-    gid = 2000;
-  };
+  # users.groups.cloudper = {
+  #   gid = 2000;
+  # };
 
-  users.users.ronald.extraGroups = [
-    "clouduser"
-  ];
+  # users.users.ronald.extraGroups = [
+  #   "clouduser"
+  # ];
 
-  users.users.nextcloud.extraGroups = [
-    "clouduser"
-  ];
+  # users.users.nextcloud.extraGroups = [
+  #   "clouduser"
+  # ];
 
   networking.firewall.enable = false;
   system.stateVersion = "26.05";
