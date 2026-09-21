@@ -3,6 +3,12 @@
 services.nextcloud = {
   enable = true;
   hostName = "nextcloud";
+
+  extraApps = {
+    inherit (config.services.nextcloud.package.packages.apps)
+      files_external;
+  };
+  
   config.adminpassFile = config.age.secrets.nextcloudcredentials.path;
   #datadir = "/mnt/nextcloud";
   config.dbtype = "sqlite";
