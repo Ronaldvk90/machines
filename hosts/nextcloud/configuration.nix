@@ -25,7 +25,7 @@
   fileSystems."/mnt/nextcloud" = {
     device = "//10.10.10.3/nextcloud";
     fsType = "cifs";
-    options = [ "credentials=/run/agenix/ronaldNasCredentials" "x-systemd.automount" "auto" "uid=999" "gid=999" "file_mode=0070" "dir_mode=0070" ];
+    options = [ "credentials=/run/agenix/ronaldNasCredentials" "x-systemd.automount" "auto" "uid=999" "gid=999" "file_mode=0770" "dir_mode=0770" ];
   };
 
   # users.groups.cloudper = {
