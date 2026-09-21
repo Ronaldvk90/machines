@@ -3,7 +3,7 @@
 services.nextcloud = {
   enable = true;
   hostName = "nextcloud";
-  config.adminpassFile = config.age.secrets.nextcloud.credentials.path;
+  config.adminpassFile = config.age.secrets.nextcloudcredentials.path;
   config.dbtype = "sqlite";
   settings = {
     # Some sane defaults required to satisfy Nextcloud configuration check
@@ -14,7 +14,7 @@ services.nextcloud = {
     };
   };
 
-  age.secrets.nextcloud.credentials = {
+  age.secrets.nextcloudcredentials = {
     file = ../../secrets/nextcloud.credentials.age;
   };
 }
