@@ -7,7 +7,7 @@
   ];
 };
 
-  networking.hostName = "owncloud";
+  networking.hostName = "nextcloud";
   networking.domain = "bttf.lan";
   networking.networkmanager.enable = true;
   networking.dhcpcd.enable = false;

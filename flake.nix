@@ -292,7 +292,7 @@ packages.x86_64-linux.nixos-pve-lxc =
       ];
     };
 
-    nixosConfigurations.owncloud =
+    nixosConfigurations.nextcloud =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -303,13 +303,13 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/services/owncloud.nix
+        ./modules/services/nextcloud.nix
         ./modules/services/qemu-guest-agent.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./hosts/owncloud/configuration.nix
-        ./hosts/owncloud/disk.nix
+        ./hosts/nextloud/configuration.nix
+        ./hosts/nextloud/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         agenix.nixosModules.default
