@@ -3,7 +3,7 @@
 services.nextcloud = {
   enable = true;
   hostName = "nextcloud";
-  #config.adminpassFile = "/etc/nextcloud-admin-pass";
+  config.adminpassFile = config.age.secrets.nextcloud.credentials.path;
   config.dbtype = "sqlite";
   settings = {
     # Some sane defaults required to satisfy Nextcloud configuration check
@@ -12,5 +12,9 @@ services.nextcloud = {
     log_type = "systemd";
     serverid = 0;
     };
+  };
+
+  age.secrets.NextcloudCredentials = {
+    file = ../../secrets/nextcloud.credentials.age;
   };
 }

@@ -18,6 +18,10 @@ in
     admin
   ];
 
+  "nextcloud.credentials.age".publicKeys = [
+    admin
+  ];
+
   "debbie.nas.credentials.age".publicKeys = [
     admin
   ];
