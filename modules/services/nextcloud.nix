@@ -11,6 +11,11 @@ services.nextcloud = {
     default_phone_region = "NL";
     log_type = "systemd";
     serverid = 0;
+
+    trusted_domains = [
+      "nextcloud"
+      "nextcloud.bttf.lan"
+      ];
     };
   };
 
