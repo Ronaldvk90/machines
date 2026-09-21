@@ -18,14 +18,14 @@
   cifs-utils
   ];
 
-  age.secrets.delenaNasCredentials = {
-    file = ../../secrets/delena.nas.credentials.age;
+  age.secrets.ronaldNasCredentials = {
+    file = ../../secrets/ronald.nas.credentials.age;
   }; 
 
-  fileSystems."/mnt/delena" = {
-    device = "//10.10.10.3/delena";
+  fileSystems."/mnt/nextcloud" = {
+    device = "//10.10.10.3/nextcloud";
     fsType = "cifs";
-    options = [ "credentials=/run/agenix/delenaNasCredentials" "x-systemd.automount" "auto" "uid=1000" "gid=2000" "file_mode=0070" "dir_mode=0070" ];
+    options = [ "credentials=/run/agenix/ronaldNasCredentials" "x-systemd.automount" "auto" "uid=1000" "gid=2000" "file_mode=0070" "dir_mode=0070" ];
   };
 
   users.groups.cloudper = {
@@ -36,9 +36,9 @@
     "clouduser"
   ];
 
-  # users.users.owncloud.extraGroups = [
-  #   "clouduser"
-  # ];
+  users.users.nextcloud.extraGroups = [
+    "clouduser"
+  ];
 
   networking.firewall.enable = false;
   system.stateVersion = "26.05";
