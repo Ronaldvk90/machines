@@ -12,5 +12,5 @@ services.nextcloud = {
     log_type = "systemd";
     serverid = 0;
     };
-  #};
+  };
 }
