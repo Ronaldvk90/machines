@@ -2,10 +2,10 @@
 {
 services.nextcloud = {
   enable = true;
-  extraApps = {
-    inherit (config.services.nextcloud.package.packages.apps) news contacts calendar tasks;
-  };
-  extraAppsEnable = true;
+  # extraApps = {
+  #   inherit (config.services.nextcloud.package.packages.apps) news contacts calendar tasks;
+  # };
+  # extraAppsEnable = true;
   hostName = "nextcloud";
   config.adminpassFile = config.age.secrets.nextcloudcredentials.path;
   datadir = "/mnt/nextcloud";
