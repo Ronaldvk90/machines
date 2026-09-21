@@ -308,8 +308,8 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./hosts/nextloud/configuration.nix
-        ./hosts/nextloud/disk.nix
+        ./hosts/nextcloud/configuration.nix
+        ./hosts/nextcloud/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         agenix.nixosModules.default
