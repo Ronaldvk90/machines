@@ -111,6 +111,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/avahi.nix
         ./modules/services/docker.nix
         ./modules/services/libvirt.nix
+        ./modules/services/nzbhydra2.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
         ./modules/services/samba.nix
