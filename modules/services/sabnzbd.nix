@@ -4,7 +4,7 @@
   services.sabnzbd = {
     enable = true;
     user = "sabnzbd";
-    group = "media";
+    group = "sabnzbd";
     openFirewall = true; # Open de firewall-poorten voor de webinterface
     # settings = { ... }; # Optionele declaratieve instellingen
   };
