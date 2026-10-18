@@ -155,9 +155,9 @@
     ];
   };
 
-  programs.tmate = {
-    enable = true;
-  };
+#  programs.tmate = {
+#    enable = true;
+#  };
 
   programs.home-manager.enable = true;
 }
