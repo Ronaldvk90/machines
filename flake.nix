@@ -329,14 +329,13 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/services/podman.nix
-        ./modules/services/qemu-guest-agent.nix
+        #./modules/services/qemu-guest-agent.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./hosts/outatime/configuration.nix
-        ./hosts/outatime/disk.nix
+        ./incusvms/outatime/configuration.nix
+        ./incusvms/outatime/incus.nix
         home-manager.nixosModules.home-manager
-        disko.nixosModules.disko
         agenix.nixosModules.default        
       ];
     };
