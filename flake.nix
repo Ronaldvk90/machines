@@ -285,10 +285,9 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./hosts/jellyfin/configuration.nix
-        ./hosts/jellyfin/disk.nix
+        ./incusvms/jellyfin/configuration.nix
+        ./incusvms/jellyfin/incus.nix
         home-manager.nixosModules.home-manager
-        disko.nixosModules.disko
         agenix.nixosModules.default
       ];
     };
