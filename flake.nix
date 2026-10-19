@@ -356,10 +356,9 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/zsh.nix
         ./modules/services/samba.nix
         ./modules/users/ronald.nix
-        ./hosts/transmission/configuration.nix
-        ./hosts/transmission/disk.nix
+        ./incusvms/transmission/configuration.nix
+        ./incusvms/transmission/incus.nix
         home-manager.nixosModules.home-manager
-        disko.nixosModules.disko
         agenix.nixosModules.default        
       ];
     };
