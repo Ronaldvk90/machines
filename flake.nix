@@ -322,7 +322,7 @@ packages.x86_64-linux.nixos-pve-lxc =
       system = "x86_64-linux";
 
       modules = [
-        #./modules/core/systemdboot.nix
+        ./modules/core/systemdboot.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix

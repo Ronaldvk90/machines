@@ -1,13 +1,9 @@
 { config, pkgs, lib, modulesPath, ... }:
 
 {
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.grub.enable = false;
-
   imports = [
     # Include the default incus configuration.
     "${modulesPath}/virtualisation/incus-virtual-machine.nix"
-    #"${modulesPath}/virtualisation/lxc-container.nix"
   ];
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
