@@ -16,8 +16,8 @@
 
   systemd.network = {
     enable = true;
-    networks."50-eth0" = {
-      matchConfig.Name = "eth0";
+    networks."50-enp5s0" = {
+      matchConfig.Name = "enp5s0";
       address = [ "10.10.10.11/24" ];
       networkConfig = {
         Gateway = "10.10.10.1";
