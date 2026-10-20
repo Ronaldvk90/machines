@@ -350,7 +350,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/services/qemu-guest-agent.nix
+        ./modules/services/incus-agent.nix
         ./modules/services/ssh.nix
         ./modules/services/transmission.nix
         ./modules/services/zsh.nix
