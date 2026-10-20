@@ -5,7 +5,14 @@
     # Include the default incus configuration.
     "${modulesPath}/virtualisation/incus-virtual-machine.nix"
   ];
-
+  
+  boot.supportedFilesystems = [ "nfs" ];
+  
+  fileSystems."/mnt/jellyfin" = {
+    device = "10.10.10.3/jellyfin";
+    fsType = "nfs4";
+  };
+  
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   networking = {
