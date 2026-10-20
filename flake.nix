@@ -280,7 +280,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/services/jellyfin.nix
-        ./modules/services/qemu-guest-agent.nix
+        ./modules/services/incus-agent.nix
         ./modules/services/samba.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
@@ -328,7 +328,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/services/podman.nix
-        #./modules/services/qemu-guest-agent.nix
+        ./modules/services/incus-agent.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
