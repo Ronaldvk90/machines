@@ -9,10 +9,10 @@
   boot.supportedFilesystems = [ "nfs" ];
   
   fileSystems."/mnt/jellyfin" = {
-    device = "10.10.10.3/jellyfin";
+    device = "10.10.10.3/storage/jellyfin";
     fsType = "nfs4";
   };
-  
+
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   networking = {
