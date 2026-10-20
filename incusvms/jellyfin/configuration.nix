@@ -10,7 +10,7 @@
   
   fileSystems."/mnt/jellyfin" = {
     device = "10.10.10.3/storage/jellyfin";
-    fsType = "nfs4";
+    fsType = "nfs";
   };
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
