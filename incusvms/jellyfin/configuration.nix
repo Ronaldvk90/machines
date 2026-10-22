@@ -11,7 +11,7 @@
    
    services.openiscsi = {
     enable = true;  # Enable openiscsi daemon
-    name = "iqn.1994-11.com.netgear:doc:d161c130:nas";  # Set **YOUR** iSCSI initiator name not the one that you are trying to connect to. I am pretty sure this can be whatever you want.
+    name = "spermaanus";  # Set **YOUR** iSCSI initiator name not the one that you are trying to connect to. I am pretty sure this can be whatever you want.
 
     discoverPortal = "10.10.10.3";   # IP of your iscsi server
   };
