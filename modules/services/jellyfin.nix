@@ -4,7 +4,7 @@
   services.jellyfin = {
     enable = true;
     openFirewall = true;
-    #dataDir = "/mnt/jellyfin";
+    dataDir = "/mnt/jellyfin";
   };
 
   users.groups.media = {
