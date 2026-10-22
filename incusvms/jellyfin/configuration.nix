@@ -32,7 +32,7 @@
   fileSystems."/mnt/jellyfin" = {
     device = "/dev/disk/by-uuid/f1b5e69f-74ef-428d-9d03-8157834e642d";
     fsType = "ext4";
-    options = [ "_netdev" "nofail" ];
+    options = [ "_netdev" "nofail" "umask=000" ];
   };
 ##################################################
 
