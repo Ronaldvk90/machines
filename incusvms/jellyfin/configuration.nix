@@ -15,7 +15,7 @@
     discoverPortal = "10.10.10.3";
   };
  
-  systemd.services.iscsi-login-lingames = {
+  systemd.services.iscsi-login-jellyfin = {
     description = "Login to iSCSI target jellyin database";
     after = [ "network.target" "iscsid.service" ];
     wants = [ "iscsid.service" ];
