@@ -23,8 +23,8 @@
     wants = [ "iscsid.service" ];
     serviceConfig = {
       ExecStartPre = "${pkgs.openiscsi}/bin/iscsiadm -m discovery -t sendtargets -p 10.10.10.3";
-      ExecStart = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.2005-10.org.freenas.ctl:lingames -p 10.10.10.3 --login";
-      ExecStop = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.2005-10.org.freenas.ctl:lingames -p 10.10.10.3 --logout";
+      ExecStart = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.1994-11.com.netgear:doc:d161c130:nas -p 10.10.10.3 --login";
+      ExecStop = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.1994-11.com.netgear:doc:d161c130:nas -p 10.10.10.3 --logout";
       Restart = "on-failure";
       RemainAfterExit = true;
     };
