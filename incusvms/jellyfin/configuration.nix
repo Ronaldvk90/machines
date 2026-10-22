@@ -7,16 +7,14 @@
   ];
 
 ############### iscsi trial ######################
-   boot.kernelModules = [ "iscsi_tcp" ];   # not sure if needed but added just incase
+   boot.kernelModules = [ "iscsi_tcp" ];
    
    services.openiscsi = {
-    enable = true;  # Enable openiscsi daemon
-    name = "spermaanus";  # Set **YOUR** iSCSI initiator name not the one that you are trying to connect to. I am pretty sure this can be whatever you want.
-
-    discoverPortal = "10.10.10.3";   # IP of your iscsi server
+    enable = true;
+    name = "jellyfindatabase";
+    discoverPortal = "10.10.10.3";
   };
  
- # Custom systemd service for logging in to a specific iSCSI target, you can name the service whatever youd like
   systemd.services.iscsi-login-lingames = {
     description = "Login to iSCSI target jellyin database";
     after = [ "network.target" "iscsid.service" ];
@@ -30,14 +28,13 @@
     };
     wantedBy = [ "multi-user.target" ];
   };
-##################################################
 
-  # boot.supportedFilesystems = [ "nfs" ];
-  
-  # fileSystems."/mnt/jellyfin" = {
-  #   device = "10.10.10.3:storage/jellyfin";
-  #   fsType = "nfs4";
-  # };
+  fileSystems."/mnt/jellyin" = {
+    device = "/dev/disk/by-uuid/f1b5e69f-74ef-428d-9d03-8157834e642d";
+    fsType = "ext4";
+    options = [ "_netdev" "nofail" ];
+  };
+##################################################
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
