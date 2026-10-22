@@ -5,18 +5,38 @@
     # Include the default incus configuration.
     "${modulesPath}/virtualisation/incus-virtual-machine.nix"
   ];
-  
-  boot.supportedFilesystems = [ "nfs" ];
-  
-  fileSystems."/mnt/jellyfin" = {
-    device = "10.10.10.3:storage/jellyfin";
-    fsType = "nfs4";
-  };
 
+############### iscsi trial ######################
+   boot.kernelModules = [ "iscsi_tcp" ];   # not sure if needed but added just incase
+   
+   services.openiscsi = {
+    enable = true;  # Enable openiscsi daemon
+    name = "iqn.1994-11.com.netgear:doc:d161c130:nas";  # Set **YOUR** iSCSI initiator name not the one that you are trying to connect to. I am pretty sure this can be whatever you want.
+
+    discoverPortal = "10.10.10.3";   # IP of your iscsi server
+  };
+ 
+ # Custom systemd service for logging in to a specific iSCSI target, you can name the service whatever youd like
+  systemd.services.iscsi-login-lingames = {
+    description = "Login to iSCSI target jellyin database";
+    after = [ "network.target" "iscsid.service" ];
+    wants = [ "iscsid.service" ];
+    serviceConfig = {
+      ExecStartPre = "${pkgs.openiscsi}/bin/iscsiadm -m discovery -t sendtargets -p 10.10.10.3";
+      ExecStart = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.2005-10.org.freenas.ctl:lingames -p 10.10.10.3 --login";
+      ExecStop = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.2005-10.org.freenas.ctl:lingames -p 10.10.10.3 --logout";
+      Restart = "on-failure";
+      RemainAfterExit = true;
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
+##################################################
+
+  # boot.supportedFilesystems = [ "nfs" ];
+  
   # fileSystems."/mnt/jellyfin" = {
-  #   device = "//10.10.10.3/jellyfin";
-  #   fsType = "cifs";
-  #   options = [ "credentials=/run/agenix/ronaldNasCredentials" "x-systemd.automount" "auto" "uid=996" "gid=995" "file_mode=0770" "dir_mode=0770" ];
+  #   device = "10.10.10.3:storage/jellyfin";
+  #   fsType = "nfs4";
   # };
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
