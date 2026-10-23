@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+
   services.openssh.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   time.timeZone = "Europe/Amsterdam";
@@ -15,6 +16,11 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
+
+  services.xserver.displayManager.lightdm = {
+    enable = false;
+    greeters.gtk.enable = true;
   };
 
   services.xserver = {
