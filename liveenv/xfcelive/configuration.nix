@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  users.users.live = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
+  };
+
   services.openssh.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   time.timeZone = "Europe/Amsterdam";
@@ -66,6 +71,7 @@
     bash
     gparted
     gsmartcontrol
+    networkmanager
   ];
 
   system.stateVersion = "26.05";
