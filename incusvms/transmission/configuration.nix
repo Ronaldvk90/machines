@@ -14,6 +14,18 @@
     useHostResolvConf = false;
   };
 
+############# SSH host key deployment ############
+  age.secrets."ssh_host_ed25519_key" = {
+    file = ./ssh_host_ed25519_key.age;
+    path = "/etc/ssh/ssh_host_ed25519_key";
+  };
+
+  age.secrets."ssh_host_rsa_key" = {
+    file = ./ssh_host_rsa_key.age;
+    path = "/etc/ssh/ssh_host_rsa_key";
+  };
+##################################################
+
   systemd.network = {
     enable = true;
     networks."50-enp5s0" = {
