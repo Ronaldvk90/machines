@@ -37,8 +37,8 @@
 ##################################################
 
 ############# SSH host key deployment ############
-  age.secrets."ssh-host-ed25519" = {
-    file = ./ssh-host-ed25519.age;
+  age.secrets."ssh_host_ed25519_key" = {
+    file = ./ssh_host_ed25519_key.age;
     path = "/etc/ssh/ssh_host_ed25519_key";
   };
 
