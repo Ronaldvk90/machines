@@ -1,11 +1,6 @@
 { pkgs, ... }:
 
 {
-  users.users.live = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-  };
-
   services.openssh.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   time.timeZone = "Europe/Amsterdam";
@@ -22,10 +17,10 @@
     pulse.enable = true;
   };
 
-  services.xserver.displayManager.lightdm = {
-    enable = true;
-    greeters.gtk.enable = true;
-  };
+  #services.xserver.displayManager.lightdm = {
+  #  enable = true;
+  #  greeters.gtk.enable = true;
+  #};
 
   services.xserver = {
     enable = true;
@@ -34,7 +29,7 @@
       xfce.enable = true;
     };
   };
-  services.displayManager.defaultSession = "xfce";
+  #services.displayManager.defaultSession = "xfce";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
