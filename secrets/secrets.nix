@@ -53,15 +53,4 @@ in
   "Ziggo-ap-4d4efe6.nmconnection.age".publicKeys = [           
     admin
   ];
-
-################ SSH keys #######################
-
-  "ssh_host_ed25519_key.age".publicKeys = [           
-    admin
-  ];
-
-  "ssh_host_rsa_key.age".publicKeys = [           
-    admin
-  ];
-##################################################
 }
