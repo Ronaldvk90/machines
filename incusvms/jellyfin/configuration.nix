@@ -36,6 +36,18 @@
   };
 ##################################################
 
+############# SSH host key deployment ############
+  age.secrets."ssh-host-ed25519" = {
+    file = ./ssh-host-ed25519.age;
+    path = "/etc/ssh/ssh_host_ed25519_key";
+  };
+
+  age.secrets."ssh_host_rsa_key" = {
+    file = ./ssh_host_rsa_key.age;
+    path = "/etc/ssh/ssh_host_rsa_key";
+  };
+##################################################
+
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   networking = {
