@@ -6,7 +6,7 @@
     "${modulesPath}/virtualisation/incus-virtual-machine.nix"
   ];
 
-############### iscsi trial ######################
+############### iscsi ######################
    boot.kernelModules = [ "iscsi_tcp" ];
    
    services.openiscsi = {
