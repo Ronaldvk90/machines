@@ -17,19 +17,14 @@
     pulse.enable = true;
   };
 
-  #services.xserver.displayManager.lightdm = {
-  #  enable = true;
-  #  greeters.gtk.enable = true;
-  #};
-
   services.xserver = {
-    enable = true;
+    enable = false;
     desktopManager = {
       xterm.enable = false;
       xfce.enable = true;
     };
   };
-  #services.displayManager.defaultSession = "xfce";
+  services.displayManager.defaultSession = "xfce";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
