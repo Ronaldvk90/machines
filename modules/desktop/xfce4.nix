@@ -1,5 +1,6 @@
-{ config, pkgs, callPackage, ... }: {
+{ config, pkgs, callPackage, ... }:
 
+{
   nixpkgs.config.pulseaudio = true;
 
   services.xserver = {

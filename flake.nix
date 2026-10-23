@@ -61,6 +61,16 @@ packages.x86_64-linux.nixos-pve-lxc =
       ];
     };
 
+  nixosConfigurations.livexfce =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+        ./liveenv/xfcelive/configuration.nix
+      ];
+    };
+
   nixosConfigurations.flserver =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
