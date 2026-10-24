@@ -119,13 +119,50 @@ let
         agenix.nixosModules.default
       ] ++ platformModules;
     };
-#################################################################################
+  
+  outatime = { platformModules }:
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
 
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/services/podman.nix
+        ./modules/services/ssh.nix
+        ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
+        home-manager.nixosModules.home-manager
+        agenix.nixosModules.default        
+      ] ++ platformModules;
+    };
 
+  transmission = { platformModules }:
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
 
-
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/services/ssh.nix
+        ./modules/services/transmission.nix
+        ./modules/services/zsh.nix
+        ./modules/services/samba.nix
+        ./modules/users/ronald.nix
+        home-manager.nixosModules.home-manager
+        agenix.nixosModules.default        
+      ] ++ platformModules;
+    };
 in
 {
+#################################################################################
 
 ############### Output modules ##################################################
 nixosConfigurations.pxeinstaller =
@@ -174,8 +211,8 @@ packages.x86_64-linux.nixos-pve-lxc =
     flserver-qemu = flserver {
       platformModules = [
         ./modules/services/qemu-guest-agent.nix
-        ./hosts/flserver/configuration.nix
-        ./hosts/flserver/disk.nix
+        ./qemuvms/flserver/configuration.nix
+        ./qemuvms/flserver/disk.nix
         disko.nixosModules.disko
       ];
     };
@@ -193,8 +230,8 @@ packages.x86_64-linux.nixos-pve-lxc =
     test-qemu = test {
       platformModules = [
         ./modules/services/qemu-guest-agent.nix
-        ./hosts/test/configuration.nix
-        ./hosts/test/disk.nix
+        ./qemuvms/test/configuration.nix
+        ./qemuvms/test/disk.nix
         disko.nixosModules.disko
       ];
     };
@@ -212,8 +249,8 @@ packages.x86_64-linux.nixos-pve-lxc =
     jellyfin-qemu = jellyfin {
       platformModules = [
         ./modules/services/qemu-guest-agent.nix
-        ./hosts/jellyfin/configuration.nix
-        ./hosts/jellyfin/disk.nix
+        ./qemuvms/jellyfin/configuration.nix
+        ./qemuvms/jellyfin/disk.nix
         disko.nixosModules.disko
       ];
     };
@@ -228,16 +265,16 @@ packages.x86_64-linux.nixos-pve-lxc =
   };
 
   nixosConfigurations = {
-    nextcloud-qemu = jellyfin {
+    nextcloud-qemu = nextcloud {
       platformModules = [
         ./modules/services/qemu-guest-agent.nix
-        ./hosts/nextcloud/configuration.nix
-        ./hosts/nextcloud/disk.nix
+        ./qemuvms/nextcloud/configuration.nix
+        ./qemuvms/nextcloud/disk.nix
         disko.nixosModules.disko
       ];
     };
 
-    nextcloud-incus = jellyfin {
+    nextcloud-incus = nextcloud {
       platformModules = [
         ./modules/services/incus-agent.nix
         ./incusvms/nextcloud/configuration.nix
@@ -245,56 +282,44 @@ packages.x86_64-linux.nixos-pve-lxc =
       ];
     };
   };
-  ############!!!!!!!!!!!!!!!!!!!#######################
 
+  nixosConfigurations = {
+    outatime-qemu = outatime {
+      platformModules = [
+        ./modules/services/qemu-guest-agent.nix
+        ./qemuvms/outatime/configuration.nix
+        ./qemuvms/outatime/disk.nix
+        disko.nixosModules.disko
+      ];
+    };
 
-
-    nixosConfigurations.outatime =
-    nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-
-      modules = [
-        ./modules/core/systemdboot.nix
-        ./modules/core/common.nix
-        ./modules/core/enable-flakes.nix
-        ./modules/core/sudo.nix
-        ./modules/core/timezone.nix
-        ./modules/core/unfree.nix
-        ./modules/services/podman.nix
+    outatime-incus = outatime {
+      platformModules = [
         ./modules/services/incus-agent.nix
-        ./modules/services/ssh.nix
-        ./modules/services/zsh.nix
-        ./modules/users/ronald.nix
         ./incusvms/outatime/configuration.nix
         ./incusvms/outatime/incus.nix
-        home-manager.nixosModules.home-manager
-        agenix.nixosModules.default        
+      ];
+    };
+  };
+
+  nixosConfigurations = {
+    transmission-qemu = transmission {
+      platformModules = [
+        ./modules/services/qemu-guest-agent.nix
+        ./qemuvms/transmission/configuration.nix
+        ./qemuvms/transmission/disk.nix
+        disko.nixosModules.disko
       ];
     };
 
-    nixosConfigurations.transmission =
-    nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-
-      modules = [
-        ./modules/core/systemdboot.nix
-        ./modules/core/common.nix
-        ./modules/core/enable-flakes.nix
-        ./modules/core/sudo.nix
-        ./modules/core/timezone.nix
-        ./modules/core/unfree.nix
+    transmission-incus = transmission {
+      platformModules = [
         ./modules/services/incus-agent.nix
-        ./modules/services/ssh.nix
-        ./modules/services/transmission.nix
-        ./modules/services/zsh.nix
-        ./modules/services/samba.nix
-        ./modules/users/ronald.nix
         ./incusvms/transmission/configuration.nix
         ./incusvms/transmission/incus.nix
-        home-manager.nixosModules.home-manager
-        agenix.nixosModules.default        
       ];
     };
+  };
 #################################################################################
 
 ############### Bare metal machines #############################################
