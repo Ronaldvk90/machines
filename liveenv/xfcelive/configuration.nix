@@ -18,19 +18,32 @@
     pulse.enable = true;
   };
 
-  services.xserver.displayManager.lightdm = {
-    enable = false;
-    greeters.gtk.enable = true;
-  };
+  services.xserver.displayManager.lightdm.enable = false;
 
   services.xserver = {
-    enable = false;
+    enable = true;
     desktopManager = {
       xterm.enable = false;
       xfce.enable = true;
     };
+  displayManager.startx.enable = true;
   };
-  services.displayManager.defaultSession = "xfce";
+
+  system.activationScripts.xinitrc.text = ''
+    install -Dm755 ${pkgs.writeText "xinitrc" ''
+     #!/bin/sh
+     exec startxfce4
+    ''} /home/nixos/.xinitrc
+    chown nixos:users /home/nixos/.xinitrc
+  '';
+
+  security.polkit.extraConfig = ''
+   polkit.addRule(function(action, subject) {
+     if (subject.user == "nixos") {
+       return polkit.Result.YES;
+     }
+   });
+  '';
 
   i18n.defaultLocale = "en_US.UTF-8";
 
