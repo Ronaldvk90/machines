@@ -6,7 +6,7 @@ set -euo pipefail
 # Information on usage.
 echo "deploy.sh <machine IP> <machine hostname (uit flake)> <user voor 2FA (ALS aanwezig)>"
 
-# Needed (and one not needed) variables.
+# Required variables and one optional variable.
 HOST="${1:?Target IP}"
 MACHINE="${2:?Machine name}"
 USER="${3:-}"
