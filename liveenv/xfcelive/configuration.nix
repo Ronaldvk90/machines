@@ -1,7 +1,11 @@
 { pkgs, ... }:
 
 {
-
+  programs.wireshark.enable = true;
+  users.users.nixos.extraGroups = [ "wireshark" "networkmanager" ];
+  virtualisation.incus.agent.enable = true;
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
   services.openssh.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   time.timeZone = "Europe/Amsterdam";
@@ -81,6 +85,7 @@
     gparted
     gsmartcontrol
     networkmanager
+    firefox
   ];
 
   system.stateVersion = "26.05";
