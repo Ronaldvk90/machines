@@ -164,41 +164,40 @@ in
 {
 #################################################################################
 
-############### Output modules ##################################################
-nixosConfigurations.pxeinstaller =
-  nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
-
-    modules = [
-      "${nixpkgs}/nixos/modules/installer/netboot/netboot-minimal.nix"
-      ./installers/pxeinstaller/configuration.nix
-    ];
-  };
-
+############### PVE LXC module ##################################################
 packages.x86_64-linux.nixos-pve-lxc =
   nixos-generators.nixosGenerate {
     system = "x86_64-linux";
     format = "proxmox-lxc";
-
     modules = [
       ./containers/pvelxc/configuration.nix
     ];
   };
+#################################################################################
 
-  nixosConfigurations.isoinstaller =
+############### Output modules ##################################################
+nixosConfigurations = {
+  pxeinstaller =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      modules = [
+        "${nixpkgs}/nixos/modules/installer/netboot/netboot-minimal.nix"
+        ./installers/pxeinstaller/configuration.nix
+      ];
+    };
 
+  isoinstaller =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
       modules = [
         "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
         ./installers/isoinstaller/configuration.nix
       ];
     };
 
-  nixosConfigurations.livexfce =
+  livexfce =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-
       modules = [
         "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
         ./liveenv/xfcelive/configuration.nix
@@ -207,7 +206,6 @@ packages.x86_64-linux.nixos-pve-lxc =
 #################################################################################
 
 ############### Virtul Machine platform specific ################################
-  nixosConfigurations = {
     flserver-qemu = flserver {
       platformModules = [
         ./modules/services/qemu-guest-agent.nix
