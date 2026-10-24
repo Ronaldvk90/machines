@@ -4,10 +4,7 @@ set -euo pipefail
 HOST="${1:?Target IP}"
 MACHINE="${2:?Machine name}"
 
-nix shell nixpkgs#nixos-anywhere -c nixos-anywhere --phases kexec,disko,install --flake github:ronaldvk90/machines#$MACHINE root@"$HOST"
+op item get "AgeNix private key" --vault "Shared" --field "text" > "$tmp/var/lib/agenix/agenix.key"
 
-echo "Paste your age key, finish with CTRL-D:"
-ssh root@"$HOST" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -q 'mkdir -p /mnt/var/lib/agenix && install -m 600 /dev/stdin /mnt/var/lib/agenix/agenix.key'
-ssh root@"$HOST" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -q "cd /mnt && nixos-enter --command \"nixos-rebuild boot --flake github:ronaldvk90/machines#$MACHINE\""
-ssh root@"$HOST" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -q "cd /mnt && nixos-enter --command \"google-authenticator\""
-echo -e "plain \e[0;31mAfter scanning the QR code for SSH (if you have the module installed), you can reboot the machine. If you weren't prompted for a QR, this machine is without SSH access. \e[0m reset"
+nix shell nixpkgs#nixos-anywhere -c nixos-anywhere --extra-files "$tmp" --phases kexec,disko,install --flake github:ronaldvk90/machines#$MACHINE root@"$HOST"
+

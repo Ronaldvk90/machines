@@ -262,6 +262,7 @@ packages.x86_64-linux.nixos-pve-lxc =
       system = "x86_64-linux";
 
       modules = [
+        ./modules/core/systemdboot.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
         ./modules/core/sudo.nix
@@ -271,7 +272,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/test/configuration.nix
-        ./hosts/test/incus.nix
+        ./hosts/test/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         agenix.nixosModules.default
