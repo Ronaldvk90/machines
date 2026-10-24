@@ -31,6 +31,10 @@
 };
 
 outputs = { self, nixpkgs, home-manager, disko, agenix, lanzaboote, nixos-generators, ... }:
+#################################################################################
+
+
+############### Virtual Machines ################################################
 let
   flserver = { platformModules }:
     nixpkgs.lib.nixosSystem {
@@ -56,7 +60,7 @@ let
       ] ++ platformModules;
     };
 
-   test = { platformModules }:
+  test = { platformModules }:
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -75,7 +79,47 @@ let
       ] ++ platformModules;
     };
 
+  jellyfin = { platformModules }:
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
 
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/services/jellyfin.nix
+        ./modules/services/samba.nix
+        ./modules/services/ssh.nix
+        ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
+        home-manager.nixosModules.home-manager
+        agenix.nixosModules.default
+      ] ++ platformModules;
+    };
+
+  nextcloud = { platformModules }:
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/services/nextcloud.nix
+        ./modules/services/ssh.nix
+        ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
+        home-manager.nixosModules.home-manager
+        agenix.nixosModules.default
+      ] ++ platformModules;
+    };
+#################################################################################
 
 
 
@@ -125,7 +169,7 @@ packages.x86_64-linux.nixos-pve-lxc =
     };
 #################################################################################
 
-############### Virtul Machines #################################################
+############### Virtul Machine platform specific ################################
   nixosConfigurations = {
     flserver-qemu = flserver {
       platformModules = [
@@ -163,54 +207,47 @@ packages.x86_64-linux.nixos-pve-lxc =
       ];
     };
   };
-  ############!!!!!!!!!!!!!!!!!!!#######################
-    nixosConfigurations.jellyfin =
-    nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
 
-      modules = [
-        ./modules/core/systemdboot.nix
-        ./modules/core/common.nix
-        ./modules/core/enable-flakes.nix
-        ./modules/core/sudo.nix
-        ./modules/core/timezone.nix
-        ./modules/core/unfree.nix
-        ./modules/services/jellyfin.nix
+  nixosConfigurations = {
+    jellyfin-qemu = jellyfin {
+      platformModules = [
+        ./modules/services/qemu-guest-agent.nix
+        ./hosts/jellyfin/configuration.nix
+        ./hosts/jellyfin/disk.nix
+        disko.nixosModules.disko
+      ];
+    };
+
+    jellyfin-incus = jellyfin {
+      platformModules = [
         ./modules/services/incus-agent.nix
-        ./modules/services/samba.nix
-        ./modules/services/ssh.nix
-        ./modules/services/zsh.nix
-        ./modules/users/ronald.nix
         ./incusvms/jellyfin/configuration.nix
         ./incusvms/jellyfin/incus.nix
-        home-manager.nixosModules.home-manager
-        agenix.nixosModules.default
       ];
     };
+  };
 
-    nixosConfigurations.nextcloud =
-    nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-
-      modules = [
-        ./modules/core/systemdboot.nix
-        ./modules/core/common.nix
-        ./modules/core/enable-flakes.nix
-        ./modules/core/sudo.nix
-        ./modules/core/timezone.nix
-        ./modules/core/unfree.nix
-        ./modules/services/nextcloud.nix
+  nixosConfigurations = {
+    nextcloud-qemu = jellyfin {
+      platformModules = [
         ./modules/services/qemu-guest-agent.nix
-        ./modules/services/ssh.nix
-        ./modules/services/zsh.nix
-        ./modules/users/ronald.nix
         ./hosts/nextcloud/configuration.nix
         ./hosts/nextcloud/disk.nix
-        home-manager.nixosModules.home-manager
         disko.nixosModules.disko
-        agenix.nixosModules.default
       ];
     };
+
+    nextcloud-incus = jellyfin {
+      platformModules = [
+        ./modules/services/incus-agent.nix
+        ./incusvms/nextcloud/configuration.nix
+        ./incusvms/nextcloud/incus.nix
+      ];
+    };
+  };
+  ############!!!!!!!!!!!!!!!!!!!#######################
+
+
 
     nixosConfigurations.outatime =
     nixpkgs.lib.nixosSystem {
