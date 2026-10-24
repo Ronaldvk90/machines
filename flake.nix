@@ -336,6 +336,7 @@ nixosConfigurations = {
         ./modules/services/printing.nix
         ./modules/services/sabnzbd.nix
         ./modules/services/samba.nix
+        ./modules/services/virt-manager.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
         ./hosts/marty/configuration.nix
@@ -372,6 +373,7 @@ nixosConfigurations = {
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
         ./modules/services/samba.nix
+        ./modules/services/virt-manager.nix
         ./modules/services/wireguard.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -405,6 +407,7 @@ nixosConfigurations = {
         ./modules/services/libvirt.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
+        ./modules/services/virt-manager.nix
         ./modules/services/wireguard.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
