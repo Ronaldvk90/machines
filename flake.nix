@@ -224,9 +224,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./incusvms/flserver/incus.nix
       ];
     };
-  };
 
-  nixosConfigurations = {
     test-qemu = test {
       platformModules = [
         ./modules/services/qemu-guest-agent.nix
@@ -243,9 +241,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./incusvms/test/incus.nix
       ];
     };
-  };
 
-  nixosConfigurations = {
     jellyfin-qemu = jellyfin {
       platformModules = [
         ./modules/services/qemu-guest-agent.nix
@@ -262,9 +258,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./incusvms/jellyfin/incus.nix
       ];
     };
-  };
 
-  nixosConfigurations = {
     nextcloud-qemu = nextcloud {
       platformModules = [
         ./modules/services/qemu-guest-agent.nix
@@ -281,9 +275,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./incusvms/nextcloud/incus.nix
       ];
     };
-  };
 
-  nixosConfigurations = {
     outatime-qemu = outatime {
       platformModules = [
         ./modules/services/qemu-guest-agent.nix
@@ -300,9 +292,7 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./incusvms/outatime/incus.nix
       ];
     };
-  };
 
-  nixosConfigurations = {
     transmission-qemu = transmission {
       platformModules = [
         ./modules/services/qemu-guest-agent.nix
@@ -319,11 +309,10 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./incusvms/transmission/incus.nix
       ];
     };
-  };
 #################################################################################
 
 ############### Bare metal machines #############################################
-  nixosConfigurations.marty =
+  marty =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -356,10 +345,10 @@ packages.x86_64-linux.nixos-pve-lxc =
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         agenix.nixosModules.default        
-      ];
-    };
+        ];
+      };
 
-  nixosConfigurations.biff =
+  biff =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -394,10 +383,10 @@ packages.x86_64-linux.nixos-pve-lxc =
         disko.nixosModules.disko
         agenix.nixosModules.default
         lanzaboote.nixosModules.lanzaboote
-      ];
-    };
+        ];
+      };
 
-  nixosConfigurations.werkplaats =
+  werkplaats =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -426,10 +415,10 @@ packages.x86_64-linux.nixos-pve-lxc =
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         agenix.nixosModules.default
-      ];
-    };
+        ];
+      };
 
-  nixosConfigurations.debbie =
+  debbie =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -453,10 +442,10 @@ packages.x86_64-linux.nixos-pve-lxc =
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         agenix.nixosModules.default
-      ];
-    };
+        ];
+      };
   
-    nixosConfigurations.strickland =
+  strickland =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -478,7 +467,8 @@ packages.x86_64-linux.nixos-pve-lxc =
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         agenix.nixosModules.default
-      ];
+        ];
+      };
     };
   };
 }
