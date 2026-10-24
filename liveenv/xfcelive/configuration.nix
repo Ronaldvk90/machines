@@ -86,6 +86,7 @@
     gsmartcontrol
     networkmanager
     firefox
+    wireshark
   ];
 
   system.stateVersion = "26.05";
