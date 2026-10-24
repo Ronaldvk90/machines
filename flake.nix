@@ -71,7 +71,7 @@ packages.x86_64-linux.nixos-pve-lxc =
       ];
     };
 
-  nixosConfigurations.flserver =
+  nixosConfigurations.flserver-qemu =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -95,6 +95,33 @@ packages.x86_64-linux.nixos-pve-lxc =
         ./hosts/flserver/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
+        agenix.nixosModules.default
+      ];
+    };
+
+  nixosConfigurations.flserver-incus =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/desktop/xfce4.nix
+        ./modules/desktop/fonts.nix
+        ./modules/services/avahi.nix
+        ./modules/services/pipewire.nix
+        ./modules/services/incus-agent.nix
+        ./modules/services/ssh.nix
+        ./modules/services/xrdp.nix
+        ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
+        ./incusvms/flserver/configuration.nix
+        ./incusvms/flserver/incus.nix
+        home-manager.nixosModules.home-manager
         agenix.nixosModules.default
       ];
     };
