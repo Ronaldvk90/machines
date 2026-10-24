@@ -1,7 +1,7 @@
 { config, pkgs, lib, modulesPath, ... }:
 
 {
-  networking.hostName = "testmachine";
+  networking.hostName = "test";
   networking.domain = "bttf.lan";
   networking.networkmanager.enable = true;
 
