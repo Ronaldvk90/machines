@@ -43,18 +43,14 @@ let
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-
         ./modules/desktop/xfce4.nix
         ./modules/desktop/fonts.nix
-
         ./modules/services/avahi.nix
         ./modules/services/pipewire.nix
         ./modules/services/ssh.nix
         ./modules/services/xrdp.nix
         ./modules/services/zsh.nix
-
         ./modules/users/ronald.nix
-
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default
       ] ++ platformModules;
@@ -74,7 +70,6 @@ let
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./hosts/test/disk.
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default
       ] ++ platformModules;
