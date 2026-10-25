@@ -192,6 +192,7 @@ nixosConfigurations = {
       modules = [
         "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
         ./installers/isoinstaller/configuration.nix
+        disko.nixosModules.disko
       ];
     };
 
@@ -201,6 +202,7 @@ nixosConfigurations = {
       modules = [
         "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
         ./liveenv/xfcelive/configuration.nix
+        disko.nixosModules.disko
       ];
     };
 #################################################################################

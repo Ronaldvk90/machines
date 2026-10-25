@@ -66,6 +66,12 @@
     nssmdns4 = true;
   };
 
+  users.motd = ''
+    Welcome to my Nix rescue env. Default a bunch of tools are available.
+    If not, nix shell them! Furthermore, a XFCE4 desktop is avaiable, 
+    just type startx. With disk and network tooling and a browser.
+  '';
+
   environment.systemPackages = with pkgs; [
     git
     vim
@@ -87,6 +93,8 @@
     networkmanager
     firefox
     wireshark
+    nixos-anywhere
+    disko
   ];
 
   system.stateVersion = "26.05";
