@@ -27,7 +27,7 @@
   lanzaboote = {
     url = "github:nix-community/lanzaboote/v1.1.0";
     inputs.nixpkgs.follows = "nixpkgs";
-    };
+  };
 };
 
 outputs = { self, nixpkgs, home-manager, disko, agenix, lanzaboote, nixos-generators, ... }:
