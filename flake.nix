@@ -327,6 +327,7 @@ nixosConfigurations = {
         ./modules/core/unfree.nix
         ./modules/desktop/fonts.nix
         ./modules/desktop/gnome-keyring.nix
+        #./modules/desktop/hyprland.nix
         ./modules/desktop/sway.nix
         ./modules/display-manager/greetd.nix
         ./modules/hardware/bluetooth.nix
