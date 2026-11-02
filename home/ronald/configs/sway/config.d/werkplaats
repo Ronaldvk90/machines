@@ -1,3 +1,11 @@
+output VGA-1 resolution 1920x1200 position 0,0
+output HDMI-A-1 resolution 1920x1200 position 1920,0
+
+workspace 1 output VGA-1
+workspace 2 output HDMI-A-1
+
+exec swaymsg workspace number 1
+
  bar {
      position top
 
