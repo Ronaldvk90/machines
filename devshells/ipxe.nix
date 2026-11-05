@@ -16,7 +16,7 @@ pkgs.mkShell {
     zsh
   ];
 
-  # Env variables IF nescesary
+  # DevEnv and other variables IF nescesary
   DEVSHELL = "1";
 
   # ShellHooks. Things to start when entering the dev shell

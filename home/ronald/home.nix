@@ -48,6 +48,7 @@
   ];
 
   home.file = {
+    ".config/gzdoom/gzdoom.ini".source = ./configs/gzdoom/gzdoom.ini;
     "./Pictures/wallpaper.jpg".source = ./Pictures/wallpaper.jpg;
     ".config/sway/config".source = ./configs/sway/config;
     ".config/sway/config.d/marty".source = ./configs/sway/config.d/marty;
