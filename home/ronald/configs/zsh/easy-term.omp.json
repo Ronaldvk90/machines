@@ -6,6 +6,13 @@
       "newline": true,
       "segments": [
         {
+          "type": "text",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#c386f1",
+          "template": "{{ if eq .Env.DEVSHELL \"1\" }} 🛠️ DEVSHELL {{ end }}"
+        },
+        {
           "background": "#0c7bbb",
           "foreground": "#ffffff",
           "leading_diamond": "\u256d\u2500\ue0b2",

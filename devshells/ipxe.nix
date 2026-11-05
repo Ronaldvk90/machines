@@ -17,7 +17,7 @@ pkgs.mkShell {
   ];
 
   # Env variables IF nescesary
-  #RANDOM_ENV = "BLA";
+  DEVSHELL = "1";
 
   # ShellHooks. Things to start when entering the dev shell
   shellHook = ''
