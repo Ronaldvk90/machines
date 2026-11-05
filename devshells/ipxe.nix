@@ -3,8 +3,17 @@
 pkgs.mkShell {
   # Packages to use for iPXE
   packages = with pkgs; [
-    make
+    gcc
+    binutils
+    perl
+    xz
+    mtools
+    cdrtools
+    syslinux
+    gnumake
     autoconf
+    git
+    zsh
   ];
 
   # Env variables IF nescesary
@@ -12,6 +21,7 @@ pkgs.mkShell {
 
   # ShellHooks. Things to start when entering the dev shell
   shellHook = ''
-  echo "lik mijn anus!"
+    echo "iPXE dev shell"
+    exec zsh
   '';
 }
