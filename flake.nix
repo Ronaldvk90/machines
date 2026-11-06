@@ -89,6 +89,7 @@ let
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
+        #./modules/services/nfsclient.nix
         ./modules/services/jellyfin.nix
         ./modules/services/sambaclientclient.nix
         ./modules/services/ssh.nix
@@ -150,10 +151,11 @@ let
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
+        #./modules/services/nfsclient.nix
         ./modules/services/ssh.nix
         ./modules/services/transmission.nix
         ./modules/services/zsh.nix
-        ./modules/services/sambaclientclient.nix
+        ./modules/services/sambaclient.nix
         ./modules/users/ronald.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default        
@@ -342,6 +344,7 @@ nixosConfigurations = {
         ./modules/services/avahi.nix
         ./modules/services/docker.nix
         ./modules/services/libvirt.nix
+        #./modules/services/nfsclient.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
         ./modules/services/sabnzbd.nix
@@ -380,6 +383,7 @@ nixosConfigurations = {
         ./modules/services/docker.nix
         ./modules/services/ifuse.nix
         ./modules/services/libvirt.nix
+        #./modules/services/nfsclient.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
         ./modules/services/sambaclientclient.nix
@@ -414,6 +418,7 @@ nixosConfigurations = {
         ./modules/display-manager/greetd.nix        
         ./modules/services/1password.nix 
         ./modules/services/docker.nix
+        #./modules/services/nfsclient.nix
         ./modules/services/libvirt.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
@@ -444,6 +449,7 @@ nixosConfigurations = {
         ./modules/hardware/bluetooth.nix
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
+        #./modules/services/nfsclient.nix
         ./modules/services/onedrive.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
@@ -493,7 +499,8 @@ nixosConfigurations = {
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/hardware/zfs.nix
-        ./modules/services/sambaserver.nix
+        ./modules/services/nfsserver.nix
+        #./modules/services/sambaserver.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -522,7 +529,7 @@ nixosConfigurations = {
         ./modules/core/unfree.nix
         #./modules/hardware/zfs.nix
         ./modules/services/nfsserver.nix
-        ./modules/services/sambaserver.nix
+        #./modules/services/sambaserver.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
