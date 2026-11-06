@@ -5,6 +5,7 @@
   users.users."debbie" = {
     isNormalUser = true;
     hashedPasswordFile = config.age.secrets.debbiePassword.path;
+    uid = 1001;
     description = "Debbie Berendsen";
     extraGroups = [ "networkmanager" "wheel" ];
   };

@@ -6,8 +6,9 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     hashedPasswordFile = config.age.secrets.ronaldPassword.path;
+    uid = 1000;
     description = "Ronald van Kouwen";
-    extraGroups = [ "openrazer" "wheel" "docker" "libvirtd" "kvm" "dialout" "scanner" "lp" "networkmanager" "video" "incus-admin" "i2c" ];
+    extraGroups = [ "wheel" "docker" "libvirtd" "kvm" "dialout" "scanner" "lp" "networkmanager" "video" "incus-admin" "i2c" ];
   };
 
   users.users.ronald.openssh.authorizedKeys.keys = [
