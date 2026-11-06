@@ -3,7 +3,7 @@
 {
 services.samba = {
   enable = true;
-  security = "user";
+  securityType = "user";
   openFirewall = true;
   settings = {
     global = {
