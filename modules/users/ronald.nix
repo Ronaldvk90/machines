@@ -5,7 +5,6 @@
   users.users.ronald = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    uid = 1001;
     hashedPasswordFile = config.age.secrets.ronaldPassword.path;
     description = "Ronald van Kouwen";
     extraGroups = [ "openrazer" "wheel" "docker" "libvirtd" "kvm" "dialout" "scanner" "lp" "networkmanager" "video" "incus-admin" "i2c" ];
