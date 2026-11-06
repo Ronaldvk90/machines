@@ -4,6 +4,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."debbie" = {
     isNormalUser = true;
+    uid = 1001;
     hashedPasswordFile = config.age.secrets.debbiePassword.path;
     description = "Debbie Berendsen";
     extraGroups = [ "networkmanager" "wheel" ];
