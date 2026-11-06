@@ -90,7 +90,7 @@ let
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/services/jellyfin.nix
-        ./modules/services/samba.nix
+        ./modules/services/sambaclientclient.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -153,7 +153,7 @@ let
         ./modules/services/ssh.nix
         ./modules/services/transmission.nix
         ./modules/services/zsh.nix
-        ./modules/services/samba.nix
+        ./modules/services/sambaclientclient.nix
         ./modules/users/ronald.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default        
@@ -345,7 +345,7 @@ nixosConfigurations = {
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
         ./modules/services/sabnzbd.nix
-        ./modules/services/samba.nix
+        ./modules/services/sambaclientclient.nix
         ./modules/services/virt-manager.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -382,7 +382,7 @@ nixosConfigurations = {
         ./modules/services/libvirt.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
-        ./modules/services/samba.nix
+        ./modules/services/sambaclientclient.nix
         ./modules/services/virt-manager.nix
         ./modules/services/wireguard.nix
         ./modules/services/zsh.nix
@@ -475,6 +475,31 @@ nixosConfigurations = {
         ./modules/users/ronald.nix
         ./hosts/strickland/configuration.nix
         ./hosts/strickland/disk.nix
+        home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+        agenix.nixosModules.default
+        ];
+      };
+
+  doc =
+    nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./modules/core/systemdboot.nix
+        ./modules/core/common.nix
+        ./modules/core/enable-flakes.nix
+        ./modules/core/sudo.nix
+        ./modules/core/timezone.nix
+        ./modules/core/unfree.nix
+        ./modules/hardware/zfs.nix
+        ./modules/services/sambaserver.nix
+        ./modules/services/ssh.nix
+        ./modules/services/zsh.nix
+        ./modules/users/ronald.nix
+        ./modules/users/debbie.nix
+        ./hosts/doc/configuration.nix
+        ./hosts/doc/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         agenix.nixosModules.default
