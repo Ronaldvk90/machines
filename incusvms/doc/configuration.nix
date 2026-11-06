@@ -9,7 +9,6 @@
   networking.hostId = "e10601fd";
   networking.domain = "bttf.lan";
   networking.networkmanager.enable = true;
-  networking.useDHCP = true;
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   environment.systemPackages = with pkgs; [
