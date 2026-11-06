@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, modulesPath, ... }:
 
 {
   imports = [
     # Include the default incus configuration.
     "${modulesPath}/virtualisation/incus-virtual-machine.nix"
   ];
-  
+
   networking.hostId = "e10601fd";
   networking.domain = "bttf.lan";
   networking.networkmanager.enable = true;
