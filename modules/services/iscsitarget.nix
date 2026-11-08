@@ -9,5 +9,4 @@
     #    # hier komt de target-configuratie
     #  };
     };
-  };
 }
