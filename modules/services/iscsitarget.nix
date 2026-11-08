@@ -28,7 +28,6 @@
 
               luns = [
                 {
-                  #authentication = 0;
                   index = 0;
                   storage_object = "/backstores/fileio/jellyfin_database";
                 }
