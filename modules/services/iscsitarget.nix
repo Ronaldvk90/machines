@@ -33,8 +33,10 @@
 
               portals = [
                 {
-                  ip_address = "10.10.10.100";
-                  ip_port = 3260;
+                  ip_address = "[::0]";
+                  iser = false;
+                  offload = false;
+                  port = 3260;
                 }
               ];
             }
