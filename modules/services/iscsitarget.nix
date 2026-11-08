@@ -41,7 +41,7 @@
               
               node_acls = [
                 {
-                  authentication = -1;
+                  authentication = 0; #whas -1
                   node_wwn = "iqn.2026-11.lan.bttf:jellyfindatabase";
                   mapped_luns = [
                     {
