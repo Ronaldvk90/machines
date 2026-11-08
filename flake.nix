@@ -519,6 +519,7 @@ nixosConfigurations = {
 
       modules = [
         ./modules/services/incus-agent.nix
+        ./modules/services/iscsitarget.nix
         ./incusvms/doc/configuration.nix
         ./incusvms/doc/incus.nix
         ./modules/core/systemdboot.nix
