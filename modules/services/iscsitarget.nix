@@ -30,12 +30,17 @@
                   storage_object = "/backstores/fileio/jellyfin_database";
                 }
               ];
+
+              portals = [
+                {
+                  ip_address = "10.10.10.100";
+                  ip_port = 3260;
+                }
+              ];
             }
           ];
-        }
-      ];
+        };
     };
-  };
 
   networking.firewall = {
     allowedTCPPorts = [ 3260 ];
