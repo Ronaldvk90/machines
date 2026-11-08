@@ -52,11 +52,11 @@
                   ];
                 }
               ];
-              #parameters = [
-              #  {
-              #    AuthMethod = "CHAP,None";
-              #  }
-              #];
+            }
+          ];
+          parameters = [
+            {
+              AuthMethod = "CHAP,None";
             }
           ];
         }
