@@ -49,4 +49,3 @@
     allowedTCPPorts = [ 3260 ];
   };
 }
-```
