@@ -11,7 +11,7 @@
    
    services.openiscsi = {
     enable = true;
-    name = "jellyfindatabase";
+    name = "iqn.2026-11.lan.bttf:jellyfindatabase";
     discoverPortal = "10.10.10.3";
   };
  
