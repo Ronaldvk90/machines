@@ -3,12 +3,8 @@
 {
   services.target = {
     enable = true;
-
-    #targets = {
-    #  "iqn.2026-11.lan.bttf:doc" = {
-    #    # hier komt de target-configuratie
-    #  };
     };
+
   services.target.config = {
     storage_objects = [
       {
@@ -22,7 +18,10 @@
     {
       fabric = "iscsi";
       wwn = "iqn.2026-11.lan.bttf:doc";
-
+      tpgs = [
+        {
+        }
+      ];
     }
   ];
 };
