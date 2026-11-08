@@ -3,16 +3,16 @@
 {
   services.target = {
     enable = true;
+    config = {
+      storage_objects = [
+        {
+          name = "jellyfin_database";
+          plugin = "fileio";
+          dev = "/home/ronald/test.img";
+        }
+      ];
     };
-
-  services.target.config = {
-    storage_objects = [
-      {
-        name = "jellyfin_database";
-        plugin = "fileio";
-        dev = "/home/ronald/test.img";
-    }
-  ];
+  };
 
   targets = [
     {
