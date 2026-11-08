@@ -52,7 +52,7 @@
                   ];
                 }
               ];
-              paramaters = [
+              parameters = [
                 {
                   AuthMethod = "CHAP,None";
                 }
