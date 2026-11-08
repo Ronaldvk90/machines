@@ -91,7 +91,7 @@ let
         ./modules/core/unfree.nix
         #./modules/services/nfsclient.nix
         ./modules/services/jellyfin.nix
-        ./modules/services/sambaclientclient.nix
+        ./modules/services/sambaclient.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
