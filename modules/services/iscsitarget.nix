@@ -12,7 +12,6 @@
           plugin = "fileio";
           size = 15000000000;
           write_back = true;
-          #wwn = "96d921a9-e443-4a28-a492-80c1d564662b";
         }
       ];
 
@@ -44,6 +43,18 @@
                 {
                   authentication = -1;
                   node_wwn = "iqn.2026-11.lan.bttf:jellyfindatabase";
+                  mapped_luns = [
+                    {
+                      index = 0;
+                      tpg_lun = 0;
+                      write_protect = false;
+                    }
+                  ];
+                }
+              ];
+              paramaters = [
+                {
+                  AuthMethod = "CHAP,None";
                 }
               ];
             }
