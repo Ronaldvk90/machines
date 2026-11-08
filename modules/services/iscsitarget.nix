@@ -39,6 +39,13 @@
                   port = 3260;
                 }
               ];
+              
+              node_acls = [
+                {
+                  authentication = -1;
+                  node_wwn = "iqn.2026-11.lan.bttf:jellyfindatabase";
+                }
+              ];
             }
           ];
         }
