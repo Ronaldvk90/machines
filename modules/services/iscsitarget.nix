@@ -11,18 +11,18 @@
           dev = "/home/ronald/test.img";
         }
       ];
-    };
 
-  targets = [
-    {
-      fabric = "iscsi";
-      wwn = "iqn.2026-11.lan.bttf:doc";
-      tpgs = [
+      targets = [
         {
+          fabric = "iscsi";
+          wwn = "iqn.2026-11.lan.bttf:doc";
+          tpgs = [
+            {
+            }
+          ];
         }
       ];
-    }
-  ];
+    };
   };
 
   networking.firewall = {
