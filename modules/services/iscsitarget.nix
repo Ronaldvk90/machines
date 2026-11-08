@@ -1,3 +1,4 @@
+```nix
 { config, pkgs, lib, ... }:
 
 {
@@ -39,10 +40,13 @@
               ];
             }
           ];
-        };
+        }
+      ];
     };
+  };
 
   networking.firewall = {
     allowedTCPPorts = [ 3260 ];
   };
 }
+```
