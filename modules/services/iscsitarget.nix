@@ -3,6 +3,7 @@
 {
   services.target = {
     enable = true;
+
     config = {
       storage_objects = [
         {
@@ -19,13 +20,15 @@
         {
           fabric = "iscsi";
           wwn = "iqn.2026-11.lan.bttf:doc";
+
           tpgs = [
             {
-              luns
+              luns = [
                 {
                   index = 0;
                   storage_object = "/backstores/fileio/jellyfin_database";
-                };
+                }
+              ];
             }
           ];
         }
