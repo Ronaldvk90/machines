@@ -6,9 +6,12 @@
     config = {
       storage_objects = [
         {
+          dev = "/home/ronald/test.img";
           name = "jellyfin_database";
           plugin = "fileio";
-          dev = "/home/ronald/test.img";
+          size = 10737418240;
+          write_back = true;
+          wwn = "96d921a9-e443-4a28-a492-80c1d564662b";
         }
       ];
 
