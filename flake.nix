@@ -348,7 +348,7 @@ nixosConfigurations = {
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
         ./modules/services/sabnzbd.nix
-        ./modules/services/sambaclientclient.nix
+        ./modules/services/sambaclient.nix
         ./modules/services/virt-manager.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -386,7 +386,7 @@ nixosConfigurations = {
         #./modules/services/nfsclient.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
-        ./modules/services/sambaclientclient.nix
+        ./modules/services/sambaclient.nix
         ./modules/services/virt-manager.nix
         ./modules/services/wireguard.nix
         ./modules/services/zsh.nix
