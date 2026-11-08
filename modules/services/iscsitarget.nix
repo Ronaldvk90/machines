@@ -12,7 +12,7 @@
           plugin = "fileio";
           size = 10737418240;
           write_back = true;
-          wwn = "96d921a9-e443-4a28-a492-80c1d564662b";
+          #wwn = "96d921a9-e443-4a28-a492-80c1d564662b";
         }
       ];
 
