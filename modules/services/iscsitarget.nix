@@ -9,4 +9,8 @@
     #    # hier komt de target-configuratie
     #  };
     };
+
+  networking.firewall = {
+    allowedTCPPorts = [ 3260 ];
+  };
 }
