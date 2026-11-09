@@ -529,6 +529,7 @@ nixosConfigurations = {
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         #./modules/hardware/zfs.nix
+        ./modules/services/cockpit.nix
         ./modules/services/nfsserver.nix
         #./modules/services/sambaserver.nix
         ./modules/services/ssh.nix
