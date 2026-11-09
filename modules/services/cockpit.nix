@@ -11,7 +11,7 @@
     ];
     settings = {
       WebService = {
-        Origins = lib.mkForce "http://localhost:9090 https://localhost:9090 https://10.10.10.4:9090";
+        Origins = lib.mkForce "http://localhost:9090 https://localhost:9090";
       };
     };
   };
