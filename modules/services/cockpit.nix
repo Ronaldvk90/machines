@@ -7,7 +7,7 @@
     openFirewall = true;
     plugins = [
       pkgs.cockpit-files
-      pkgs.cockpit-zfs
+      #pkgs.cockpit-zfs
     ];
     settings = {
       WebService = {
