@@ -28,6 +28,13 @@
   };
 ##################################################
 
+############# mount the right home dir. ##########
+  fileSystems."/home" = {
+    device = "storage/home";
+    fsType = "zfs";
+  };
+##################################################
+
   networking.enableIPv6 = false;
   networking.firewall.enable = true;
 
