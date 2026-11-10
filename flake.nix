@@ -499,7 +499,7 @@ nixosConfigurations = {
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
         ./modules/hardware/zfs.nix
-        #./modules/services/iscsitarget.nix
+        ./modules/services/iscsitarget.nix
         ./modules/services/nfsserver.nix
         ./modules/services/sambaserver.nix
         ./modules/services/ssh.nix
@@ -510,35 +510,6 @@ nixosConfigurations = {
         ./hosts/doc/disk.nix
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
-        agenix.nixosModules.default
-        ];
-      };
-
-    doc-incus =
-    nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-
-      modules = [
-        ./modules/services/incus-agent.nix
-        ./modules/services/iscsitarget.nix
-        ./incusvms/doc/configuration.nix
-        ./incusvms/doc/incus.nix
-        ./modules/core/systemdboot.nix
-        ./modules/core/common.nix
-        ./modules/core/enable-flakes.nix
-        ./modules/core/sudo.nix
-        ./modules/core/timezone.nix
-        ./modules/core/unfree.nix
-        ./modules/hardware/zfs.nix
-        #./modules/services/cockpit.nix
-        ./modules/services/nfsserver.nix
-        #./modules/services/sambaserver.nix
-        ./modules/services/ssh.nix
-        ./modules/services/zsh.nix
-        ./modules/users/ronald.nix
-        ./modules/users/debbie.nix
-        home-manager.nixosModules.home-manager
-        #disko.nixosModules.disko
         agenix.nixosModules.default
         ];
       };
