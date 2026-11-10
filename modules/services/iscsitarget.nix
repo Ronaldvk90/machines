@@ -28,7 +28,7 @@
               luns = [
                 {
                   index = 0;
-                  storage_object = "/backstores/fileio/jellyfin_database";
+                  storage_object = "/backstores/block/jellyfin_database";
                 }
               ];
 
