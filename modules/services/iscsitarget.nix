@@ -7,10 +7,9 @@
     config = {
       storage_objects = [
         {
-          dev = "/storage/jellyfin";
+          dev = "/dev/zvol/storage/jellyfin_database";
           name = "jellyfin_database";
-          plugin = "fileio";
-          size = 15000000000;
+          plugin = "block";
           write_back = true;
         }
       ];
