@@ -20,9 +20,9 @@
     after = [ "network.target" "iscsid.service" ];
     wants = [ "iscsid.service" ];
     serviceConfig = {
-      ExecStartPre = "${pkgs.openiscsi}/bin/iscsiadm -m discovery -t sendtargets -p 10.10.10.3";
-      ExecStart = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.1994-11.com.netgear:doc:d161c130:nas -p 10.10.10.3 --login";
-      ExecStop = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.1994-11.com.netgear:doc:d161c130:nas -p 10.10.10.3 --logout";
+      ExecStartPre = "${pkgs.openiscsi}/bin/iscsiadm -m discovery -t sendtargets -p 10.10.10.112";
+      ExecStart = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.2026-11.lan.bttf:doc  -p 10.10.10.112 --login";
+      ExecStop = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.2026-11.lan.bttf:doc  -p 10.10.10.112 --logout";
       Restart = "on-failure";
       RemainAfterExit = true;
     };
@@ -30,7 +30,7 @@
   };
 
   fileSystems."/mnt/jellyfin" = {
-    device = "/dev/disk/by-uuid/f1b5e69f-74ef-428d-9d03-8157834e642d";
+    device = "/dev/disk/by-uuid/2ba9661a-2576-4c96-aaab-569471e66135";
     fsType = "ext4";
     options = [ "_netdev" "nofail" ];
   };
