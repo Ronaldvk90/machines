@@ -383,10 +383,10 @@ nixosConfigurations = {
         ./modules/services/docker.nix
         ./modules/services/ifuse.nix
         ./modules/services/libvirt.nix
-        #./modules/services/nfsclient.nix
+        ./modules/services/nfsclient.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
-        ./modules/services/sambaclient.nix
+        #./modules/services/sambaclient.nix
         ./modules/services/virt-manager.nix
         ./modules/services/wireguard.nix
         ./modules/services/zsh.nix
