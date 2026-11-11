@@ -28,6 +28,16 @@
   };
 ##################################################
 
+############# smbpasswd deployment ###############
+  age.secrets.samba-passdb = {
+    file = ../../secrets/samba-passdb.tdb.age;
+    path = "/var/lib/samba/private/passdb.tdb";
+    owner = "root";
+    group = "root";
+    mode = "0600";
+  };
+##################################################
+
 ############# mount the right home dir ###########
   fileSystems."/home" = {
     device = "storage/home";
