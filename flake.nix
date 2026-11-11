@@ -89,9 +89,9 @@ let
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        #./modules/services/nfsclient.nix
+        ./modules/services/nfsclient.nix
         ./modules/services/jellyfin.nix
-        ./modules/services/sambaclient.nix
+        #./modules/services/sambaclient.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -151,11 +151,11 @@ let
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        #./modules/services/nfsclient.nix
+        ./modules/services/nfsclient.nix
         ./modules/services/ssh.nix
         ./modules/services/transmission.nix
         ./modules/services/zsh.nix
-        ./modules/services/sambaclient.nix
+        #./modules/services/sambaclient.nix
         ./modules/users/ronald.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default        
@@ -344,11 +344,10 @@ nixosConfigurations = {
         ./modules/services/avahi.nix
         ./modules/services/docker.nix
         ./modules/services/libvirt.nix
-        #./modules/services/nfsclient.nix
+        ./modules/services/nfsclient.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
         ./modules/services/sabnzbd.nix
-        ./modules/services/sambaclient.nix
         ./modules/services/virt-manager.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -386,7 +385,6 @@ nixosConfigurations = {
         ./modules/services/nfsclient.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
-        #./modules/services/sambaclient.nix
         ./modules/services/virt-manager.nix
         ./modules/services/wireguard.nix
         ./modules/services/zsh.nix
@@ -418,7 +416,6 @@ nixosConfigurations = {
         ./modules/display-manager/greetd.nix        
         ./modules/services/1password.nix 
         ./modules/services/docker.nix
-        #./modules/services/nfsclient.nix
         ./modules/services/libvirt.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
@@ -449,7 +446,6 @@ nixosConfigurations = {
         ./modules/hardware/bluetooth.nix
         ./modules/services/1password.nix
         ./modules/services/avahi.nix
-        #./modules/services/nfsclient.nix
         ./modules/services/onedrive.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
