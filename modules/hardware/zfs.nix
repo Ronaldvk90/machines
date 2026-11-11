@@ -12,7 +12,7 @@
   services.zfs.trim.enable = true;
   
   age.secrets.msmtp = {
-    file = "../../secrets/msmtp.age";
+    file = ../../secrets/msmtp.age;
   };
 
   # for zed enableMail, enable sendmailSetuidWrapper
