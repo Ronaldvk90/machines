@@ -20,9 +20,9 @@
     after = [ "network.target" "iscsid.service" ];
     wants = [ "iscsid.service" ];
     serviceConfig = {
-      ExecStartPre = "${pkgs.openiscsi}/bin/iscsiadm -m discovery -t sendtargets -p 10.10.10.112";
-      ExecStart = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.2026-11.lan.bttf:doc  -p 10.10.10.112 --login";
-      ExecStop = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.2026-11.lan.bttf:doc  -p 10.10.10.112 --logout";
+      ExecStartPre = "${pkgs.openiscsi}/bin/iscsiadm -m discovery -t sendtargets -p 10.10.10.3";
+      ExecStart = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.2026-11.lan.bttf:doc  -p 10.10.10.3 --login";
+      ExecStop = "${pkgs.openiscsi}/bin/iscsiadm -m node -T iqn.2026-11.lan.bttf:doc  -p 10.10.10.3 --logout";
       Restart = "on-failure";
       RemainAfterExit = true;
     };
