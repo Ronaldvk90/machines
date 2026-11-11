@@ -55,7 +55,7 @@ services.udev.extraRules =
     ''SUBSYSTEM=="block"''
     ''KERNEL=="sd[a-z]"''
     ''ATTR{queue/rotational}=="1"''
-    ''RUN+="${pkgs.hdparm}/bin/hdparm -S 200 /dev/%k"''
+    ''RUN+="${pkgs.hdparm}/bin/hdparm -B 90 -S 41 /dev/%k"''
   ])]);
 ##################################################
 
