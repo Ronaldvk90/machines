@@ -89,9 +89,8 @@ let
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/services/nfsclient.nix
         ./modules/services/jellyfin.nix
-        #./modules/services/sambaclient.nix
+        ./modules/services/sambaclient.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
@@ -151,11 +150,11 @@ let
         ./modules/core/sudo.nix
         ./modules/core/timezone.nix
         ./modules/core/unfree.nix
-        ./modules/services/nfsclient.nix
+        #./modules/services/nfsclient.nix
         ./modules/services/ssh.nix
         ./modules/services/transmission.nix
         ./modules/services/zsh.nix
-        #./modules/services/sambaclient.nix
+        ./modules/services/sambaclient.nix
         ./modules/users/ronald.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default        
