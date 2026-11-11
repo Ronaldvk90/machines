@@ -28,11 +28,25 @@
   };
 ##################################################
 
-############# mount the right home dir. ##########
+############# mount the right home dir ###########
   fileSystems."/home" = {
     device = "storage/home";
     fsType = "zfs";
   };
+##################################################
+
+############# Spindown disks afer 15 min #########
+services.udev.extraRules = 
+  let
+    mkRule = as: lib.concatStringsSep ", " as;
+    mkRules = rs: lib.concatStringsSep "\n" rs;
+  in mkRules ([( mkRule [
+    ''ACTION=="add|change"''
+    ''SUBSYSTEM=="block"''
+    ''KERNEL=="sd[a-z]"''
+    ''ATTR{queue/rotational}=="1"''
+    ''RUN+="${pkgs.hdparm}/bin/hdparm -S 200 /dev/%k"''
+  ])]);
 ##################################################
 
   networking.enableIPv6 = false;
