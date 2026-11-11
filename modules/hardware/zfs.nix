@@ -37,4 +37,13 @@
       };
     };
   };
+
+    services.zfs.zed = {
+    enableMail = true;
+    settings = {
+      ZED_EMAIL_ADDR = [ "root" ];
+      # send notification if scrub succeeds
+      ZED_NOTIFY_VERBOSE = true;
+    };
+  };
 }
