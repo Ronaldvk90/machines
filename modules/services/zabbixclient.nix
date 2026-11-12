@@ -3,6 +3,8 @@
 {
   services.zabbixAgent = {
     enable = true;
-    server = "IP_VAN_JE_ZABBIX_SERVER";
+    server = "10.10.10.8";
   };
+
+  networking.firewall.allowedTCPPorts = [ 10050 10051 ];
 }
