@@ -9,7 +9,8 @@
   ];
   
   boot.isContainer = true;
-
+  nix.settings.sandbox = false;
+  
   networking = {
     dhcpcd.enable = false;
     useDHCP = false;
