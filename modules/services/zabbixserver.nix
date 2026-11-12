@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
+  services.phpfpm.pools.zabbix.phpPackage = pkgs.php83;
   services.zabbixServer = {
     enable = true;
   };
