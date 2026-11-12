@@ -333,7 +333,7 @@ nixosConfigurations = {
         ./modules/services/zabbixserver.nix
         ./modules/services/zsh.nix
         ./modules/users/ronald.nix
-        ./hosts/marty/configuration.nix
+        ./incusct/zabbix/configuration.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default        
         ];
