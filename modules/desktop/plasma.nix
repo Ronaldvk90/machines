@@ -30,6 +30,7 @@
   environment.systemPackages = with pkgs; [
     kdePackages.kate
     kdePackages.konqueror
+    kdePackages.kio-extras
     jellyfin-desktop
     nfs-utils
   ];
