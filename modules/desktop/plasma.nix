@@ -31,5 +31,6 @@
     kdePackages.kate
     kdePackages.konqueror
     jellyfin-desktop
+    nfs-utils
   ];
 }
