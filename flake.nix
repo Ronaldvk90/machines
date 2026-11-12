@@ -520,6 +520,7 @@ nixosConfigurations = {
         ./modules/services/sambaserver.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
+        ./modules/services/zabbixclient.nix
         ./modules/users/ronald.nix
         ./modules/users/debbie.nix
         ./hosts/doc/configuration.nix
