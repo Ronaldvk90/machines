@@ -28,7 +28,10 @@
         Gateway = "10.10.10.1";
         DNS = [ "10.10.10.1" ];
       };
-      linkConfig.RequiredForOnline = "routable";
+      linkConfig = {
+        MACAddress = "10:66:6a:5d:9e:df";
+        RequiredForOnline = "routable";
+      };
     };
   };
 
