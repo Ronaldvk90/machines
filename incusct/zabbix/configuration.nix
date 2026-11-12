@@ -23,13 +23,26 @@
     enable = true;
     networks."50-eth0" = {
       matchConfig.Name = "eth0";
+      address = [ "10.10.10.8/24" ];
       networkConfig = {
-        DHCP = "ipv4";
-        IPv6AcceptRA = true;
+        Gateway = "10.10.10.1";
+        DNS = [ "10.10.10.1" ];
       };
       linkConfig.RequiredForOnline = "routable";
     };
   };
+
+  # systemd.network = {
+  #   enable = true;
+  #   networks."50-eth0" = {
+  #     matchConfig.Name = "eth0";
+  #     networkConfig = {
+  #       DHCP = "ipv4";
+  #       IPv6AcceptRA = true;
+  #     };
+  #     linkConfig.RequiredForOnline = "routable";
+  #   };
+  # };
   
   networking.firewall.enable = true;
   system.stateVersion = "26.05"; # Did you read the comment?
