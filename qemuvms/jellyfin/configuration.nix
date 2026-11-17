@@ -3,11 +3,30 @@
 {
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
-  networking.hostName = "jellyfin";
-  networking.domain = "bttf.lan";
-  networking.networkmanager.enable = true;
-  networking.dhcpcd.enable = false;
-  networking.resolvconf.package = pkgs.openresolv;
+  networking = {
+    hostName = "jellyfin";
+    domain = "bttf.lan";
+    dhcpcd.enable = false;
+    useDHCP = false;
+    useHostResolvConf = false;
+  };
+
+  systemd.network = {
+    enable = true;
+    networks."50-enp5s0" = {
+      matchConfig.Name = "enp5s0";
+      address = [ "10.10.10.17/24" ];
+      networkConfig = {
+        Gateway = "10.10.10.1";
+        DNS = [ "10.10.10.1" ];
+      };
+      
+      linkConfig = {
+        RequiredForOnline = "routable";
+        MACAddress = "10:66:6a:ca:20:04";
+      };
+    };
+  };
 
 ############### iscsi ######################
    boot.kernelModules = [ "iscsi_tcp" ];

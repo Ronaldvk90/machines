@@ -51,6 +51,8 @@
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   networking = {
+    enableIPv6 = false;
+    firewall.enable = false;
     dhcpcd.enable = false;
     useDHCP = false;
     useHostResolvConf = false;
@@ -65,10 +67,13 @@
         Gateway = "10.10.10.1";
         DNS = [ "10.10.10.1" ];
       };
-      linkConfig.RequiredForOnline = "routable";
+      
+      linkConfig = {
+        RequiredForOnline = "routable";
+        MACAddress = "10:66:6a:ca:20:04";
+      };
     };
   };
-
-  networking.enableIPv6 = false;
+  
   system.stateVersion = "26.05";
 }
