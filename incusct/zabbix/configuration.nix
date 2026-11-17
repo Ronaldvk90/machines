@@ -17,6 +17,9 @@
     useHostResolvConf = false;
   };
 
+  packages.x86_64-linux.zabbix-zfs =
+    pkgs.callPackage ../../packages/zabbix-zfs.nix {};
+
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   systemd.network = {
