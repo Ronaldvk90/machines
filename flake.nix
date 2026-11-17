@@ -53,6 +53,7 @@ let
         ./modules/services/ssh.nix
         ./modules/services/xrdp.nix
         ./modules/services/zsh.nix
+        ./modules/services/zabbixclient.nix
         ./modules/users/ronald.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default
@@ -93,6 +94,7 @@ let
         ./modules/services/sambaclient.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
+        ./modules/services/zabbixclient.nix
         ./modules/users/ronald.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default
@@ -113,6 +115,7 @@ let
         ./modules/services/nextcloud.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
+        ./modules/services/zabbixclient.nix
         ./modules/users/ronald.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default
@@ -133,6 +136,7 @@ let
         ./modules/services/podman.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
+        ./modules/services/zabbixclient.nix
         ./modules/users/ronald.nix
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default        
@@ -154,6 +158,7 @@ let
         ./modules/services/ssh.nix
         ./modules/services/transmission.nix
         ./modules/services/zsh.nix
+        ./modules/services/zabbixclient.nix
         ./modules/services/sambaclient.nix
         ./modules/users/ronald.nix
         home-manager.nixosModules.home-manager
@@ -494,6 +499,7 @@ nixosConfigurations = {
         ./modules/services/incus.nix
         ./modules/services/ssh.nix
         ./modules/services/zsh.nix
+        ./modules/services/zabbixclient.nix
         ./modules/users/ronald.nix
         ./hosts/strickland/configuration.nix
         ./hosts/strickland/disk.nix
