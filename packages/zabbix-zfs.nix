@@ -15,6 +15,10 @@ stdenv.mkDerivation {
     mkdir -p $out/bin
 
     cp zfs.py $out/bin/zabbix-zfs
-    cp zfs.conf $out/zfs.conf
+
+    substitute zfs.conf $out/zfs.conf \
+      --replace-fail \
+        "/etc/zabbix/scripts/zfs.py" \
+        "/run/current-system/sw/bin/zabbix-zfs"
   '';
 }
