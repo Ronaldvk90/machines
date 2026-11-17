@@ -5,9 +5,9 @@
     enable = true;
     server = "10.10.10.8";
     openFirewall = true;
-    settings = {
-      Hostname = "doc";
-      DebugLevel = 4;
-    };
+    
+    extraConfig = ''
+      AllowKey=system.run[reboot,*]
+    '';
   };
 }
