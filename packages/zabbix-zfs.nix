@@ -38,6 +38,7 @@
 python3Packages.buildPythonApplication {
   pname = "zabbix-zfs";
   version = "unstable-2026-11-17";
+  format = "other";
 
   src = fetchFromGitHub {
     owner = "blind-oracle";
