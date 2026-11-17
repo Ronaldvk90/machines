@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-{  
+{
   networking.hostName = "strickland";
   networking.hostId = "e46ea564";
   networking.domain = "bttf.lan";
@@ -21,6 +21,7 @@
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   environment.systemPackages = with pkgs; [
+  (pkgs.callPackage ../../packages/zabbix-zfs.nix {})
   vim
   killall
   htop

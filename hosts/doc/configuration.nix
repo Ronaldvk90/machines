@@ -8,6 +8,7 @@
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   environment.systemPackages = with pkgs; [
+  (pkgs.callPackage ../../packages/zabbix-zfs.nix {})
   vim
   killall
   htop

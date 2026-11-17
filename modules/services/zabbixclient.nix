@@ -29,6 +29,7 @@ in
 
     settings = {
       AllowKey = "system.run[sudo /run/current-system/sw/bin/zabbix-reboot,*]";
+      UserParameter = "zfs,/run/current-system/sw/bin/zabbix-zfs";
     };
   };
 }
