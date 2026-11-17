@@ -7,7 +7,7 @@
     openFirewall = true;
     
     settings = {
-      AllowKey = "system.run[${zabbix-reboot}/bin/zabbix-reboot,*]";
+      AllowKey = "system.run[/run/current-system/sw/bin/zabbix-reboot,*]";
     };
   };
 
