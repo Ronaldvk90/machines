@@ -16,6 +16,16 @@ stdenv.mkDerivation {
 
     install -m 755 zfs.py $out/bin/zabbix-zfs
 
+    substituteInPlace $out/bin/zabbix-zfs \
+      --replace-fail \
+        "/sbin/zpool" \
+        "/run/current-system/sw/bin/zpool"
+
+    substituteInPlace $out/bin/zabbix-zfs \
+      --replace-fail \
+        "/sbin/zfs" \
+        "/run/current-system/sw/bin/zfs"
+
     substitute zfs.conf $out/zfs.conf \
       --replace-fail \
         "/etc/zabbix/scripts/zfs.py" \
