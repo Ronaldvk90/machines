@@ -14,7 +14,7 @@ stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out/bin
 
-    cp zfs.py $out/bin/zabbix-zfs
+    install -m 755 zfs.py $out/bin/zabbix-zfs
 
     substitute zfs.conf $out/zfs.conf \
       --replace-fail \
