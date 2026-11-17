@@ -18,6 +18,34 @@
   networking.networkmanager.enable = true;
   networking.dhcpcd.enable = false;
   networking.resolvconf.package = pkgs.openresolv;
+  networking.firewall.enable = false;
+
+# networking = {
+#   enableIPv6 = false;
+#   firewall.enable = false;
+#   hostName = "flserver";
+#   domain = "bttf.lan";
+#   dhcpcd.enable = false;
+#   useDHCP = false;
+#   useHostResolvConf = false;
+# };
+
+# systemd.network = {
+#   enable = true;
+#   networks."50-enp5s0" = {
+#     matchConfig.Name = "enp5s0";
+#     address = [ "10.10.10.xx/24" ];
+#     networkConfig = {
+#       Gateway = "10.10.10.1";
+#       DNS = [ "10.10.10.1" ];
+#     };
+      
+#     linkConfig = {
+#       RequiredForOnline = "routable";
+#       MACAddress = "xx:xx:xx:xx:xx:xx";
+#     };
+#   };
+# };
 
 ############# SSH host key deployment ############
   age.secrets."ssh_host_ed25519_key" = {
@@ -35,6 +63,5 @@
   vim
   ];
 
-  networking.firewall.enable = false;
   system.stateVersion = "26.05";
 }
