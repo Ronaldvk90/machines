@@ -3,8 +3,7 @@
 {
   services.zabbixAgent = {
     enable = true;
-    ServerActive = "10.10.10.8";
+    serverActive = "10.10.10.8";
+    openFirewall = true;
   };
-
-  networking.firewall.allowedTCPPorts = [ 10050 10051 ];
 }
