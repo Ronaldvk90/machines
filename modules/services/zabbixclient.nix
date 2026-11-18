@@ -28,6 +28,7 @@ in
   ];
 
   services.zabbixAgent = {
+    package = pkgs.zabbix74.agent2;
     enable = true;
     server = "10.10.10.8";
     openFirewall = true;
