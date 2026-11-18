@@ -1,7 +1,11 @@
 { config, pkgs, lib, ... }:
 
 {
-  #services.phpfpm.pools.zabbix.phpPackage = pkgs.php83;
+  
+  # security.acme = {
+  #   acceptTerms = true;
+  #   defaults.email = "ronaldvk90@bttf.lan";
+  # };
 
   services.zabbixServer = {
     package = pkgs.zabbix74.server;
@@ -13,7 +17,12 @@
     enable = true;
     virtualHost = {
       hostName = "zabbix.bttf.lan";
+      frontend = "nginx";
       adminAddr = "webmaster@bttf.lan";
+      nginx.virtualHost = {
+        forceSSL = true; #
+        enableACME = true; #
+      };
     };
   };
 
