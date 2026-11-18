@@ -1,13 +1,6 @@
 { config, pkgs, lib, ... }:
 
-{
-  services.nginx.virtualHosts."zabbix.bttf.lan" = {
-    forceSSL = true;
-
-    sslCertificate = config.age.secrets."zabbix_bttf_lan_crt".path;
-    sslCertificateKey = config.age.secrets."zabbix_bttf_lan_key".path;
-  };
-  
+{  
   services.zabbixServer = {
     package = pkgs.zabbix74.server;
     enable = true;
@@ -21,6 +14,12 @@
     virtualHost = {
       hostName = "zabbix.bttf.lan";
       adminAddr = "webmaster@bttf.lan";
+
+      nginx.virtualHost = {
+        forceSSL = true;
+        sslCertificate = config.age.secrets."zabbix_bttf_lan_crt".path;
+        sslCertificateKey = config.age.secrets."zabbix_bttf_lan_key".path;
+      };
     };
   };
 
