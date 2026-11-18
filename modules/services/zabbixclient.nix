@@ -33,7 +33,6 @@ in
     openFirewall = true;
 
     settings = {
-      Plugins.Smart.Path = "${pkgs.smartmontools}/bin/smartctl";
       AllowKey = "system.run[sudo /run/current-system/sw/bin/zabbix-reboot,*]";
       UserParameter = "zfs,/run/current-system/sw/bin/zabbix-zfs";
     };
