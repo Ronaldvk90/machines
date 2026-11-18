@@ -32,9 +32,9 @@ in
     enable = true;
     server = "10.10.10.8";
     openFirewall = true;
-    Plugins.Smart.Path = "${pkgs.smartmontools}/bin/smartctl";
 
     settings = {
+      "Plugins.Smart.Path" = "${pkgs.smartmontools}/bin/smartctl";
       AllowKey = "system.run[sudo /run/current-system/sw/bin/zabbix-reboot,*]";
       UserParameter = "zfs,/run/current-system/sw/bin/zabbix-zfs";
     };
