@@ -15,7 +15,7 @@
     };
   };
 
-  services.zabbix.agent2 = {
+  services.zabbix74.agent = {
     enable = true;
     server = "127.0.0.1";
   };
