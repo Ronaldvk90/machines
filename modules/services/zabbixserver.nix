@@ -9,7 +9,7 @@
   };
 
   services.zabbix.Web = {
-    packages = pkgs.zabbix74.web;
+    package = pkgs.zabbix74.web;
     enable = true;
     virtualHost = {
       hostName = "zabbix.bttf.lan";
