@@ -3,11 +3,13 @@
 {
   #services.phpfpm.pools.zabbix.phpPackage = pkgs.php83;
 
-  services.zabbix74.server = {
+  services.zabbix.server = {
+    package = pkgs.zabbix74.server;
     enable = true;
   };
 
-  services.zabbix74.Web = {
+  services.zabbix.Web = {
+    packages = pkgs.zabbix74.web;
     enable = true;
     virtualHost = {
       hostName = "zabbix.bttf.lan";
@@ -15,7 +17,8 @@
     };
   };
 
-  services.zabbix74.agent = {
+  services.zabbix.agent = {
+    package = pkgs.zabbix74.agent2;
     enable = true;
     server = "127.0.0.1";
   };
