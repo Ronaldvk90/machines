@@ -8,7 +8,7 @@
     enable = true;
   };
 
-  services.zabbix.Web = {
+  services.zabbix.web = {
     package = pkgs.zabbix74.web;
     enable = true;
     virtualHost = {
