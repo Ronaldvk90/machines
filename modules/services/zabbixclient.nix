@@ -18,14 +18,21 @@ in
           command = "/run/current-system/sw/bin/zabbix-reboot";
           options = [ "NOPASSWD" ];
         }
+
+        {
+          command = "${pkgs.smartmontools}/bin/smartctl";
+          options = [ "NOPASSWD" ];
+        }
       ];
     }
   ];
 
   services.zabbixAgent = {
+    package = pkgs.zabbix-agent2;
     enable = true;
     server = "10.10.10.8";
     openFirewall = true;
+    Plugins.Smart.Path = "${pkgs.smartmontools}/bin/smartctl";
 
     settings = {
       AllowKey = "system.run[sudo /run/current-system/sw/bin/zabbix-reboot,*]";
