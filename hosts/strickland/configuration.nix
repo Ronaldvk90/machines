@@ -22,6 +22,7 @@
 
   environment.systemPackages = with pkgs; [
   (pkgs.callPackage ../../packages/zabbix-zfs.nix {})
+  storcli
   vim
   killall
   htop
