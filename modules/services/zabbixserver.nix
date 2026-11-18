@@ -1,12 +1,13 @@
 { config, pkgs, lib, ... }:
 
 {
-  services.phpfpm.pools.zabbix.phpPackage = pkgs.php83;
-  services.zabbixServer = {
+  #services.phpfpm.pools.zabbix.phpPackage = pkgs.php83;
+
+  services.zabbix74.server = {
     enable = true;
   };
 
-  services.zabbixWeb = {
+  services.zabbix74.Web = {
     enable = true;
     virtualHost = {
       hostName = "zabbix.bttf.lan";
@@ -14,7 +15,7 @@
     };
   };
 
-  services.zabbixAgent = {
+  services.zabbix.agent2 = {
     enable = true;
     server = "127.0.0.1";
   };
