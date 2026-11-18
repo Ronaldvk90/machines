@@ -14,10 +14,10 @@
 
   services.zabbixWeb = {
     package = pkgs.zabbix74.web;
+    frontend = "nginx";
     enable = true;
     virtualHost = {
       hostName = "zabbix.bttf.lan";
-      frontend = "nginx";
       adminAddr = "webmaster@bttf.lan";
       nginx.virtualHost = {
         forceSSL = true; #
