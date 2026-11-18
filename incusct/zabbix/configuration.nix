@@ -34,10 +34,14 @@
 ############# SSL cert for Nginx deployment ######
   age.secrets."zabbix_bttf_lan_key" = {
     file = ./zabbix_bttf_lan_key.age;
+    owner = "nginx";
+    group = "nginx";
   };
 
   age.secrets."zabbix_bttf_lan_crt" = {
     file = ./zabbix_bttf_lan_crt.age;
+    owner = "nginx";
+    group = "nginx";
   };
 ##################################################
 

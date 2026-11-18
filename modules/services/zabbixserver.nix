@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  
   services.nginx.virtualHosts."zabbix.bttf.lan" = {
     forceSSL = true;
 
@@ -18,7 +17,7 @@
     package = pkgs.zabbix74.web;
     frontend = "nginx";
     enable = true;
-    
+
     virtualHost = {
       hostName = "zabbix.bttf.lan";
       adminAddr = "webmaster@bttf.lan";
