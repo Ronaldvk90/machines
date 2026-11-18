@@ -19,6 +19,28 @@
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
+############# SSH host key deployment ############
+  age.secrets."ssh_host_ed25519_key" = {
+    file = ./ssh_host_ed25519_key.age;
+    path = "/etc/ssh/ssh_host_ed25519_key";
+  };
+
+  age.secrets."ssh_host_rsa_key" = {
+    file = ./ssh_host_rsa_key.age;
+    path = "/etc/ssh/ssh_host_rsa_key";
+  };
+##################################################
+
+############# SSL cert for Nginx deployment ######
+  age.secrets."zabbix_bttf_lan_key" = {
+    file = ./zabbix_bttf_lan_key.age;
+  };
+
+  age.secrets."zabbix_bttf_lan_crt" = {
+    file = ./zabbix_bttf_lan_crt.age;
+  };
+##################################################
+
   systemd.network = {
     enable = true;
     networks."50-eth0" = {
