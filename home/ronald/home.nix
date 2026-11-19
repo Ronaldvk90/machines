@@ -23,7 +23,6 @@
     acme
     wineWow64Packages.stable
     winetricks
-    firefox
     thunderbird
     unzip
     p7zip
@@ -89,7 +88,18 @@
       "workbench.colorTheme" = "Light 2026";
     };
   };
-
+  
+  programs.firefox = {
+    enable = true;
+    policies = {
+      Certificates = {
+        Install = [
+        ../../certs/bttf-ca.crt
+        ];
+      };
+    };
+  };
+  
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
