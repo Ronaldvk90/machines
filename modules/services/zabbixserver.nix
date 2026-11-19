@@ -32,7 +32,6 @@
       forceSSL = true;
       sslCertificate = config.age.secrets."zabbix_bttf_lan_crt".path;
       sslCertificateKey = config.age.secrets."zabbix_bttf_lan_key".path;
-      serverName = zabbix;
     };
   };
 
