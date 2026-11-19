@@ -32,8 +32,8 @@
       adminAddr = "webmaster@bttf.lan";
 
       forceSSL = true;
-      sslServerCert = config.age.secrets."zabbix_bttf_lan_crt".path;
-      sslServerKey = config.age.secrets."zabbix_bttf_lan_key".path;
+      sslCertificate = config.age.secrets."zabbix_bttf_lan_crt".path;
+      sslCertificateKey = config.age.secrets."zabbix_bttf_lan_key".path;
     };
   };
 
