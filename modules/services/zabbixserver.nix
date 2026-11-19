@@ -27,7 +27,7 @@
     frontend = "nginx";
     enable = true;
 
-    httpd.virtualHost = {
+    nginx.virtualHost = {
       hostName = "zabbix.bttf.lan";
       adminAddr = "webmaster@bttf.lan";
 
