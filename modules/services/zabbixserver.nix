@@ -26,7 +26,7 @@
     package = pkgs.zabbix74.web;
     frontend = "nginx";
     enable = true;
-    hostName = "zabbix.bttf.lan";
+    hostname = "zabbix.bttf.lan";
 
     nginx.virtualHost = {
       forceSSL = true;
