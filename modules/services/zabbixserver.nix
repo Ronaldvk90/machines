@@ -22,19 +22,22 @@
   #     };
   #   };
   # };
-  services.zabbixWeb = {
-    package = pkgs.zabbix74.web;
-    frontend = "nginx";
-    enable = true;
+services.zabbixWeb = {
+  package = pkgs.zabbix74.web;
+  frontend = "nginx";
+  enable = true;
 
-    virtualHost = {
-      hostName = "zabbix.bttf.lan";
-      adminAddr = "webmaster@bttf.lan";
-      forceSSL = true;
-      sslCertificate = config.age.secrets."zabbix_bttf_lan_crt".path;
-      sslCertificateKey = config.age.secrets."zabbix_bttf_lan_key".path;
-    };
+  virtualHost = {
+    hostName = "zabbix.bttf.lan";
+    adminAddr = "webmaster@bttf.lan";
   };
+};
+
+services.nginx.virtualHosts."zabbix.bttf.lan" = {
+  forceSSL = true;
+  sslCertificate = config.age.secrets."zabbix_bttf_lan_crt".path;
+  sslCertificateKey = config.age.secrets."zabbix_bttf_lan_key".path;
+};
 
   services.zabbixAgent = {
     package = pkgs.zabbix74.agent2;
