@@ -351,6 +351,7 @@ nixosConfigurations = {
       system = "x86_64-linux";
 
       modules = [
+        ./certs/certs.nix
         ./modules/core/binfmt.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
@@ -429,6 +430,7 @@ nixosConfigurations = {
       system = "x86_64-linux";
 
       modules = [
+        ./certs/certs.nix
         ./modules/core/binfmt.nix
         ./modules/core/common.nix
         ./modules/core/enable-flakes.nix
