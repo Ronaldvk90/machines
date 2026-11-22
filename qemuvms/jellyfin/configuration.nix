@@ -12,6 +12,7 @@
   };
 
   systemd.network = {
+    enableIPv6 = true;
     enable = true;
     networks."50-enp5s0" = {
       matchConfig.Name = "enp5s0";

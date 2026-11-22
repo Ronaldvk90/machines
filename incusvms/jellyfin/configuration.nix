@@ -51,7 +51,7 @@
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   networking = {
-    enableIPv6 = false;
+    enableIPv6 = true;
     firewall.enable = false;
     dhcpcd.enable = false;
     useDHCP = false;

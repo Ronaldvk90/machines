@@ -6,7 +6,7 @@
   networking.networkmanager.enable = true;
 
 # networking = {
-#   enableIPv6 = false;
+#   enableIPv6 = true;
 #   firewall.enable = false;
 #   hostName = "test";
 #   domain = "bttf.lan";

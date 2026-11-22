@@ -21,5 +21,6 @@
     nfs-utils
   ];
 
+  networking.enableIPv6 = true;
   system.stateVersion = "26.05";
 }

@@ -57,6 +57,6 @@
   environment.systemPackages = with pkgs; [
   vim
   ];
-
+  networking.enableIPv6 = false;
   system.stateVersion = "26.05";
 }

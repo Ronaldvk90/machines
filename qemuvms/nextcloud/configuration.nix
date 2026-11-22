@@ -40,6 +40,7 @@
   #   "clouduser"
   # ];
 
+  networking.enableIPv6 = true;
   networking.firewall.enable = false;
   system.stateVersion = "26.05";
 }

@@ -44,7 +44,7 @@
   };
 ##################################################
 
-  networking.enableIPv6 = false;
+  networking.enableIPv6 = true;
   networking.firewall.enable = false;
 
   system.stateVersion = "26.05"; # Did you read the comment?

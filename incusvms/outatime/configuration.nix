@@ -21,7 +21,7 @@
 ##################################################
 
   networking = {
-    enableIPv6 = false;
+    enableIPv6 = true;
     firewall.enable = false;
     hostName = "outatime";
     domain = "bttf.lan";

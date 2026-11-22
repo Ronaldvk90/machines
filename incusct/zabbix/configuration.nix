@@ -61,6 +61,7 @@
     };
   };
   
+  networking.enableIPv6 = true;
   networking.firewall.enable = true;
   system.stateVersion = "26.05"; # Did you read the comment?
 }
