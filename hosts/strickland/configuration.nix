@@ -1,22 +1,66 @@
 { config, pkgs, ... }:
 
 {
-  networking.hostName = "strickland";
-  networking.hostId = "e46ea564";
-  networking.domain = "bttf.lan";
-  networking.networkmanager.enable = false;
-  networking.useDHCP = false;
-  networking.bridges = {
-    "br0" = {
-      interfaces = [ "eno1" ];
+  networking = {
+    hostName = "strickland";
+    hostId = "e46ea564";
+    domain = "bttf.lan";
+    nameservers = ["10.10.10.1"];
+  };
+
+  systemd.network = {
+    netdevs = {
+      "20-br0" = {
+        netdevConfig = {
+          Kind = "bridge";
+          Name = "br0";
+        };
+      };
     };
   };
-  networking.interfaces.br0.ipv4.addresses = [ {
-    address = "10.10.10.2";
-    prefixLength = 24;
-  } ];
-  networking.defaultGateway = "10.10.10.1";
-  networking.nameservers = ["10.10.10.1"];
+
+  networks = {
+    "30-eno1" = {
+      matchConfig.Name = "eno1";
+      networkConfig = {
+        Bridge = "br0";
+      };
+
+      linkConfig.RequiredForOnline = "enslaved";
+    };
+
+    "40-br0" = {
+      matchConfig.Name = "br0";
+      networkConfig.IPv6AcceptRA = true;
+      address = [
+        "10.10.10.2/24"
+        "fd42:4242:4242:1::2/64"
+      ];
+      
+      routes = [
+        #{ Gateway = "fe80::1"; }
+        { Gateway = "10.10.10.1"; }
+      ];
+
+      linkConfig = {
+        RequiredForOnline = "routable";
+      };
+    };
+  };
+
+  # networking.networkmanager.enable = false;
+  # networking.useDHCP = false;
+  # networking.bridges = {
+  #   "br0" = {
+  #     interfaces = [ "eno1" ];
+  #   };
+  # };
+  # networking.interfaces.br0.ipv4.addresses = [ {
+  #   address = "10.10.10.2";
+  #   prefixLength = 24;
+  # } ];
+  # networking.defaultGateway = "10.10.10.1";
+  # networking.nameservers = ["10.10.10.1"];
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
