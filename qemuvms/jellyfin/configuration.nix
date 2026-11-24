@@ -16,8 +16,8 @@
     networks."50-enp5s0" = {
       matchConfig.Name = "enp5s0";
       address = [
-        "10.10.10.17/24"
-        "fd42:4242:4242:1::17"  
+        "10.10.10.14/24"
+        "fd42:4242:4242:1::14"  
       ];
 
       networkConfig = {
