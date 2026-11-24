@@ -10,12 +10,6 @@
   
   boot.isContainer = true;
   nix.settings.sandbox = false;
-  
-  networking = {
-    dhcpcd.enable = false;
-    useDHCP = false;
-    useHostResolvConf = false;
-  };
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
@@ -44,24 +38,41 @@
     group = "nginx";
   };
 ##################################################
+  networking = {
+    enableIPv6 = true;
+    firewall.enable = true;
+    dhcpcd.enable = false;
+    useDHCP = false;
+    useHostResolvConf = false;
+  };
 
   systemd.network = {
     enable = true;
     networks."50-eth0" = {
       matchConfig.Name = "eth0";
-      address = [ "10.10.10.8/24" ];
+      address = [
+        "10.10.10.8/24"
+        "fd42:4242:4242:1::8"  
+      ];
+
       networkConfig = {
-        Gateway = "10.10.10.1";
-        DNS = [ "10.10.10.1" ];
+        Gateway = [
+          "10.10.10.1"
+          "fd42:4242:4242:1::1"
+        ];
+
+        DNS = [
+          "10.10.10.1"
+          "fd42:4242:4242:1::1"
+        ];
       };
+      
       linkConfig = {
-        MACAddress = "10:66:6a:5d:9e:df";
         RequiredForOnline = "routable";
+        MACAddress = "10:66:6a:5d:9e:df";
       };
     };
   };
   
-  networking.enableIPv6 = true;
-  networking.firewall.enable = true;
   system.stateVersion = "26.05"; # Did you read the comment?
 }
