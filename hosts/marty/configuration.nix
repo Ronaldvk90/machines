@@ -7,21 +7,40 @@
   };
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  networking.hostName = "marty"; # Define your hostname.
-  networking.domain = "bttf.lan";
-  networking.networkmanager.enable = false;
-  networking.useDHCP = false;
-  networking.bridges = {
-    "br0" = {
-      interfaces = [ "enp3s0" ];
+  networking = {
+    hostName = "marty";
+    domain = "bttf.lan";
+    nameservers = [
+      "10.10.10.1"
+      "fd42:4242:4242:1::1"
+    ];
+
+    defaultGateway = "10.10.10.1";
+    defaultGateway6 = "fe80::1";
+    networkmanager.enable = false;
+    useDHCP = false;
+    bridges = {
+      "br0" = {
+        interfaces = [ "enp3s0" ];
+      };
+    };
+  
+    interfaces.br0 = {
+      ipv4.addresses = [
+      {
+        address = "10.10.10.4";
+        prefixLength = 24;
+      } 
+      ];
+
+    ipv6.addresses = [
+      {
+        address = "fd42:4242:4242:1::4";
+        prefixLength = 64;
+      }
+      ];
     };
   };
-  networking.interfaces.br0.ipv4.addresses = [ {
-    address = "10.10.10.4";
-    prefixLength = 24;
-  } ];
-  networking.defaultGateway = "10.10.10.1";
-  networking.nameservers = ["10.10.10.1"];
 
   home-manager.users.ronald = import ../../home/ronald/home.nix;
 

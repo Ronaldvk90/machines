@@ -13,22 +13,20 @@
     ];
   };
 
-  networking.hostName = "flserver";
-  networking.domain = "bttf.lan";
-  networking.networkmanager.enable = true;
-  networking.dhcpcd.enable = false;
-  networking.resolvconf.package = pkgs.openresolv;
-  networking.firewall.enable = false;
+  networking = {
+    hostName = "flserver";
+    domain = "bttf.lan";
+    networkmanager.enable = true;
+    dhcpcd.enable = false;
+    resolvconf.package = pkgs.openresolv;
+    firewall.enable = false;
 
-# networking = {
 #   enableIPv6 = false;
 #   firewall.enable = false;
 #   hostName = "flserver";
 #   domain = "bttf.lan";
-#   dhcpcd.enable = false;
-#   useDHCP = false;
 #   useHostResolvConf = false;
-# };
+  };
 
 # systemd.network = {
 #   enable = true;

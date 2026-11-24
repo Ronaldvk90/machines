@@ -62,10 +62,18 @@
     enable = true;
     networks."50-enp5s0" = {
       matchConfig.Name = "enp5s0";
-      address = [ "10.10.10.17/24" ];
+      address = [
+        "10.10.10.17/24"
+        "fd42:4242:4242:1::17"  
+      ];
+      
       networkConfig = {
         Gateway = "10.10.10.1";
-        DNS = [ "10.10.10.1" ];
+        Gateway6 = "fd42:4242:4242:1::1";
+        DNS = [
+          "10.10.10.1"
+          "fd42:4242:4242:1::1"
+        ];
       };
       
       linkConfig = {

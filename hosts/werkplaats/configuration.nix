@@ -8,11 +8,14 @@
     enable32Bit = true;
   };
 
-  networking.hostName = "werkplaats";
-  networking.domain = "2switch";
-  networking.networkmanager.enable = true;
-  networking.dhcpcd.enable = false;
-  networking.resolvconf.package = pkgs.openresolv;
+  networking = {
+    hostName = "werkplaats";
+    domain = "2switch";
+    networkmanager.enable = true;
+    dhcpcd.enable = false;
+    resolvconf.package = pkgs.openresolv;
+    enableIPv6 = true;
+  };
   
   # Per host Age encrypted files #
   age.secrets.wg0 = {
