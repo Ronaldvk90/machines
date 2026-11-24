@@ -4,22 +4,32 @@
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   networking = {
-    hostName = "jellyfin";
-    domain = "bttf.lan";
+    enableIPv6 = true;
+    firewall.enable = false;
     dhcpcd.enable = false;
     useDHCP = false;
     useHostResolvConf = false;
   };
 
   systemd.network = {
-    enableIPv6 = true;
     enable = true;
     networks."50-enp5s0" = {
       matchConfig.Name = "enp5s0";
-      address = [ "10.10.10.17/24" ];
+      address = [
+        "10.10.10.17/24"
+        "fd42:4242:4242:1::17"  
+      ];
+
       networkConfig = {
-        Gateway = "10.10.10.1";
-        DNS = [ "10.10.10.1" ];
+        Gateway = [
+          "10.10.10.1"
+          "fd42:4242:4242:1::1"
+        ];
+
+        DNS = [
+          "10.10.10.1"
+          "fd42:4242:4242:1::1"
+        ];
       };
       
       linkConfig = {
@@ -71,6 +81,5 @@
   };
 ##################################################
 
-  networking.firewall.enable = false;
   system.stateVersion = "26.05";
 }

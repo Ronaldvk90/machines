@@ -23,8 +23,6 @@
   networking = {
     enableIPv6 = true;
     firewall.enable = false;
-    hostName = "outatime";
-    domain = "bttf.lan";
     dhcpcd.enable = false;
     useDHCP = false;
     useHostResolvConf = false;
@@ -34,10 +32,21 @@
     enable = true;
     networks."50-enp5s0" = {
       matchConfig.Name = "enp5s0";
-      address = [ "10.10.10.11/24" ];
+      address = [
+        "10.10.10.11/24"
+        "fd42:4242:4242:1::11"  
+      ];
+
       networkConfig = {
-        Gateway = "10.10.10.1";
-        DNS = [ "10.10.10.1" ];
+        Gateway = [
+          "10.10.10.1"
+          "fd42:4242:4242:1::1"
+        ];
+
+        DNS = [
+          "10.10.10.1"
+          "fd42:4242:4242:1::1"
+        ];
       };
       
       linkConfig = {
