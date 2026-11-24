@@ -9,32 +9,32 @@
       "10.10.10.1"
       "fd42:4242:4242:1::1"
     ];
+
     defaultGateway = "10.10.10.1";
     defaultGateway6 = "fe80::1";
-  };
-
-  networking.networkmanager.enable = false;
-  networking.useDHCP = false;
-  networking.bridges = {
-    "br0" = {
-      interfaces = [ "eno1" ];
+    networkmanager.enable = false;
+    useDHCP = false;
+    bridges = {
+      "br0" = {
+        interfaces = [ "eno1" ];
+      };
     };
-  };
   
-  networking.interfaces.br0 = {
-    ipv4.addresses = [
+    interfaces.br0 = {
+      ipv4.addresses = [
       {
         address = "10.10.10.2";
         prefixLength = 24;
       } 
-    ];
+      ];
 
     ipv6.addresses = [
       {
         address = "fd42:4242:4242:1::2";
         prefixLength = 64;
       }
-    ];
+      ];
+    };
   };
 
   home-manager.users.ronald = import ../../home/ronald/server.nix;
