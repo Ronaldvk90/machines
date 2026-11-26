@@ -412,6 +412,7 @@ nixosConfigurations = {
         ./modules/services/nfsclient.nix
         ./modules/services/pipewire.nix
         ./modules/services/printing.nix
+        ./modules/services/tftpd.nix
         ./modules/services/virt-manager.nix
         ./modules/services/wireguard.nix
         ./modules/services/zsh.nix
