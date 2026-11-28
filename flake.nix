@@ -186,31 +186,10 @@ packages.x86_64-linux.nixos-pve-lxc =
       ./containers/pvelxc/configuration.nix
     ];
   };
-
-nixosConfigurations = {
-    outatime-pve =
-      nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-
-        modules = [
-          ./modules/core/common.nix
-          ./modules/core/enable-flakes.nix
-          ./modules/core/sudo.nix
-          ./modules/core/timezone.nix
-          ./modules/core/unfree.nix
-          ./modules/services/podman.nix
-          ./modules/services/ssh.nix
-          ./modules/services/zsh.nix
-          ./modules/services/zabbixclient.nix
-          ./modules/users/ronald.nix
-          ./containers/outatime/configuration.nix
-          home-manager.nixosModules.home-manager
-          agenix.nixosModules.default        
-        ];
-      };
 #################################################################################
 
 ############### Output modules ##################################################
+nixosConfigurations = {
   pxeinstaller =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
