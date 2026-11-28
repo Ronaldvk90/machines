@@ -6,6 +6,7 @@
     "${modulesPath}/virtualisation/lxc-container.nix"
   ];
   
+  console.enable = true;
   boot.isContainer = true;
   nix.settings.sandbox = false;
 
