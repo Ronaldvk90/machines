@@ -4,6 +4,7 @@
   home-manager.users.ronald = import ../../home/ronald/server.nix;
 
   networking = {
+    hostName = "outatime";
     enableIPv6 = true;
     firewall.enable = false;
     dhcpcd.enable = false;
