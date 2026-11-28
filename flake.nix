@@ -204,7 +204,6 @@ nixosConfigurations = {
           ./modules/services/zabbixclient.nix
           ./modules/users/ronald.nix
           ./containers/outatime/configuration.nix
-          ./containers/outatime/agenix-rules.nix
           home-manager.nixosModules.home-manager
           agenix.nixosModules.default        
         ];
