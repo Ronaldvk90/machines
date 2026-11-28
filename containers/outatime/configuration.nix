@@ -5,7 +5,8 @@
     # Include the default incus configuration.
     "${modulesPath}/virtualisation/lxc-container.nix"
   ];
-  
+
+  networking.hostName = "outatime";
   console.enable = true;
   boot.isContainer = true;
   nix.settings.sandbox = false;
@@ -23,7 +24,7 @@
   systemd.network = {
     enable = true;
     networks."50-eth0" = {
-      matchConfig.Name = "wth0";
+      matchConfig.Name = "eth0";
       address = [
         "10.10.10.11/24"
         "fd42:4242:4242:1::11"  
