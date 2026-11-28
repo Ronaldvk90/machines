@@ -13,12 +13,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    git
     vim
-    tmux
-    disko
-    cifs-utils
-    nfs-utils
   ];
 
   networking.enableIPv6 = true;
