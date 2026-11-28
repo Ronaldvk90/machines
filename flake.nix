@@ -207,11 +207,9 @@ nixosConfigurations = {
           agenix.nixosModules.default        
         ];
       };
-  }
 #################################################################################
 
 ############### Output modules ##################################################
-nixosConfigurations = {
   pxeinstaller =
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
