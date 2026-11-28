@@ -13,8 +13,8 @@
 
   systemd.network = {
     enable = true;
-    networks."50-enp5s0" = {
-      matchConfig.Name = "enp5s0";
+    networks."50-ens18" = {
+      matchConfig.Name = "ens18";
       address = [
         "10.10.10.11/24"
         "fd42:4242:4242:1::11"  
