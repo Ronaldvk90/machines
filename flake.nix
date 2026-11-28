@@ -196,6 +196,8 @@ nixosConfigurations = {
       modules = [
         "${nixpkgs}/nixos/modules/installer/netboot/netboot-minimal.nix"
         ./installers/pxeinstaller/configuration.nix
+        ./modules/services/qemu-guest-agent.nix
+        ./modules/services/incus-agent.nix
       ];
     };
 
@@ -205,6 +207,8 @@ nixosConfigurations = {
       modules = [
         "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
         ./installers/isoinstaller/configuration.nix
+        ./modules/services/qemu-guest-agent.nix
+        ./modules/services/incus-agent.nix
         disko.nixosModules.disko
       ];
     };
@@ -215,6 +219,8 @@ nixosConfigurations = {
       modules = [
         "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
         ./liveenv/xfcelive/configuration.nix
+        ./modules/services/qemu-guest-agent.nix
+        ./modules/services/incus-agent.nix
         disko.nixosModules.disko
       ];
     };
